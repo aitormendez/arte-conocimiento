@@ -19,12 +19,14 @@ return [
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
             'show_in_rest' => true,
             'has_archive' => false,
+            'taxonomies' => ['category'],
             'labels' => [
                 'singular' => 'Book',
                 'plural' => 'Books',
             ],
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -37,9 +39,9 @@ return [
     */
 
     'taxonomy' => [
-        'genre' => [
-            'links' => ['book'],
-            'meta_box' => 'radio',
+        'proyecto' => [
+            'links' => ['post'],
+            'meta_box' => 'simple',
         ],
     ],
 

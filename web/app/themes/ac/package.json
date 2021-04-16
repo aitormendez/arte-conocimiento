@@ -43,6 +43,7 @@
     "animejs": "^3.2.1",
     "infinite-scroll": "^4.0.1",
     "jquery": "^3.5.1",
-    "lightgallery": "^1.10.0"
+    "lightgallery": "^1.10.0",
+    "three": "^0.127.0"
   }
 }
