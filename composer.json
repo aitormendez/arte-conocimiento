@@ -90,6 +90,7 @@
     "wpackagist-plugin/favicon-by-realfavicongenerator": "*",
     "wpackagist-plugin/wp-optimize": "*",
     "wpackagist-plugin/easy-table-of-contents": "*",
+    "wpackagist-plugin/capability-manager-enhanced": "*",
     "wpackagist-plugin/footnotes": "*"
   },
   "require-dev": {
