@@ -10,6 +10,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['rubik', 'sans-serif'],
+        'serif': ['times-new-roman', 'serif'],
+       },
       colors: {},
     },
   },
