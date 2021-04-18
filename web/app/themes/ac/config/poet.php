@@ -18,7 +18,7 @@ return [
             'menu_icon' => 'dashicons-book-alt',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
             'show_in_rest' => true,
-            'has_archive' => false,
+            'has_archive' => true,
             'taxonomies' => ['category'],
             'labels' => [
                 'singular' => 'Book',
@@ -42,6 +42,14 @@ return [
         'proyecto' => [
             'links' => ['post'],
             'meta_box' => 'simple',
+        ],
+        'lineas_investigacion' => [
+            'links' => ['post'],
+            'meta_box' => 'simple',
+            'labels' => [
+                'singular' => 'Línea de investigación',
+                'plural' => 'Líneas de investigación',
+            ],
         ],
     ],
 
