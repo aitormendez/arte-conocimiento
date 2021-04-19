@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: {
     content: [
@@ -14,7 +16,16 @@ module.exports = {
         'sans': ['rubik', 'sans-serif'],
         'serif': ['times-new-roman', 'serif'],
        },
-      colors: {},
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: colors.black,
+        white: colors.white,
+        gray: colors.coolGray,
+        red: colors.red,
+        yellow: colors.amber,
+        blue: colors.blue
+      },
     },
   },
   variants: {
