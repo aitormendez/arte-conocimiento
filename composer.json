@@ -91,6 +91,7 @@
     "wpackagist-plugin/wp-optimize": "*",
     "wpackagist-plugin/easy-table-of-contents": "*",
     "wpackagist-plugin/capability-manager-enhanced": "*",
+    "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/footnotes": "*"
   },
   "require-dev": {

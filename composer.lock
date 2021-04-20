@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f1ca24b32805e956b368523166129eb",
+    "content-hash": "a9f06cd1329be7de4246fd5945423f5a",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -1127,6 +1127,24 @@
             "homepage": "https://wordpress.org/plugins/cookie-notice/"
         },
         {
+            "name": "wpackagist-plugin/disable-comments",
+            "version": "2.1.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/disable-comments/",
+                "reference": "tags/2.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.2.1.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/disable-comments/"
+        },
+        {
             "name": "wpackagist-plugin/easy-table-of-contents",
             "version": "2.0.17",
             "source": {
@@ -1182,15 +1200,15 @@
         },
         {
             "name": "wpackagist-plugin/footnotes",
-            "version": "2.7.1",
+            "version": "2.7.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/footnotes/",
-                "reference": "tags/2.7.1"
+                "reference": "tags/2.7.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/footnotes.2.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/footnotes.2.7.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1260,12 +1278,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "6c88e3fbd5e56eaf1869ec290db225b5c5dbe322"
+                "reference": "593c4de369ca852cf3b86037f19435d47c136448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6c88e3fbd5e56eaf1869ec290db225b5c5dbe322",
-                "reference": "6c88e3fbd5e56eaf1869ec290db225b5c5dbe322",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/593c4de369ca852cf3b86037f19435d47c136448",
+                "reference": "593c4de369ca852cf3b86037f19435d47c136448",
                 "shasum": ""
             },
             "conflict": {
@@ -1344,7 +1362,7 @@
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
                 "friendsoftypo3/mediace": ">=7.6.2,<7.6.5",
                 "fuel/core": "<1.8.1",
-                "getgrav/grav": "<1.7-beta.8",
+                "getgrav/grav": "<1.7.11",
                 "getkirby/cms": ">=3,<3.4.5",
                 "getkirby/panel": "<2.5.14",
                 "gos/web-socket-bundle": "<1.10.4|>=2,<2.6.1|>=3,<3.3",
@@ -1598,7 +1616,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-15T10:01:35+00:00"
+            "time": "2021-04-16T20:01:44+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
