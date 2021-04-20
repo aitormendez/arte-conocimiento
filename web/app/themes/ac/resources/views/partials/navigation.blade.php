@@ -1,13 +1,13 @@
 @if ($navigation)
   <ul class="solapa">
     @foreach ($navigation as $item)
-      <li class="my-menu-item {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }} font-bold">
-        <a href="{{ $item->url }}">
+      <li class="my-menu-item {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }} font-bold cerrado" role="button">
+        <a href="#">
           {{ $item->label }}
         </a>
 
         @if ($item->children)
-          <ul class="my-child-menu">
+          <ul class="my-child-menu overflow-hidden">
             @foreach ($item->children as $child)
               <li class="my-child-item {{ $child->classes ?? '' }} {{ $child->active ? 'active' : '' }} font-normal">
                 <a href="{{ $child->url }}">

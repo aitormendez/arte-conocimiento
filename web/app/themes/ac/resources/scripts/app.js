@@ -2,7 +2,7 @@
  * External Dependencies
  */
 import 'jquery';
-import './three.js';
+// import './three.js';
 import './nav.js';
 
 $(document).ready(() => {
