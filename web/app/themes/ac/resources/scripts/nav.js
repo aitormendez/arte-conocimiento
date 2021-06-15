@@ -3,14 +3,19 @@ $(document).ready(() => {
   let
     w = $(window),
     viewportWidth = w.width(),
-    lastY = w.scrollTop();
-    menuItems = $('.my-menu-item');
+    lastY = w.scrollTop(),
+    menuItems = $('.my-menu-item'),
+    hamb = $('#hamb'),
+    direction = '',
+    currY = '';
 
     menuItems.each(function() {
       $(this).siblings().children('.my-child-menu').slideUp(0);
     });
 
-  if (viewportWidth >= 1024) {
+
+
+  if (viewportWidth <= 1024) {
     // acordeón móvil
     menuItems.click(function(){
       console.log(menuItems.index(this));
@@ -18,15 +23,19 @@ $(document).ready(() => {
       $(this).siblings().children('.my-child-menu').slideUp();
     });
 
+    // botón hamburguesa
+    if (direction) {
+
+    }
+
 
   } else {
 
   }
 
   w.scroll(function() {
-    let
-      currY = w.scrollTop(),
-      direction = (currY > lastY) ? 'down' : 'up';
+    currY = w.scrollTop(),
+    direction = (currY > lastY) ? 'down' : 'up';
     lastY = currY;
     console.log(direction);
   });

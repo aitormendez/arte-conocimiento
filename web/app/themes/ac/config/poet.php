@@ -13,17 +13,62 @@ return [
     */
 
     'post' => [
-        'book' => [
-            'enter_title_here' => 'Enter book title',
-            'menu_icon' => 'dashicons-book-alt',
+        'proyecto' => [
+            'enter_title_here' => 'Título del proyecto',
+            // 'menu_icon' => 'dashicons-book-alt',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
             'show_in_rest' => true,
             'has_archive' => true,
-            'taxonomies' => ['category'],
+            'taxonomies' => ['post_tag'],
+            'menu_position' => 2,
+            // 'labels' => [
+            //     'singular' => 'Book',
+            //     'plural' => 'Books',
+            // ],
+        ],
+        'noticia' => [
+            'enter_title_here' => 'Título de la noticia',
+            // 'menu_icon' => 'dashicons-book-alt',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'taxonomies' => ['post_tag'],
+            'menu_position' => 3,
+        ],
+        'actividad' => [
+            'enter_title_here' => 'Título de la noticia',
+            // 'menu_icon' => 'dashicons-book-alt',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'taxonomies' => ['post_tag'],
+            'menu_position' => 4,
             'labels' => [
-                'singular' => 'Book',
-                'plural' => 'Books',
+                'singular' => 'Actividad',
+                'plural' => 'Actividades',
             ],
+        ],
+        'publicacion' => [
+            'enter_title_here' => 'Título de la publicación',
+            // 'menu_icon' => 'dashicons-book-alt',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'taxonomies' => ['post_tag'],
+            'menu_position' => 5,
+            'labels' => [
+                'singular' => 'Publicación',
+                'plural' => 'Publicaciones',
+            ],
+        ],
+        'referencia' => [
+            'enter_title_here' => 'Título de la referencia',
+            // 'menu_icon' => 'dashicons-book-alt',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'taxonomies' => ['post_tag'],
+            'menu_position' => 6,
         ],
     ],
 
@@ -39,16 +84,36 @@ return [
     */
 
     'taxonomy' => [
-        'proyecto' => [
-            'links' => ['post'],
+        'metaproyecto' => [
+            'links' => [
+                'proyecto',
+                'noticia',
+                'actividad',
+                'publicacion',
+            ],
             'meta_box' => 'simple',
         ],
         'lineas_investigacion' => [
-            'links' => ['post'],
+            'links' => [
+                'proyecto',
+                'noticia',
+                'actividad',
+                'publicacion',
+            ],
             'meta_box' => 'simple',
             'labels' => [
                 'singular' => 'Línea de investigación',
                 'plural' => 'Líneas de investigación',
+            ],
+        ],
+        'tipo_de_referencia' => [
+            'links' => [
+                'referencia',
+            ],
+            'meta_box' => 'simple',
+            'labels' => [
+                'singular' => 'Tipo de referencia',
+                'plural' => 'Tipos de referencias',
             ],
         ],
     ],
