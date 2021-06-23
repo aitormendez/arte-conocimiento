@@ -5,7 +5,6 @@ import {
 import {
   OrbitControls
 } from 'three/examples/jsm/controls/OrbitControls.js';
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 
 $(document).ready(() => {
@@ -52,12 +51,12 @@ $(document).ready(() => {
   controls.enableDamping = true;
   controls.dampingFactor = 0.1;
 
-  // const loader2 = new GLTFLoader();
-  // loader2.load( '/app/themes/ac/public/images/3d/cubo.glb', function ( gltf ) {
-  //   scene.add( gltf.scene );
-  // }, undefined, function ( error ) {
-  //   console.error( error );
-  // } );
+  const loader2 = new GLTFLoader();
+  loader2.load('/app/themes/ac/public/images/3d/cubo.glb', function (gltf) {
+    scene.add(gltf.scene);
+  }, undefined, function (error) {
+    console.error(error);
+  });
 
   window.addEventListener('resize', redimensionar);
 
