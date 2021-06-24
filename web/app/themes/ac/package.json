@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "gsap": "^3.7.0",
     "infinite-scroll": "^4.0.1",
     "jquery": "^3.5.1",
     "lightgallery": "^1.10.0",
