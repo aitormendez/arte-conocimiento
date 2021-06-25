@@ -5,7 +5,9 @@ body {
 html {
   font-size: 1rem;
 
-  @screen sm {
+
+
+  @media (min-width: 786px) {
     font-size: calc(0.5vw + 0.7rem);
   }
 }
