@@ -2,12 +2,6 @@ body {
   @apply font-sans;
 }
 
-html {
-  font-size: 1rem;
-
-
-
-  @media (min-width: 786px) {
-    font-size: calc(0.5vw + 0.7rem);
-  }
+.brand {
+  @apply text-3xl font-medium text-indigo-500;
 }

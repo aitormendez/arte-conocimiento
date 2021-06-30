@@ -3,10 +3,9 @@
     {{ $siteName }}
   </a>
 
-  <nav class="solapa">
-    @include('partials.navigation')
-    <button id="hamb">
-      @svg('images.hamb', 'fixed top-5 right-5')
-    </button>
+  <nav class="nav-primary">
+    @if (has_nav_menu('primary_navigation'))
+      {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
+    @endif
   </nav>
 </header>

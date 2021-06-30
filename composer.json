@@ -17,7 +17,12 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -27,13 +32,16 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org",
-      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
     },
     {
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.9.6",
+        "version": "5.9.7",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -48,25 +56,25 @@
     {
       "type": "package",
       "package": {
-          "name": "analogmemory/wp-sync-db",
-          "type": "wordpress-plugin",
-          "version": "1.6",
-          "dist": {
-              "type": "zip",
-              "url": "https://github.com/AnalogMemory/wp-sync-db/archive/master.zip"
-          }
+        "name": "analogmemory/wp-sync-db",
+        "type": "wordpress-plugin",
+        "version": "1.6",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/AnalogMemory/wp-sync-db/archive/master.zip"
+        }
       }
     },
     {
       "type": "package",
       "package": {
-          "name": "wp-sync-db/wp-sync-db-media-files",
-          "type": "wordpress-plugin",
-          "version": "master",
-          "dist": {
-              "type": "zip",
-              "url": "https://github.com/wp-sync-db/wp-sync-db-media-files/archive/master.zip"
-          }
+        "name": "wp-sync-db/wp-sync-db-media-files",
+        "type": "wordpress-plugin",
+        "version": "master",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/wp-sync-db/wp-sync-db-media-files/archive/master.zip"
+        }
       }
     }
   ],
@@ -106,9 +114,15 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },

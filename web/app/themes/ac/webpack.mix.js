@@ -14,26 +14,21 @@ require('@tinypixelco/laravel-mix-wp-blocks');
 
 mix
   .setPublicPath('./public')
-  .browserSync({
-    proxy: 'https://arte-conocimiento.test',
-    browser: 'google chrome',
-  });
+  .browserSync('sage.test');
 
 mix
   .sass('resources/styles/app.scss', 'styles')
   .sass('resources/styles/editor.scss', 'styles')
   .options({
     processCssUrls: false,
-    postCss: [require('@tailwindcss/jit')],
+    postCss: [require('tailwindcss')],
   });
 
 mix
   .js('resources/scripts/app.js', 'scripts')
   .js('resources/scripts/customizer.js', 'scripts')
   .blocks('resources/scripts/editor.js', 'scripts')
-  .autoload({
-    jquery: ['$', 'window.jQuery']
-  })
+  .autoload({ jquery: ['$', 'window.jQuery'] })
   .extract();
 
 mix

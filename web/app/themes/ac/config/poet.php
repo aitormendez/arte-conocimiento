@@ -21,10 +21,6 @@ return [
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
             'menu_position' => 2,
-            // 'labels' => [
-            //     'singular' => 'Book',
-            //     'plural' => 'Books',
-            // ],
         ],
         'noticia' => [
             'enter_title_here' => 'Título de la noticia',
