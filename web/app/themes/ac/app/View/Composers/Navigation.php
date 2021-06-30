@@ -3,8 +3,9 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use Log1x\Navi\Facades\Navi;
 
-class App extends Composer
+class Navigation extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,7 +13,7 @@ class App extends Composer
      * @var array
      */
     protected static $views = [
-        '*',
+        'partials.navigation',
     ];
 
     /**
@@ -23,17 +24,21 @@ class App extends Composer
     public function with()
     {
         return [
-            'siteName' => $this->siteName(),
+            'navigation' => $this->navigation(),
         ];
     }
 
     /**
-     * Returns the site name.
+     * Returns the primary navigation.
      *
-     * @return string
+     * @return array
      */
-    public function siteName()
+    public function navigation()
     {
-        return get_bloginfo('name', 'display');
+        if (Navi::build()->isEmpty()) {
+            return;
+        }
+
+        return Navi::build()->toArray();
     }
 }
