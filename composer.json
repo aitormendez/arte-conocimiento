@@ -100,6 +100,7 @@
     "wpackagist-plugin/easy-table-of-contents": "*",
     "wpackagist-plugin/capability-manager-enhanced": "*",
     "wpackagist-plugin/disable-comments": "*",
+    "wpackagist-plugin/fakerpress": "*",
     "wpackagist-plugin/footnotes": "*"
   },
   "require-dev": {

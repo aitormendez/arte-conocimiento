@@ -32,3 +32,24 @@ add_action(
         $query->set( 'post_type', array( 'post', 'book' ) );
     }
 );
+
+/**
+ * Cambiar títulos sentencias
+ */
+
+
+    // add_action( 'acf/save_post', function ($post_id) {
+    // $post_type = get_post_type($post_id);
+
+    // if ($post_type == 'proyecto') {
+
+    //     $usuarios = [];
+
+    //     if( have_rows('participantes') ):
+    //         while( have_rows('participantes') ) : the_row();
+    //             var_dump(get_sub_field('participante'));
+    //         endwhile;
+    //     endif;
+
+    // }
+    // });
