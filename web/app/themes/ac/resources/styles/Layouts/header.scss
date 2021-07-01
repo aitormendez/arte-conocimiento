@@ -1,0 +1,9 @@
+.banner {
+  .my-menu-item {
+    &.cerrado {
+      .my-child-menu {
+        // height: 0;
+      }
+    }
+  }
+}

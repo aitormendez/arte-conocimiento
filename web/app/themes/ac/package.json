@@ -21,6 +21,7 @@
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print"
   },
   "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
     "@tailwindcss/typography": "^0.4.1",
     "@tinypixelco/laravel-mix-wp-blocks": "^1.1.0",
     "@wordpress/babel-preset-default": "^6.1.0",
@@ -41,5 +42,8 @@
   },
   "peerDependencies": {
     "jquery": "^3.5.1"
+  },
+  "dependencies": {
+    "gsap": "^3.7.0"
   }
 }

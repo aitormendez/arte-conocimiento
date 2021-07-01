@@ -16,7 +16,7 @@ return [
         'proyecto' => [
             'enter_title_here' => 'Título del proyecto',
             // 'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
@@ -25,7 +25,7 @@ return [
         'noticia' => [
             'enter_title_here' => 'Título de la noticia',
             // 'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
@@ -34,7 +34,7 @@ return [
         'actividad' => [
             'enter_title_here' => 'Título de la noticia',
             // 'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
@@ -47,7 +47,7 @@ return [
         'publicacion' => [
             'enter_title_here' => 'Título de la publicación',
             // 'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
@@ -60,7 +60,7 @@ return [
         'referencia' => [
             'enter_title_here' => 'Título de la referencia',
             // 'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
