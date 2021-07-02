@@ -50,8 +50,12 @@ add_action(
         $participantes_post = [];
         if( have_rows('participantes') ):
             while( have_rows('participantes') ) : the_row();
-                $nombre = get_sub_field('nombre_participante');
-                array_push($participantes_post, $nombre);
+                $nombre_post = get_sub_field('nombre_participante');
+                $rol_post = get_sub_field('rol_participante');
+                array_push($participantes_post, [
+                    'nombre' => $nombre_post,
+                    'rol' => $rol_post,
+                  ]);
             endwhile;
         endif;
 
@@ -68,6 +72,20 @@ add_action(
                 $nombre_term = get_sub_field('nombre_participante', $term->term_id);
                 array_push($participantes_term, $nombre_term);
             endwhile;
+
+            // comprobar que cada participante del $participantes_post 
+            // no está en $participantes_term y añadirlo
+
+            foreach ($participantes_post as $participante_post) {
+                if (! in_array($participante_post['nombre'], $participantes_term)) {
+                    $row = array(
+                        'nombre_participante' => $participante_post['nombre'],
+                        'rol_participante' => $participante_post['rol'],
+                    );
+                    add_row('participantes', $row, 'term_' . $term->term_id);
+                }
+            }
+
         }
 
     }

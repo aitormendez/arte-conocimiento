@@ -21,7 +21,11 @@
       @php
           the_row();
           $nombre_post = get_sub_field('nombre_participante');
-          array_push($participantes_post, $nombre_post);
+          $rol_post = get_sub_field('rol_participante');
+          array_push($participantes_post, [
+            'nombre' => $nombre_post,
+            'rol' => $rol_post,
+          ]);
       @endphp
     @endwhile
   @endif
@@ -44,10 +48,10 @@
   @dump($participantes_term)
 
   @foreach ($participantes_post as $participante_post)
-    @if (! in_array($participante_post, $participantes_term))
-      <p>{{ $participante_post . 'no' }}</p> 
+    @if (! in_array($participante_post['nombre'], $participantes_term))
+      <p>{{ $participante_post['nombre'] . 'no' }}</p> 
     @else
-      <p>{{ $participante_post . 'si' }}</p> 
+      <p>{{ $participante_post['nombre'] . 'si' }}</p> 
     @endif
   @endforeach
 
