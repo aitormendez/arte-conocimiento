@@ -16,7 +16,7 @@ class Post extends Field
     public function fields()
     {
 
-        $equipo = new FieldsBuilder('posts_usuarios');
+        $equipo = new FieldsBuilder('equipo_de_esta_entrada');
 
         $equipo
             ->setLocation('post_type', '==', 'proyecto')

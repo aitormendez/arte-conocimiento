@@ -1,4 +1,4 @@
-<article @php(post_class())>
+<article @php post_class() @endphp >
   <header>
     <h1 class="entry-title">
       {!! $title !!}
@@ -6,6 +6,43 @@
 
     @include('partials/entry-meta')
   </header>
+
+  @php
+      $terms = get_the_terms( $post->ID, 'metaproyecto' )
+  @endphp
+
+  @dump($terms)
+
+  @if (have_rows('participantes'))
+  @php
+      $participantes_post = [];
+  @endphp
+    @while (have_rows('participantes'))
+      @php
+          the_row();
+          $nombre_post = get_sub_field('nombre_participante');
+          array_push($participantes_post, $nombre_post);
+      @endphp
+    @endwhile
+  @endif
+
+  @foreach ($terms as $term)
+    @php
+      $participantes_term = [];
+    @endphp
+  
+    @while (have_rows('participantes', 'term_' . $term->term_id))
+      @php
+          the_row();
+          $nombre_term = get_sub_field('nombre_participante', $term->term_id);
+          array_push($participantes_term, $nombre_term);
+      @endphp
+    @endwhile
+  @endforeach
+
+  @dump($participantes_post)
+  @dump($participantes_term)
+
 
   <div class="entry-content">
     @php(the_content())

@@ -23,8 +23,10 @@ class Usuarios extends Partial
             'layout' => 'table',
             'button_label' => 'Añadir usuario',
         ])
-            ->addUser('usuario')
-            ->addSelect('user_rol', [
+            ->addUser('nombre_usuario', [
+                'label' => 'Nombre de usuario',
+            ])
+            ->addSelect('rol_usuario', [
                 'label' => 'Rol de usuario',
                 'required' => 1,
                 'choices' => [
@@ -48,10 +50,12 @@ class Usuarios extends Partial
             'label' => 'Participantes',
             'instructions' => 'Añade aquí los participantes en el proyecto que NO tengan cuenta de usuario en este sitio web. Se añadirán automáticamente los que ya existan en los post asociados a este metaproyecto',
             'layout' => 'table',
-            'button_label' => 'Añadir usuario',
+            'button_label' => 'Añadir participante',
         ])
-            ->addText('participante')
-            ->addSelect('partaker_rol', [
+            ->addText('nombre_participante', [
+                'label' => 'Nombre de participante',
+            ])
+            ->addSelect('rol_participante', [
                 'label' => 'Rol de participante',
                 'required' => 1,
                 'choices' => [
@@ -70,7 +74,6 @@ class Usuarios extends Partial
                 'placeholder' => '',
             ])
             ->endRepeater();
-        
 
         return $listItems;
     }
