@@ -13,17 +13,19 @@
 
   @dump($terms)
 
-  @if (have_rows('participantes'))
+  @if (have_rows('usuarios'))
   @php
-      $participantes_post = [];
+      $usuarios_post = [];
   @endphp
-    @while (have_rows('participantes'))
+    @while (have_rows('usuarios'))
       @php
           the_row();
-          $nombre_post = get_sub_field('nombre_participante');
-          $rol_post = get_sub_field('rol_participante');
-          array_push($participantes_post, [
-            'nombre' => $nombre_post,
+          $usuario_post = get_sub_field('nombre_usuario');
+          $nombre_post = $usuario_post['display_name'];
+          $rol_post = get_sub_field('rol_usuarios');
+          array_push($usuarios_post, [
+            'user' => $usuario_post,
+            'display_name' => $nombre_post,
             'rol' => $rol_post,
           ]);
       @endphp
@@ -32,30 +34,28 @@
 
   @foreach ($terms as $term)
     @php
-      $participantes_term = [];
+      $usuarios_term = [];
     @endphp
   
-    @while (have_rows('participantes', 'term_' . $term->term_id))
+    @while (have_rows('usuarios', 'term_' . $term->term_id))
       @php
           the_row();
-          $nombre_term = get_sub_field('nombre_participante', $term->term_id);
-          array_push($participantes_term, $nombre_term);
+          $nombre_term = get_sub_field('nombre_usuario', $term->term_id);
+          array_push($usuarios_term, $nombre_term['display_name']);
       @endphp
     @endwhile
   @endforeach
 
-  @dump($participantes_post)
-  @dump($participantes_term)
+  @dump($usuarios_post)
+  @dump($usuarios_term)
 
-  @foreach ($participantes_post as $participante_post)
-    @if (! in_array($participante_post['nombre'], $participantes_term))
-      <p>{{ $participante_post['nombre'] . 'no' }}</p> 
+  @foreach ($usuarios_post as $usuario_post)
+    @if (! in_array($usuario_post['display_name'], $usuarios_term))
+      <p>{{ $usuario_post['display_name'] . ': no' }}</p> 
     @else
-      <p>{{ $participante_post['nombre'] . 'si' }}</p> 
+      <p>{{ $usuario_post['display_name'] . ': si' }}</p> 
     @endif
   @endforeach
-
-
 
   <div class="entry-content">
     @php(the_content())

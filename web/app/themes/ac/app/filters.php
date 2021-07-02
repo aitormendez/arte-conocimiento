@@ -43,9 +43,10 @@ add_action(
 
     if ($post_type == 'proyecto') {
 
-        // PARTICIPANTES
+        // PARTICIPANTES y USUARIOS
+        // --------------------------------------------------------------------------
 
-        // crear array de participantes que están en el post
+        // crear array de PARTICIPANTES que están en el post
 
         $participantes_post = [];
         if( have_rows('participantes') ):
@@ -59,13 +60,31 @@ add_action(
             endwhile;
         endif;
 
+        // crear array de USUARIOS que están en el post
+
+        $usuarios_post = [];
+        if( have_rows('usuarios') ):
+            while( have_rows('usuarios') ) : the_row();
+                $usuario_post = get_sub_field('nombre_usuario');
+                $nombre_post = $usuario_post['display_name'];
+                $rol_post = get_sub_field('rol_usuario');
+                array_push($usuarios_post, [
+                    'user' => $usuario_post,
+                    'display_name' => $nombre_post,
+                    'rol' => $rol_post,
+                  ]);
+            endwhile;
+        endif;
+
         // comprobar terms que están en este post
 
         $terms = get_the_terms( $post_id, 'metaproyecto' );
 
-        // crear array de participantes que están en cada term de este post
+        
         
         foreach ($terms as $term) {
+
+            // crear array de PARTICIPANTES que están en cada term de este post
             $participantes_term = [];
 
             while( have_rows('participantes', 'term_' . $term->term_id) ) : the_row();
@@ -85,6 +104,33 @@ add_action(
                     add_row('participantes', $row, 'term_' . $term->term_id);
                 }
             }
+
+
+
+
+            // crear array de USUARIOS que están en cada term de este post
+            $usuarios_term = [];
+
+            while( have_rows('usuarios', 'term_' . $term->term_id) ) : the_row();
+                $nombre_term = get_sub_field('nombre_usuario', $term->term_id);
+                array_push($usuarios_term, $nombre_term['display_name']);
+            endwhile;
+
+            // comprobar que cada USUARIO del $usuarios_post 
+            // no está en $usuarios_term y añadirlo
+
+            foreach ($usuarios_post as $usuario_post) {
+                if (! in_array($usuario_post['display_name'], $usuarios_term)) {
+                    $row = array(
+                        'nombre_usuario' => $usuario_post['user'],
+                        'rol_usuario' => $usuario_post['rol'],
+                    );
+                    add_row('usuarios', $row, 'term_' . $term->term_id);
+                }
+            }
+
+
+
 
         }
 
