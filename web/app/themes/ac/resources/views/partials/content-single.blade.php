@@ -43,6 +43,15 @@
   @dump($participantes_post)
   @dump($participantes_term)
 
+  @foreach ($participantes_post as $participante_post)
+    @if (! in_array($participante_post, $participantes_term))
+      <p>{{ $participante_post . 'no' }}</p> 
+    @else
+      <p>{{ $participante_post . 'si' }}</p> 
+    @endif
+  @endforeach
+
+
 
   <div class="entry-content">
     @php(the_content())
