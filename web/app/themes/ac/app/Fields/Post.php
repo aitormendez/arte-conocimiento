@@ -5,6 +5,7 @@ namespace App\Fields;
 use Log1x\AcfComposer\Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\Usuarios;
+use App\Fields\Partials\Destacados;
 
 class Post extends Field
 {
@@ -16,19 +17,21 @@ class Post extends Field
     public function fields()
     {
 
-        $equipo = new FieldsBuilder('equipo_de_esta_entrada');
+        $entrada = new FieldsBuilder('entrada');
 
-        $equipo
+        $entrada
             ->setLocation('post_type', '==', 'proyecto')
             ->or('post_type', '==', 'noticia')
             ->or('post_type', '==', 'publicacion')
             ->or('post_type', '==', 'actividad');
 
-        $equipo
+        $entrada
         ->addTab('Equipo', ['placement' => 'left'])
-        ->addFields($this->get(Usuarios::class));
+        ->addFields($this->get(Usuarios::class))
+        ->addTab('Destacar')
+        ->addFields($this->get(Destacados::class));
 
 
-        return $equipo->build();
+        return $entrada->build();
     }
 }
