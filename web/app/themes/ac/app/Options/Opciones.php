@@ -30,9 +30,7 @@ class Opciones extends Field
     {
         $options = new FieldsBuilder('options');
 
-        $options
-            ->addTab('Equipo', ['placement' => 'left'])
-                ;
+        $options;
 
         return $options->build();
     }

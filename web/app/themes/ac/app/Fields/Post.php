@@ -27,9 +27,9 @@ class Post extends Field
 
         $entrada
         ->addTab('Equipo', ['placement' => 'left'])
-        ->addFields($this->get(Usuarios::class))
+            ->addFields($this->get(Usuarios::class))
         ->addTab('Destacar')
-        ->addFields($this->get(Destacados::class));
+            ->addFields($this->get(Destacados::class));
 
 
         return $entrada->build();

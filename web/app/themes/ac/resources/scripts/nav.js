@@ -16,6 +16,7 @@ $(document).ready(() => {
 
 
   if (viewportWidth <= 1024) {
+    console.log(menuItems);
     // acordeón móvil
     menuItems.click(function(){
       console.log(menuItems.index(this));
