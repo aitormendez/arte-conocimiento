@@ -26,6 +26,7 @@ class Post extends Composer
     {
         return [
             'title' => $this->title(),
+            'personas' => $this->personas(),
         ];
     }
 
@@ -65,5 +66,44 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+    public function personas()
+    {
+        global $post;
+
+        // crear array de USUARIOS que están en el post
+
+        $personas_post = [];
+        if( have_rows('usuarios') ):
+            while( have_rows('usuarios') ) : the_row();
+                $usuario_post = get_sub_field('nombre_usuario');
+                $nombre_post = $usuario_post['display_name'];
+                $rol_post = get_sub_field('rol_usuario');
+                array_push($personas_post, [
+                    'tipo' => 'usuario',
+                    'user' => $usuario_post,
+                    'nombre' => $nombre_post,
+                    'rol' => $rol_post,
+                    'permalink' => get_author_posts_url($usuario_post['ID']),
+                    ]);
+            endwhile;
+        endif;
+
+        // crear array de PARTICIPANTES que están en el post
+
+        if( have_rows('participantes') ):
+            while( have_rows('participantes') ) : the_row();
+                $nombre_post = get_sub_field('nombre_participante');
+                $rol_post = get_sub_field('rol_participante');
+                array_push($personas_post, [
+                    'tipo' => 'participante',
+                    'nombre' => $nombre_post,
+                    'rol' => $rol_post,
+                    ]);
+            endwhile;
+        endif;
+
+        return $personas_post;
     }
 }

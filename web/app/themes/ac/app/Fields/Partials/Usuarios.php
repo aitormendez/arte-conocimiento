@@ -41,7 +41,7 @@ class Usuarios extends Partial
                 'multiple' => 0,
                 'ui' => 0,
                 'ajax' => 0,
-                'return_format' => 'value',
+                'return_format' => 'array',
                 'placeholder' => '',
             ])
             ->endRepeater()
@@ -64,13 +64,14 @@ class Usuarios extends Partial
                     'doctor' => 'Doctor de equipo',
                     'miembro' => 'Miembro del equipo',
                     'colaborador' => 'Colaborador',
+                    'sin_rol' => 'Sin rol',
                 ],
                 'default_value' => ['colaborador'],
                 'allow_null' => 0,
                 'multiple' => 0,
                 'ui' => 0,
                 'ajax' => 0,
-                'return_format' => 'value',
+                'return_format' => 'array',
                 'placeholder' => '',
             ])
             ->endRepeater();

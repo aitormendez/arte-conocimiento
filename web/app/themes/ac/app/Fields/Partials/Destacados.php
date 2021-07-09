@@ -106,3 +106,4 @@ class Destacados extends Partial
         return $destacados;
     }
 }
+
