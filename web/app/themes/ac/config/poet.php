@@ -21,6 +21,16 @@ return [
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
             'menu_position' => 2,
+            'admin_cols'   => [
+                'destacado' => [
+                    'title'    => 'Destacado',
+                    'meta_key' => 'destacar',
+                ],
+                'formato' =>[
+                'title'    => 'Formato del destacado',
+                'meta_key' => 'destacar_imagen_texto',
+                ],
+            ],
         ],
         'noticia' => [
             'enter_title_here' => 'Título de la noticia',
@@ -30,6 +40,16 @@ return [
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
             'menu_position' => 3,
+            'admin_cols'   => [
+                'destacado' => [
+                    'title'    => 'Destacado',
+                    'meta_key' => 'destacar',
+                ],
+                'formato' =>[
+                'title'    => 'Formato del destacado',
+                'meta_key' => 'destacar_imagen_texto',
+                ],
+            ],
         ],
         'actividad' => [
             'enter_title_here' => 'Título de la noticia',
@@ -43,6 +63,16 @@ return [
                 'singular' => 'Actividad',
                 'plural' => 'Actividades',
             ],
+            'admin_cols'   => [
+                'destacado' => [
+                    'title'    => 'Destacado',
+                    'meta_key' => 'destacar',
+                ],
+                'formato' =>[
+                'title'    => 'Formato del destacado',
+                'meta_key' => 'destacar_imagen_texto',
+                ],
+            ],
         ],
         'publicacion' => [
             'enter_title_here' => 'Título de la publicación',
@@ -55,6 +85,16 @@ return [
             'labels' => [
                 'singular' => 'Publicación',
                 'plural' => 'Publicaciones',
+            ],
+            'admin_cols'   => [
+                'destacado' => [
+                    'title'    => 'Destacado',
+                    'meta_key' => 'destacar',
+                ],
+                'formato' =>[
+                'title'    => 'Formato del destacado',
+                'meta_key' => 'destacar_imagen_texto',
+                ],
             ],
         ],
         'referencia' => [
