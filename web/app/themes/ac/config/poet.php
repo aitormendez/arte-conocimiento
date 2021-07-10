@@ -27,8 +27,12 @@ return [
                     'meta_key' => 'destacar',
                 ],
                 'formato' =>[
-                'title'    => 'Formato del destacado',
-                'meta_key' => 'destacar_imagen_texto',
+                    'title'    => 'Formato del destacado',
+                    'meta_key' => 'destacar_imagen_texto',
+                ],
+                'tipo' =>[
+                    'title'    => 'Tipo',
+                    'taxonomy' => 'tipo_de_proyecto',
                 ],
             ],
         ],
@@ -46,8 +50,8 @@ return [
                     'meta_key' => 'destacar',
                 ],
                 'formato' =>[
-                'title'    => 'Formato del destacado',
-                'meta_key' => 'destacar_imagen_texto',
+                    'title'    => 'Formato del destacado',
+                    'meta_key' => 'destacar_imagen_texto',
                 ],
             ],
         ],
@@ -150,6 +154,16 @@ return [
             'labels' => [
                 'singular' => 'Tipo de referencia',
                 'plural' => 'Tipos de referencias',
+            ],
+        ],
+        'tipo_de_proyecto' => [
+            'links' => [
+                'proyecto',
+            ],
+            'meta_box' => 'simple',
+            'labels' => [
+                'singular' => 'Tipo de proyecto',
+                'plural' => 'Tipos de proyectos',
             ],
         ],
     ],
