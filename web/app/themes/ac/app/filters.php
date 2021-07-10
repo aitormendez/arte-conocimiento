@@ -38,8 +38,8 @@ add_action(
  */
 
 
-    add_action( 'acf/save_post', function ($post_id) {
-    $post_type = get_post_type($post_id);
+add_action( 'acf/save_post', function ($post_id) {
+$post_type = get_post_type($post_id);
 
     if ($post_type == 'proyecto') {
 
@@ -56,7 +56,7 @@ add_action(
                 array_push($participantes_post, [
                     'nombre' => $nombre_post,
                     'rol' => $rol_post,
-                  ]);
+                ]);
             endwhile;
         endif;
 
@@ -72,7 +72,7 @@ add_action(
                     'user' => $usuario_post,
                     'display_name' => $nombre_post,
                     'rol' => $rol_post,
-                  ]);
+                ]);
             endwhile;
         endif;
 
@@ -135,4 +135,21 @@ add_action(
         }
 
     }
-    });
+});
+
+
+/**
+ * Añadir CPTs a main query en authors
+ */
+
+add_action('pre_get_posts', function ($query) {
+    if ( is_author() && $query->is_main_query() ) {
+        $query->set('post_type', [
+            'projecto', 
+            'noticia', 
+            'referencia',
+            'actividad',
+        ]);
+    }
+    return $query;
+});
