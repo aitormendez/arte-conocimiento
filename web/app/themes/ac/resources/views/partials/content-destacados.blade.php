@@ -11,6 +11,7 @@
         <div class="tracking-wide excerpt">
           {!! $destacado['excerpt'] !!}
         </div>
+        @include('partials/entry-meta')
       </header>
       @if ($destacado['has_img'])
         <div class="img">

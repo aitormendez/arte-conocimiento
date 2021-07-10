@@ -27,6 +27,44 @@ class Post extends Composer
         return [
             'title' => $this->title(),
             'personas' => $this->personas(),
+            'personas_front_page' => function($post_id) {
+                
+                // crear array de USUARIOS que están en el post
+
+                $personas_post = [];
+                if( have_rows('usuarios', $post_id) ):
+                    while( have_rows('usuarios', $post_id) ) : the_row();
+                        $usuario_post = get_sub_field('nombre_usuario');
+                        $nombre_post = $usuario_post['display_name'];
+                        $rol_post = get_sub_field('rol_usuario');
+                        array_push($personas_post, [
+                            'tipo' => 'usuario',
+                            'user' => $usuario_post,
+                            'nombre' => $nombre_post,
+                            'rol' => $rol_post,
+                            'permalink' => get_author_posts_url($usuario_post['ID']),
+                        ]);
+                    endwhile;
+                endif;
+
+                // crear array de PARTICIPANTES que están en el post
+
+                if( have_rows('participantes', $post_id) ):
+                    while( have_rows('participantes', $post_id) ) : the_row();
+                        $nombre_post = get_sub_field('nombre_participante');
+                        $rol_post = get_sub_field('rol_participante');
+                        array_push($personas_post, [
+                            'tipo' => 'participante',
+                            'nombre' => $nombre_post,
+                            'rol' => $rol_post,
+                            ]);
+                    endwhile;
+                endif;
+
+
+
+                return $personas_post;
+            }
         ];
     }
 
@@ -72,38 +110,54 @@ class Post extends Composer
     {
         global $post;
 
-        // crear array de USUARIOS que están en el post
+        // SINGLE
+        // ------------------------------------------------------------------
 
-        $personas_post = [];
-        if( have_rows('usuarios') ):
-            while( have_rows('usuarios') ) : the_row();
-                $usuario_post = get_sub_field('nombre_usuario');
-                $nombre_post = $usuario_post['display_name'];
-                $rol_post = get_sub_field('rol_usuario');
-                array_push($personas_post, [
-                    'tipo' => 'usuario',
-                    'user' => $usuario_post,
-                    'nombre' => $nombre_post,
-                    'rol' => $rol_post,
-                    'permalink' => get_author_posts_url($usuario_post['ID']),
-                    ]);
-            endwhile;
-        endif;
+        if (is_single()) {
+            // crear array de USUARIOS que están en el post
 
-        // crear array de PARTICIPANTES que están en el post
+            $personas_post = [];
+            if( have_rows('usuarios') ):
+                while( have_rows('usuarios') ) : the_row();
+                    $usuario_post = get_sub_field('nombre_usuario');
+                    $nombre_post = $usuario_post['display_name'];
+                    $rol_post = get_sub_field('rol_usuario');
+                    array_push($personas_post, [
+                        'tipo' => 'usuario',
+                        'user' => $usuario_post,
+                        'nombre' => $nombre_post,
+                        'rol' => $rol_post,
+                        'permalink' => get_author_posts_url($usuario_post['ID']),
+                        ]);
+                endwhile;
+            endif;
 
-        if( have_rows('participantes') ):
-            while( have_rows('participantes') ) : the_row();
-                $nombre_post = get_sub_field('nombre_participante');
-                $rol_post = get_sub_field('rol_participante');
-                array_push($personas_post, [
-                    'tipo' => 'participante',
-                    'nombre' => $nombre_post,
-                    'rol' => $rol_post,
-                    ]);
-            endwhile;
-        endif;
+            // crear array de PARTICIPANTES que están en el post
 
-        return $personas_post;
+            if( have_rows('participantes') ):
+                while( have_rows('participantes') ) : the_row();
+                    $nombre_post = get_sub_field('nombre_participante');
+                    $rol_post = get_sub_field('rol_participante');
+                    array_push($personas_post, [
+                        'tipo' => 'participante',
+                        'nombre' => $nombre_post,
+                        'rol' => $rol_post,
+                        ]);
+                endwhile;
+            endif;
+
+            return $personas_post;
+        }
+
+        // LOOP FRONT PAGE
+        // ------------------------------------------------------------------
+        
+        // mirar en 'public function override()' en este mismo archivo.
+
+
+
+        
+
+        
     }
 }

@@ -56,6 +56,7 @@ class Destacados extends Composer
             };
 
             $out = [
+                'ID' => $post->ID,
                 'post_type' => $post_type,
                 'title'     => get_the_title($post->ID),
                 'contenido'   => $contenido,
