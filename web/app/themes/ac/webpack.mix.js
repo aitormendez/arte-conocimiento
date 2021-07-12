@@ -24,7 +24,7 @@ mix
   .sass('resources/styles/editor.scss', 'styles')
   .options({
     processCssUrls: false,
-    postCss: [require('@tailwindcss/jit')],
+    postCss: [require('tailwindcss')],
   });
 
 mix
