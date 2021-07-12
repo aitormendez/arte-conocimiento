@@ -1,9 +1,15 @@
 .banner {
-  .my-menu-item {
-    &.cerrado {
-      .my-child-menu {
-        // height: 0;
+  .solapa {
+    width: 100%;
+    height: 100%;
+    
+    .my-menu-item {
+      &.cerrado {
+        .my-child-menu {
+          // height: 0;
+        }
       }
     }
   }
+
 }

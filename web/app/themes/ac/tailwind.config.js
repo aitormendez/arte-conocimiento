@@ -27,9 +27,15 @@ module.exports = {
         blue: colors.blue
       },
     },
+    debugScreens: {
+      position: ['bottom', 'left'],
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-debug-screens'),
+  ],
 };
