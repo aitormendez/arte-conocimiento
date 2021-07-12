@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a84e8f61885bbdb92c0f29e72886e199",
+    "content-hash": "e4ca65e75f5e59b2d3504258ba688ba6",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -744,6 +744,58 @@
             "time": "2016-03-01T16:27:06+00:00"
         },
         {
+            "name": "soberwp/intervention",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/soberwp/intervention.git",
+                "reference": "be1ff37e7237aaf0e25190f273c965e7db84548a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/soberwp/intervention/zipball/be1ff37e7237aaf0e25190f273c965e7db84548a",
+                "reference": "be1ff37e7237aaf0e25190f273c965e7db84548a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "tightenco/collect": "^8"
+            },
+            "require-dev": {
+                "composer/installers": "^1.11",
+                "phing/phing": "^2.16.4",
+                "symplify/easy-coding-standard": "dev-main"
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Sober\\Intervention\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darren Jacoby",
+                    "email": "darren@jacoby.co.za",
+                    "homepage": "https://twitter.com/withjacoby"
+                }
+            ],
+            "description": "WordPress plugin containing modules to cleanup and customize wp-admin.",
+            "homepage": "https://github.com/soberwp",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/soberwp/intervention/issues",
+                "source": "https://github.com/soberwp/intervention/tree/master"
+            },
+            "time": "2021-06-29T12:43:25+00:00"
+        },
+        {
             "name": "symfony/polyfill-ctype",
             "version": "v1.23.0",
             "source": {
@@ -986,6 +1038,148 @@
             "time": "2021-02-19T12:13:01+00:00"
         },
         {
+            "name": "symfony/var-dumper",
+            "version": "v5.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "46aa709affb9ad3355bd7a810f9662d71025c384"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/46aa709affb9ad3355bd7a810f9662d71025c384",
+                "reference": "46aa709affb9ad3355bd7a810f9662d71025c384",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.15"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<5.4.3",
+                "symfony/console": "<4.4"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "symfony/console": "^4.4|^5.0",
+                "symfony/process": "^4.4|^5.0",
+                "twig/twig": "^2.13|^3.0.4"
+            },
+            "suggest": {
+                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
+                "ext-intl": "To show region name in time zone dump",
+                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
+            },
+            "bin": [
+                "Resources/bin/var-dump-server"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/var-dumper/tree/v5.3.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-06-24T08:13:00+00:00"
+        },
+        {
+            "name": "tightenco/collect",
+            "version": "v8.34.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tighten/collect.git",
+                "reference": "b069783ab0c547bb894ebcf8e7f6024bb401f9d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tighten/collect/zipball/b069783ab0c547bb894ebcf8e7f6024bb401f9d2",
+                "reference": "b069783ab0c547bb894ebcf8e7f6024bb401f9d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "symfony/var-dumper": "^3.4 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "nesbot/carbon": "^2.23.0",
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Collect/Support/helpers.php",
+                    "src/Collect/Support/alias.php"
+                ],
+                "psr-4": {
+                    "Tightenco\\Collect\\": "src/Collect"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "Collect - Illuminate Collections as a separate package.",
+            "keywords": [
+                "collection",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/tighten/collect/issues",
+                "source": "https://github.com/tighten/collect/tree/v8.34.0"
+            },
+            "time": "2021-03-29T21:29:00+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.3.0",
             "source": {
@@ -1112,15 +1306,15 @@
         },
         {
             "name": "wpackagist-plugin/cookie-notice",
-            "version": "2.0.4",
+            "version": "2.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookie-notice/",
-                "reference": "tags/2.0.4"
+                "reference": "tags/2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookie-notice.2.0.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookie-notice.2.1.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1728,6 +1922,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "wp-sync-db/wp-sync-db-media-files": 20,
+        "soberwp/intervention": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

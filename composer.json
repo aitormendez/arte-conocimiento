@@ -101,7 +101,8 @@
     "wpackagist-plugin/capability-manager-enhanced": "*",
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/fakerpress": "*",
-    "wpackagist-plugin/footnotes": "*"
+    "wpackagist-plugin/footnotes": "*",
+    "soberwp/intervention": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.5.8",

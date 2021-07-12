@@ -153,7 +153,7 @@ return [
             'meta_box' => 'simple',
             'labels' => [
                 'singular' => 'Tipo de referencia',
-                'plural' => 'Tipos de referencias',
+                'plural' => 'Tipos de referencia',
             ],
         ],
         'tipo_de_proyecto' => [
@@ -163,7 +163,17 @@ return [
             'meta_box' => 'simple',
             'labels' => [
                 'singular' => 'Tipo de proyecto',
-                'plural' => 'Tipos de proyectos',
+                'plural' => 'Tipos de proyecto',
+            ],
+        ],
+        'tipo_de_actividad' => [
+            'links' => [
+                'actividad',
+            ],
+            'meta_box' => 'simple',
+            'labels' => [
+                'singular' => 'Tipo de actividad',
+                'plural' => 'Tipos de actividad',
             ],
         ],
     ],
