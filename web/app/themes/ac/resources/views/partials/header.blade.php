@@ -5,10 +5,13 @@
     <span class="block">Contemporáneas</span>
   </a>
 
-  <nav class="solapa absolute">
+  <nav class="solapa absolute top-0">
     @include('partials.navigation')
-    <button id="hamb">
-      @svg('images.hamb', 'fixed top-5 right-5')
-    </button>
   </nav>
+
+  <button id="hamb" class="absolute flex flex-col justify-between top-4 right-4">
+    <b class="h block bg-black w-full"></b>
+    <b class="h block bg-black w-full"></b>
+    <b class="h block bg-black w-full"></b>
+  </button>
 </header>
