@@ -5,7 +5,7 @@
     <span class="block">Contemporáneas</span>
   </a>
 
-  <nav class="solapa absolute top-0">
+  <nav class="solapa absolute top-0 bg-white p-4">
     @include('partials.navigation')
   </nav>
 

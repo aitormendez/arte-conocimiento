@@ -18,11 +18,13 @@ import {
 
 
 /* 
- * Botón hamburguesa
+ * Botón hamburguesa y solapa abatible movil
  */
 
 let hamb = $('#hamb');
 let h = $('.h');
+let solapa = $('.solapa');
+let menuItems = $('.my-menu-item');
 let hambObj = {
     estado: 'cerrado',
     abrir: function(){
@@ -31,12 +33,15 @@ let hambObj = {
         hambDesintegrar.restart();
         console.log(this.estado);
         hambFlotar.pause();
+        abrirSolapa.restart();
+        menuItemsStagger.restart();
     },
     cerrar: function(){
         this.estado = 'cerrado';
         hambDesintegrar.reverse();
         console.log(this.estado);
         hambFlotar.play();
+        cerrarSolapa.restart();
     },
 }
 
@@ -46,8 +51,8 @@ let hambFlotar = gsap.to( h, {
     y: 'random(-5, 5)',
     rotate: 'random(-5, 5)',
     repeat: -1,
+    ease: "sine.inOut",
     repeatRefresh: true,
-    ease: "sine.inOut"
 });
 
 let hambDesintegrar = gsap.to( h, {
@@ -56,9 +61,27 @@ let hambDesintegrar = gsap.to( h, {
     x: 'random(-5, 5)',
     y: 'random(-5, 5)',
     paused:true,
-    repeatRefresh: true,
     ease: 'Power3.out',
 });
+
+let abrirSolapa = gsap.to( solapa, {
+    left: 0,
+    paused:true,
+})
+
+let cerrarSolapa = gsap.to( solapa, {
+    left: '-100%',
+    paused:true,
+})
+
+let menuItemsStagger = gsap.from( menuItems, {
+    duration: '1',
+    x: '50%',
+    ease: 'elastic.out',
+    stagger: {
+        each: 0.1,
+    }
+})
 
 hamb.click(function() {
     if (hambObj.estado == 'cerrado') {
