@@ -9,7 +9,7 @@
     @include('partials.navigation')
   </nav>
 
-  <button id="hamb" class="absolute flex flex-col justify-between top-4 right-4">
+  <button id="hamb" class="fixed flex flex-col justify-between top-4 right-4">
     <b class="h block bg-black w-full"></b>
     <b class="h block bg-black w-full"></b>
     <b class="h block bg-black w-full"></b>
