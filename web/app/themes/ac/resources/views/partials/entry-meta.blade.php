@@ -11,7 +11,12 @@
     @if ($persona['tipo'] === 'usuario')
 
       <p class="byline author vcard">
-        <a href="{{ $persona['permalink'] }}" rel="author"><span class="fn">{{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span></a>
+        @if (! is_home())
+          <a href="{{ $persona['permalink'] }}" rel="author"><span class="fn">{{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span></a>
+        @else
+          {{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span>
+        @endif
+
       </p>
 
     @elseif ($persona['tipo'] === 'participante')

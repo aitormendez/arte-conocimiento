@@ -18,14 +18,10 @@ module.exports = {
         'serif': ['times-new-roman', 'serif'],
       },
       colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        black: colors.black,
-        white: colors.white,
-        gray: colors.coolGray,
-        red: colors.red,
-        yellow: colors.amber,
-        blue: colors.blue
+        blue: '#2c38d4'
+      },
+      screens: {
+        '3xl': '1796px',
       },
     },
     debugScreens: {

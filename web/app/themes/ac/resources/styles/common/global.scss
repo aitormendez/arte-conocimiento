@@ -11,3 +11,14 @@ html {
     font-size: calc(0.5vw + 0.7rem);
   }
 }
+
+
+a {
+  @apply text-blue;
+  transition: color 0.5s, background-color 0.5s;
+  text-decoration: none;
+
+  &:hover {
+    color: #90ac4f;
+  }
+}

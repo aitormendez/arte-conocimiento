@@ -4,5 +4,68 @@
     width: 300px;
     height: 300px;
   }
+
+  @media (min-width: 786px) {
+    article {
+      .entry-meta {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    --bloque: calc(100vw / 10);
+
+    article {
+      &.grande {
+        &.horizontal {
+          background-color: black;
+          width: calc(var(--bloque) * 4);
+          height: calc(var(--bloque) * 2);
+        }
+
+        &.vertical {
+          width: calc(var(--bloque) * 2);
+          height: calc(var(--bloque) * 4);
+        }
+
+        &.cuadrado {
+          width: calc(var(--bloque) * 2);
+          height: calc(var(--bloque) * 2);
+        }
+      }
+
+      &.pequeño {
+        &.horizontal {
+          width: calc(var(--bloque) * 2);
+          height: calc(var(--bloque) * 1);
+        }
+
+        &.vertical {
+          width: calc(var(--bloque) * 1);
+          height: calc(var(--bloque) * 2);
+        }
+
+        &.cuadrado {
+          width: calc(var(--bloque) * 1);
+          height: calc(var(--bloque) * 1);
+        }
+      }
+    }
+
+  }
+
+  @media (min-width: 1536px) {
+    --bloque: calc(100vw / 8)
+  }
+
+  @media (min-width: 1792px) {
+    --bloque: calc(100vw / 12)
+  }
 }
 

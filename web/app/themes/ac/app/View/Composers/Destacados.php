@@ -62,7 +62,6 @@ class Destacados extends Composer
                 'contenido'   => $contenido,
                 'formato'   => $formato,
                 'tamano'   => $tamano,
-                'excerpt'   => get_the_excerpt( $post->ID ),
                 'link'      => get_permalink( $post->ID  ),
             ];
 
@@ -78,7 +77,7 @@ class Destacados extends Composer
                     $out['has_img'] = false;
                 }
 
-            } elseif($formato === 'texto') {
+            } elseif($contenido === 'texto') {
                 $txt = get_field ('destacar_texto', $post->ID);
 
                 if ($txt) {
