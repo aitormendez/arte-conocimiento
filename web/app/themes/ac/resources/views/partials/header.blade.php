@@ -5,11 +5,11 @@
     <span class="block">Contemporáneas</span>
   </a>
 
-  <nav class="solapa absolute top-0 bg-white p-4">
+  <nav class="solapa fixed top-0 bg-white p-4">
     @include('partials.navigation')
   </nav>
 
-  <button id="hamb" class="absolute flex flex-col justify-between top-4 right-4">
+  <button id="hamb" class="fixed flex flex-col justify-between top-4 right-4">
     <b class="h block bg-black w-full"></b>
     <b class="h block bg-black w-full"></b>
     <b class="h block bg-black w-full"></b>

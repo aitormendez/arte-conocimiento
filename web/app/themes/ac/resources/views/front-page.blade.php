@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @dump($destacados)
-
-    <div class="colores">aaaaaabbbb</div>
-
     @if ($destacados['has_posts'] == true)
 
 

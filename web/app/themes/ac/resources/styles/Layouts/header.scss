@@ -4,14 +4,6 @@
     height: 100vh;
     max-width: 500px;
     left: -100%;
-
-    .my-menu-item {
-      &.cerrado {
-        .my-child-menu {
-          // height: 0;
-        }
-      }
-    }
   }
 
   #hamb {
