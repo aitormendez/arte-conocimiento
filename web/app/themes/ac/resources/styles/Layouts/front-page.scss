@@ -130,6 +130,12 @@
               width: 100%;
               height: calc(var(--bloque) * 2);
             }
+
+            .abajo {
+              &.txt {
+                height: calc(var(--bloque) * 2 - 2rem);
+              }
+            } 
           }
         }
 
@@ -190,6 +196,19 @@
         &.cuadrado {
           width: calc(var(--bloque) * 1);
           height: calc(var(--bloque) * 1);
+
+          a {
+            .abajo {
+              &.txt {
+                font-size: 0.8rem;
+                line-height: 1.2em;
+                hyphens: auto;
+                height: calc(var(--bloque) - 2rem);
+                text-overflow: ellipsis;
+                overflow: hidden;
+              }
+            }
+          }
         }
       }
     }
