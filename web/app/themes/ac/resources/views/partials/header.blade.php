@@ -1,5 +1,5 @@
 <header class="p-4 banner">
-  <a class="inline-block brand" href="{{ home_url('/') }}">
+  <a class="inline-block text-black hover:text-blue brand" href="{{ home_url('/') }}">
     <span class="block">Prácticas Artísticas</span>
     <span class="block">y Formas de Conocimiento</span>
     <span class="block">Contemporáneas</span>

@@ -17,6 +17,18 @@
     }
   }
 
+  .abajo {
+    &.txt {
+      line-height: 1.2em;
+      hyphens: auto;
+    }
+  }
+
+  .arriba {
+    line-height: 1.2em;
+    hyphens: auto;
+  }
+
   @media (min-width: 786px) {
     --bloque: calc(100% / 4);
 
@@ -63,6 +75,10 @@
           .arriba {
             width: 100%;
 
+            h2 {
+              max-height: calc(var(--bloque) - 2rem);
+            }
+
             header {
               width: 100%;
             }
@@ -84,6 +100,7 @@
             transition: opacity, 0.5s;
   
             header {
+              hyphens: auto;
               height: 100%;
       
               h2 {
@@ -111,11 +128,23 @@
           height: calc(var(--bloque) * 2);
 
           a {
-            width: calc(var(--bloque) * 4 - 6rem);
+            width: calc(var(--bloque) * 4 - 2rem);
+            height: 100%;
+
+            .arriba {
+              width: calc(var(--bloque) * 2);
+            }
+
 
             .abajo {
+              width: auto;
+
               img {
                 max-width: calc(var(--bloque) * 2 - 2rem);
+              }
+
+              &.txt {
+                width: calc(var(--bloque) * 2 - 2rem);
               }
             }
           }
@@ -215,16 +244,16 @@
 
   }
 
-  @media (min-width: 15280px) {
-    --bloque: calc((100vw - var(--scrollbar-width)) / 8);
+  @media (min-width: 1280px) {
+    --bloque: calc((100vw - var(--scrollbar-width)) / 7);
   }
 
   @media (min-width: 1536px) {
-    --bloque: calc((100vw - var(--scrollbar-width)) / 10);
+    --bloque: calc((100vw - var(--scrollbar-width)) / 8);
   }
 
   @media (min-width: 1792px) {
-    --bloque: calc((100vw - var(--scrollbar-width)) / 12);
+    --bloque: calc((100vw - var(--scrollbar-width)) / 9);
   }
 }
 

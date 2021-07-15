@@ -14,7 +14,7 @@
     </div>
     @if ($destacado['contenido'] === 'imagen')
       @if ($destacado['has_img'])
-        <div class="flex-none abajo img">
+        <div class="abajo img">
           <img class="" src="{!! $destacado['url'] !!}" srcset="{!! $destacado['srcset'] !!}" alt="{!! $destacado['alt'] !!}" sizes="(max-width: 768px) 100vw, 40vw">
         </div>
       @endif
