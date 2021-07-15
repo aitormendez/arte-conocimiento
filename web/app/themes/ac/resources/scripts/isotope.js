@@ -1,8 +1,9 @@
 let Isotope = require('isotope-layout');
 let imagesLoaded = require('imagesloaded');
 require('isotope-packery');
+let viewportWidth = $(window).width();
 
-if (document.body.classList.contains('home')) {
+if (document.body.classList.contains('home') && viewportWidth > 1024 ) {
     let grid = document.querySelector('#destacados');
 
     var iso = new Isotope( grid, {

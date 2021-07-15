@@ -101,14 +101,18 @@ return [
                 ],
             ],
         ],
-        'referencia' => [
-            'enter_title_here' => 'Título de la referencia',
+        'investigación' => [
+            'enter_title_here' => 'Título de la entrada',
             // 'menu_icon' => 'dashicons-book-alt',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
             'menu_position' => 6,
+            'labels' => [
+                'singular' => 'Investigación',
+                'plural' => 'Investigaciones',
+            ],
         ],
     ],
 
@@ -130,6 +134,7 @@ return [
                 'noticia',
                 'actividad',
                 'publicacion',
+                'investigacion',
             ],
             'meta_box' => 'simple',
         ],
@@ -139,21 +144,12 @@ return [
                 'noticia',
                 'actividad',
                 'publicacion',
+                'investigacion',
             ],
             'meta_box' => 'simple',
             'labels' => [
                 'singular' => 'Línea de investigación',
                 'plural' => 'Líneas de investigación',
-            ],
-        ],
-        'tipo_de_referencia' => [
-            'links' => [
-                'referencia',
-            ],
-            'meta_box' => 'simple',
-            'labels' => [
-                'singular' => 'Tipo de referencia',
-                'plural' => 'Tipos de referencia',
             ],
         ],
         'tipo_de_proyecto' => [

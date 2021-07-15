@@ -7,9 +7,6 @@
       <header class="w-full p-4">
           <div class="text-sm font-bold tracking-widest uppercase tipo">{{ $destacado['post_type'] }}</div>
           <h2 class="my-6 text-2xl tracking-wider">{{ $destacado['title'] }}</h2>
-        <div class="entry-meta">
-          @include('partials/entry-meta')
-        </div>
       </header>
     </div>
     @if ($destacado['contenido'] === 'imagen')
@@ -26,6 +23,9 @@
         </div>
       @endif
     @endif
+    <div class="meta">
+      @include('partials/entry-meta')
+    </div>
   </a>
 
 
