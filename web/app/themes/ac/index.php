@@ -7,7 +7,7 @@
   </head>
 
 
-  <body <?php body_class(WP_ENV == 'development' ? 'debug-screens':''); ?>>
+  <body <?php body_class(WP_ENV == 'development' ? 'debug-screen':''); ?>>
 
     <?php wp_body_open(); ?>
     <?php do_action('get_header'); ?>

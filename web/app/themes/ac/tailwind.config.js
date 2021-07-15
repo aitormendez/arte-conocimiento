@@ -18,7 +18,8 @@ module.exports = {
         'serif': ['times-new-roman', 'serif'],
       },
       colors: {
-        blue: '#2c38d4'
+        blue: '#2c38d4',
+        fondo: '#f0f0f0'
       },
       screens: {
         '3xl': '1796px',

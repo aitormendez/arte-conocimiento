@@ -1,12 +1,6 @@
 .home {
 
   article {
-    background-color: cyan;
-
-    .interior {
-      background-color: darkcyan;
-    }
-
     .entry-meta {
       position: absolute;
       width: 100%;
@@ -37,12 +31,10 @@
       height: calc(var(--bloque) * 2);
 
       .arriba {
-        background-color: darkgreen;
         width: 57.8%;
       }
 
       .abajo {
-        background-color: darkslateblue;
         width: 42%;
       }
 
