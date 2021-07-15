@@ -5,7 +5,7 @@
 
 
 
-    <section id="destacados">
+    <section id="destacados" class="">
       @foreach ($destacados['posts'] as $destacado)
         @include('partials.content-destacados')
       @endforeach

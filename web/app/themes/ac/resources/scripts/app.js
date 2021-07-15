@@ -7,5 +7,5 @@ import './nav.js';
 import './gsap.js';
 
 $(document).ready(() => {
-  // console.log('Hello world');
+  document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + "px");
 });
