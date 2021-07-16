@@ -1,8 +1,6 @@
-<article class="flex-none p-4 mb-4 md:mb-0 {{ $destacado['post_type'] }} {{ $destacado['tamano'] }} {{ $destacado['formato'] }} relative">
+<article id="art-{{  $destacado['ID']  }}" class="flex-none p-4 mb-4 md:mb-0 {{ $destacado['post_type'] }} {{ $destacado['tamano'] }} {{ $destacado['formato'] }} relative">
 
-  {{-- IMAGEN --}}
-
-  <a href="{{ $destacado['link'] }}" class="flex flex-wrap justify-between text-black bg-white hover:text-black interior">
+  <a href="{{ $destacado['link'] }}" class="relative flex flex-wrap justify-between text-black bg-white hover:text-black interior">
     <div class="arriba">
       <header class="w-full p-4">
           <div class="text-sm font-bold tracking-widest uppercase tipo">{{ $destacado['post_type'] }}</div>
@@ -23,11 +21,10 @@
         </div>
       @endif
     @endif
-    <div class="meta">
+    <div class="p-4 meta colores">
       @include('partials/entry-meta')
     </div>
   </a>
-
 
 </article>
 
