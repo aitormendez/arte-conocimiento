@@ -102,6 +102,7 @@
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/fakerpress": "*",
     "wpackagist-plugin/footnotes": "*",
+    "wpackagist-plugin/wplyr-media-block": "*",
     "soberwp/intervention": "dev-master"
   },
   "require-dev": {

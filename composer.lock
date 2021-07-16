@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d95ed4f69c2ec2389a011e542357329",
+    "content-hash": "6cba93942d31a7edbb3c6ceeb53bdc1f",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -749,12 +749,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/soberwp/intervention.git",
-                "reference": "be1ff37e7237aaf0e25190f273c965e7db84548a"
+                "reference": "37a5a9b18c6483ebd85b22cecc2de32ba0296219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/soberwp/intervention/zipball/be1ff37e7237aaf0e25190f273c965e7db84548a",
-                "reference": "be1ff37e7237aaf0e25190f273c965e7db84548a",
+                "url": "https://api.github.com/repos/soberwp/intervention/zipball/37a5a9b18c6483ebd85b22cecc2de32ba0296219",
+                "reference": "37a5a9b18c6483ebd85b22cecc2de32ba0296219",
                 "shasum": ""
             },
             "require": {
@@ -793,7 +793,7 @@
                 "issues": "https://github.com/soberwp/intervention/issues",
                 "source": "https://github.com/soberwp/intervention/tree/master"
             },
-            "time": "2021-06-29T12:43:25+00:00"
+            "time": "2021-07-13T20:47:14+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1360,7 +1360,7 @@
         },
         {
             "name": "wpackagist-plugin/easy-wp-smtp",
-            "version": "1.4.6",
+            "version": "1.4.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/easy-wp-smtp/",
@@ -1368,7 +1368,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easy-wp-smtp.zip?timestamp=1615348787"
+                "url": "https://downloads.wordpress.org/plugin/easy-wp-smtp.zip?timestamp=1626162390"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1468,21 +1468,39 @@
         },
         {
             "name": "wpackagist-plugin/wpforms-lite",
-            "version": "1.6.7.3",
+            "version": "1.6.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpforms-lite/",
-                "reference": "tags/1.6.7.3"
+                "reference": "tags/1.6.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpforms-lite.1.6.7.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wpforms-lite.1.6.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wpforms-lite/"
+        },
+        {
+            "name": "wpackagist-plugin/wplyr-media-block",
+            "version": "1.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wplyr-media-block/",
+                "reference": "tags/1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wplyr-media-block.1.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wplyr-media-block/"
         }
     ],
     "packages-dev": [
@@ -1492,12 +1510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "1a08d0c7ab47e57fad0d254951a615f07445e91f"
+                "reference": "fc5e5d772af47d035df8178172391259b6e30566"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1a08d0c7ab47e57fad0d254951a615f07445e91f",
-                "reference": "1a08d0c7ab47e57fad0d254951a615f07445e91f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fc5e5d772af47d035df8178172391259b6e30566",
+                "reference": "fc5e5d772af47d035df8178172391259b6e30566",
                 "shasum": ""
             },
             "conflict": {
@@ -1555,6 +1573,7 @@
                 "endroid/qr-code-bundle": "<3.4.2",
                 "enshrined/svg-sanitize": "<0.13.1",
                 "erusev/parsedown": "<1.7.2",
+                "ether/logs": "<3.0.4",
                 "ezsystems/demobundle": ">=5.4,<5.4.6.1",
                 "ezsystems/ez-support-tools": ">=2.2,<2.2.3",
                 "ezsystems/ezdemo-ls-extension": ">=5.4,<5.4.2.1",
@@ -1669,7 +1688,7 @@
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
-                "pimcore/pimcore": "<6.8.8",
+                "pimcore/pimcore": "<10.0.7",
                 "pocketmine/pocketmine-mp": "<3.15.4",
                 "pressbooks/pressbooks": "<5.18",
                 "prestashop/autoupgrade": ">=4,<4.10.1",
@@ -1859,7 +1878,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-02T20:02:51+00:00"
+            "time": "2021-07-13T18:03:10+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
