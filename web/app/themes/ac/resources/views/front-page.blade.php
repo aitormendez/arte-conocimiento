@@ -8,9 +8,9 @@
     <section id="destacados" class="">
       <article class="cuadrado pequeño">
         <div class="h-full p-4 interior">
-          <div class="flex items-center h-full p-4 font-bold tracking-widest text-center uppercase border-8 border-black color-ya">
+          <a href="#" class="flex items-center h-full p-4 font-bold tracking-widest text-center text-black uppercase transition duration-500 border-8 border-black hover:text-white color-ya hover:border-white">
             <span class="block">Revista Accesos</span>
-          </div>
+          </a>
         </div>
       </article>
       @foreach ($destacados['posts'] as $destacado)
