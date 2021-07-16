@@ -1,6 +1,6 @@
-<article id="art-{{  $destacado['ID']  }}" class="flex-none p-4 mb-4 md:mb-0 {{ $destacado['post_type'] }} {{ $destacado['tamano'] }} {{ $destacado['formato'] }} relative">
+<article id="art-{{  $destacado['ID']  }}" class="flex-none p-4 mb-4 md:mb-0 {{ $destacado['post_type'] }} {{ $destacado['tamano'] }} {{ $destacado['formato'] }} {{ $destacado['contenido'] }} relative">
 
-  <a href="{{ $destacado['link'] }}" class="relative flex justify-between text-black bg-white hover:text-black interior">
+  <a href="{{ $destacado['link'] }}" class="relative flex flex-wrap justify-between text-black bg-white hover:text-black interior sm:flex-nowrap">
     <div class="arriba">
       <header class="w-full p-4">
           <div class="text-sm font-bold tracking-widest uppercase tipo">{{ $destacado['post_type'] }}</div>
