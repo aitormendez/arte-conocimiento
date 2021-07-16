@@ -101,7 +101,7 @@ return [
                 ],
             ],
         ],
-        'investigación' => [
+        'investigacion' => [
             'enter_title_here' => 'Título de la entrada',
             // 'menu_icon' => 'dashicons-book-alt',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],

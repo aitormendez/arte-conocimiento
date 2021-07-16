@@ -35,7 +35,7 @@
       }
 
       .abajo {
-        width: 42%;
+        flex: none;
       }
 
     }
@@ -184,7 +184,7 @@
 
       &.pequeño {
         h2 {
-          font-size: 1.3vw;
+          font-size: 0.8rem;
           line-height: 1.2em;
           margin-bottom: 0;
           margin-top: 0.5em;
@@ -195,12 +195,21 @@
           line-height: 1em;
         }
 
+        .txt {
+          font-size: 0.8rem;
+          @apply text-gray-400;
+        }
+
+        .meta {
+          font-size: 0.6rem;
+        }
+
         &.horizontal {
           width: calc(var(--bloque) * 2);
           height: calc(var(--bloque) * 1);
 
           a {
-            width: calc(var(--bloque) * 2 - 3rem);
+            width: calc(var(--bloque) * 2 - 2rem);
 
             .abajo {
               img {

@@ -23,7 +23,8 @@ class Post extends Field
             ->setLocation('post_type', '==', 'proyecto')
             ->or('post_type', '==', 'noticia')
             ->or('post_type', '==', 'publicacion')
-            ->or('post_type', '==', 'actividad');
+            ->or('post_type', '==', 'actividad')
+            ->or('post_type', '==', 'investigacion');
 
         $entrada
         ->addTab('Equipo', ['placement' => 'left'])
