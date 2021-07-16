@@ -32,28 +32,30 @@ class Destacados extends Composer
 
         $posts = get_posts([
             'posts_per_page'   => -1,
-            'post_type'        => ['proyecto', 'noticia', 'actividad', 'publicacion'],
+            'post_type'        => ['proyecto', 'noticia', 'actividad', 'publicacion', 'investigacion'],
             'post_status'      => 'publish',
             'meta_key'		   => 'destacar',
             'meta_value'	   => '1'
         ]);
 
+        $filtros = [];
+
+        foreach ($posts as $post) {
+            $post_type = get_post_type( $post->ID );
+            if (! in_array($post_type, $filtros)) {
+                array_push($filtros, $post_type);
+            }
+        }
+
+
+
         $posts_array = array_map(function ($post) {
             $contenido = get_field('destacar_imagen_texto', $post->ID);
             $formato = get_field('destacar_formato', $post->ID);
             $tamano = get_field('destacar_tamano', $post->ID);
-
             $post_type = get_post_type( $post->ID );
 
-            if ($post_type === 'proyecto') {
-                $post_type = "Proyectos";
-            } elseif ($post_type === 'noticia') {
-                $post_type = "Noticias";
-            } elseif ($post_type === 'actividad') {
-                $post_type = "Actividades";
-            } elseif ($post_type === 'publicacion') {
-                $post_type = "Publicaciones";
-            };
+
 
             $out = [
                 'ID' => $post->ID,
@@ -94,6 +96,7 @@ class Destacados extends Composer
 
         $output = [
             'posts' => $posts_array,
+            'filtros' => $filtros,
         ];
 
         if (count($posts) !== 0) {
