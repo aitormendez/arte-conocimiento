@@ -92,6 +92,17 @@
             width: 100%;
           }
         }
+
+        &.texto {
+          a {
+            justify-content: flex-start;
+            height: 100%;
+          }
+
+          .arriba {
+            height: auto;
+          }
+        }
       }
 
       &.cuadrado {
@@ -179,6 +190,12 @@
               }
             } 
           }
+
+          &.texto {
+            .arriba {
+              height: auto;
+            }
+          }
         }
 
         &.cuadrado {
@@ -235,14 +252,22 @@
             .arriba {
               height: calc(var(--bloque));
             }
+          }
+
+          &.texto {
+            .arriba {
+              height: auto;
+            }
 
             .abajo {
               &.txt {
-                height: calc(var(--bloque) - 2rem);
+                height: auto
               }
             } 
           }
         }
+
+
 
         &.cuadrado {
           width: calc(var(--bloque) * 1);
