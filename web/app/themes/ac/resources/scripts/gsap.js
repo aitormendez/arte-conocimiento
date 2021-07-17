@@ -21,6 +21,7 @@ $(document).ready(() => {
         });
     }
     
+    if (viewportWidth > 1024 ) {
     // animación degradados enlaces que no son '.normal'
     
     document.querySelectorAll('a:not(.normal)').forEach((item, i) => {
@@ -66,6 +67,7 @@ $(document).ready(() => {
             gsap.killTweensOf('#color-' + i);
         })
       })
+    }
     
     // animar elementos con la clase '.colores' INMEDIATAMENTE
     
