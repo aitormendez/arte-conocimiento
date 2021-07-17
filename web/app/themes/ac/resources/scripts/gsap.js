@@ -93,8 +93,11 @@ $(document).ready(() => {
             item.id = 'menu-' + i;
             let alto = document.getElementById('menu-' + i).offsetHeight;
             let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            let desplaza = -(alto - 2.5 * rem);
-            console.log(desplaza);
+            let desplaza = -(alto - 3.1 * rem);
+            if (item.classList.contains('doslineas')) {
+                desplaza = -(alto - 4.2 * rem);
+            }
+            console.log(item);
             gsap.set('#menu-' + i, {
                 top: desplaza,
             })
