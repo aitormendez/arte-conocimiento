@@ -60,11 +60,11 @@ class Destacados extends Partial
                 ->conditional('destacar_imagen_texto', '==', 'imagen')
             ->addTextarea('destacar_texto', [
                 'label' => 'Texto para el destacado',
-                'instructions' => 'Máximo 200 caracteres',
+                'instructions' => 'Ten cuidado con la extensión del texto. Cada formato elegido requiere una cantidad de texto diferente. Se recomienda comprobar cómo queda en portada y ajustar en caso necesario.',
                 'required' => 0,
                 'default_value' => '',
                 'placeholder' => 'Escribe una introducción corta',
-                'maxlength' => '200',
+                'maxlength' => '2000',
                 'rows' => '',
                 'new_lines' => 'wpautop', // Possible values are 'wpautop', 'br', or ''.
             ])
