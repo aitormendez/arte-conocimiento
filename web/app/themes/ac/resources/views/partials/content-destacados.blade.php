@@ -19,7 +19,7 @@
     @endif
     @if ($destacado['contenido'] === 'texto')
       @if ($destacado['has_txt'])
-        <div class="p-4 abajo txt">
+        <div class="p-4 font-light abajo txt">
           {!! $destacado['txt'] !!}
         </div>
       @endif

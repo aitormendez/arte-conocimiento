@@ -4,6 +4,15 @@ require('isotope-packery');
 let viewportWidth = $(window).width();
 
 if (document.body.classList.contains('home') && viewportWidth > 1024 ) {
+
+    // añadir clase colores en '.arriba' del destacado cuadrado
+
+    document.querySelectorAll('article.cuadrado .arriba').forEach((item, i) => {
+        item.classList.add("colores");
+    });
+
+    // isotope
+
     let grid = document.querySelector('#destacados');
 
     var iso = new Isotope( grid, {
@@ -18,6 +27,7 @@ if (document.body.classList.contains('home') && viewportWidth > 1024 ) {
     });
 }
 
+// filtros isotope
 
 document.querySelectorAll('#button-group button').forEach((item, i) => {
     item.addEventListener('click', event => {
