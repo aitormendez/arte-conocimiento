@@ -133,14 +133,46 @@
           .meta {
             display: none;
           }
+        }
 
-          &:hover {
+        &.imagen {
+          a {
             .arriba {
               z-index: 40;
-              opacity: 1;
             }
+  
             .abajo {
               z-index: 30;
+            }
+
+            &:hover {
+              .arriba {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        &.texto {
+          a {
+            .arriba {
+              z-index: 30;
+              opacity: 1;
+            }
+  
+            .abajo {
+              z-index: 40;
+              opacity: 0;
+            }
+
+            &:hover {
+              .arriba {
+                opacity: 0;
+              }
+
+              .abajo {
+                opacity: 1;
+              }
             }
           }
         }
@@ -222,7 +254,6 @@
 
         .txt {
           font-size: 0.8rem;
-          @apply text-gray-400;
         }
 
         .meta {

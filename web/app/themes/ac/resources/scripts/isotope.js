@@ -5,12 +5,6 @@ let viewportWidth = $(window).width();
 
 if (document.body.classList.contains('home') && viewportWidth > 1024 ) {
 
-    // añadir clase colores en '.arriba' del destacado cuadrado
-
-    document.querySelectorAll('article.cuadrado .arriba').forEach((item, i) => {
-        item.classList.add("colores");
-    });
-
     // isotope
 
     let grid = document.querySelector('#destacados');
