@@ -59,7 +59,12 @@
       }
 
       .arriba {
+        transition: opacity, 0.5s;
         max-width: none;
+      }
+
+      .abajo {
+        transition: opacity, 0.5s;
       }
 
       &.horizontal {
