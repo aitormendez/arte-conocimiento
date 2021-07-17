@@ -13,7 +13,7 @@ class Navigation extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.navigation',
+        'partials.header',
     ];
 
     /**
@@ -24,7 +24,8 @@ class Navigation extends Composer
     public function with()
     {
         return [
-            'navigation' => $this->navigation(),
+            'navigation_desktop' => $this->navigation(),
+            'mobile_navigation' => $this->mobileNavigation(),
         ];
     }
 
@@ -40,5 +41,19 @@ class Navigation extends Composer
         }
 
         return Navi::build()->toArray();
+    }
+
+    /**
+     * Returns the mobile_navigation.
+     *
+     * @return array
+     */
+    public function mobileNavigation()
+    {
+        if (Navi::build('mobile_navigation')->isEmpty()) {
+            return;
+        }
+
+        return Navi::build('mobile_navigation')->toArray();
     }
 }
