@@ -20,17 +20,21 @@ a {
 
   &:not(.normal) {
     &:hover {
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      @media (min-width: 1024px) {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 
 
   &:hover {
-    color: #90ac4f;
+    color: #1053a0;
   }
 }
 
 #main {
-  padding-top: 12rem;
+  @media (min-width: 1024px) {
+    padding-top: 12rem;
+  }
 }
