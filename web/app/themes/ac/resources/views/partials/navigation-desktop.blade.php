@@ -13,7 +13,7 @@
             @endforeach
           </ul>
         @endif
-        <a href="#" class="text-black">
+        <a href="{{ $item->url }}" class="text-black">
           {{ $item->label }}
         </a>
       </li>
