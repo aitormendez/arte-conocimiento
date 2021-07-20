@@ -14,6 +14,23 @@ class Usuarios extends Partial
      */
     public function fields()
     {
+        // llenar dinámicamente las choices de roles usuario con un campo en options
+        $user_choices_out = [];
+        $user_choices = get_field('roles_usuario', 'option', false);
+        $user_choices = explode("\n", $user_choices);
+        foreach ($user_choices as $key => $value) {
+          $user_choices_out[trim(strtolower(str_replace(' ','-',$value))) ] = $value ;
+        }
+
+        // llenar dinámicamente las choices de roles participantes con un campo en options
+        $user_choices_out = [];
+        $participant_choices = get_field('roles_participante', 'option', false);
+        $participant_choices = explode("\n", $participant_choices);
+        foreach ($participant_choices as $key => $value) {
+          $participant_choices_out[trim(strtolower(str_replace(' ','-',$value))) ] = $value ;
+        }
+
+
         $listItems = new FieldsBuilder('Usuarios');
 
         $listItems
@@ -29,13 +46,7 @@ class Usuarios extends Partial
             ->addSelect('rol_usuario', [
                 'label' => 'Rol de usuario',
                 'required' => 1,
-                'choices' => [
-                    'investigador_principal' => 'Investigador principal',
-                    'investigador' => 'Investigador',
-                    'doctor' => 'Doctor de equipo',
-                    'miembro' => 'Miembro del equipo',
-                    'colaborador' => 'Colaborador',
-                ],
+                'choices' => $user_choices_out,
                 'default_value' => [],
                 'allow_null' => 0,
                 'multiple' => 0,
@@ -58,14 +69,7 @@ class Usuarios extends Partial
             ->addSelect('rol_participante', [
                 'label' => 'Rol de participante',
                 'required' => 1,
-                'choices' => [
-                    'investigador_principal' => 'Investigador principal',
-                    'investigador' => 'Investigador',
-                    'doctor' => 'Doctor de equipo',
-                    'miembro' => 'Miembro del equipo',
-                    'colaborador' => 'Colaborador',
-                    'sin_rol' => 'Sin rol',
-                ],
+                'choices' => $participant_choices_out,
                 'default_value' => ['colaborador'],
                 'allow_null' => 0,
                 'multiple' => 0,

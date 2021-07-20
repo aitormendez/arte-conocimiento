@@ -28,9 +28,28 @@ class Opciones extends Field
      */
     public function fields()
     {
-        $options = new FieldsBuilder('options');
+        $options = new FieldsBuilder('opciones');
 
-        $options;
+        $options
+        ->addTab('Roles', ['placement' => 'left'])
+            ->addTextarea('roles_usuario', [
+                'label' => 'Roles de usuario',
+                'instructions' => 'Elige los roles de usuario (personas CON cuenta en esta web). Un rol por línea.',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
+            ])
+            ->addTextarea('roles_participante', [
+                'label' => 'Roles de participante',
+                'instructions' => 'Elige los roles de participante (personas SIN cuenta en esta web). Un rol por línea.',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
+            ]);
 
         return $options->build();
     }
