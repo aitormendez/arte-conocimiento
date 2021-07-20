@@ -24,7 +24,8 @@ class Post extends Field
             ->or('post_type', '==', 'noticia')
             ->or('post_type', '==', 'publicacion')
             ->or('post_type', '==', 'actividad')
-            ->or('post_type', '==', 'investigacion');
+            ->or('post_type', '==', 'investigacion')
+            ->or('post_type', '==', 'transferencia');
 
         $entrada
         ->addTab('Equipo', ['placement' => 'left'])

@@ -1,5 +1,5 @@
 @if ($mobile_navigation)
-  <ul class="mobile md:hidden">
+  <ul class="mobile lg:hidden">
     @foreach ($mobile_navigation as $item)
       <li class="my-menu-item {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }} font-bold cerrado" role="button">
         <a href="#" class="text-black">

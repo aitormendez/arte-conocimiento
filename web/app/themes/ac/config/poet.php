@@ -78,6 +78,29 @@ return [
                 ],
             ],
         ],
+        'Transferencia' => [
+            'enter_title_here' => 'Título de la entrada',
+            // 'menu_icon' => 'dashicons-book-alt',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'taxonomies' => ['post_tag'],
+            'menu_position' => 4,
+            'labels' => [
+                'singular' => 'Transferencia',
+                'plural' => 'Transferencias',
+            ],
+            'admin_cols'   => [
+                'destacado' => [
+                    'title'    => 'Destacado',
+                    'meta_key' => 'destacar',
+                ],
+                'formato' =>[
+                'title'    => 'Formato del destacado',
+                'meta_key' => 'destacar_imagen_texto',
+                ],
+            ],
+        ],
         'publicacion' => [
             'enter_title_here' => 'Título de la publicación',
             // 'menu_icon' => 'dashicons-book-alt',
@@ -135,6 +158,7 @@ return [
                 'actividad',
                 'publicacion',
                 'investigacion',
+                'transferencia',
             ],
             'meta_box' => 'simple',
         ],
@@ -145,6 +169,7 @@ return [
                 'actividad',
                 'publicacion',
                 'investigacion',
+                'transferencia',
             ],
             'meta_box' => 'simple',
             'labels' => [
@@ -170,6 +195,16 @@ return [
             'labels' => [
                 'singular' => 'Tipo de actividad',
                 'plural' => 'Tipos de actividad',
+            ],
+        ],
+        'tipo_de_transferencia' => [
+            'links' => [
+                'transferencia',
+            ],
+            'meta_box' => 'simple',
+            'labels' => [
+                'singular' => 'Tipo de transferencia',
+                'plural' => 'Tipos de transferencia',
             ],
         ],
     ],
