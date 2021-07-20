@@ -32,7 +32,7 @@ class Destacados extends Composer
 
         $posts = get_posts([
             'posts_per_page'   => -1,
-            'post_type'        => ['proyecto', 'noticia', 'actividad', 'publicacion', 'investigacion'],
+            'post_type'        => ['proyecto', 'noticia', 'actividad', 'publicacion', 'investigacion', 'transferencia'],
             'post_status'      => 'publish',
             'meta_key'		   => 'destacar',
             'meta_value'	   => '1'
