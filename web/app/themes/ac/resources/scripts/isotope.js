@@ -1,7 +1,7 @@
 let Isotope = require('isotope-layout');
 let imagesLoaded = require('imagesloaded');
 require('isotope-packery');
-let viewportWidth = $(window).width();
+let viewportWidth = window.innerWidth;
 
 if (document.body.classList.contains('home') && viewportWidth > 1024 ) {
 

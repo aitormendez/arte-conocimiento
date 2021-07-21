@@ -4,7 +4,7 @@ import {
 
 $(document).ready(() => {
 
-    let viewportWidth = $(window).width();
+    let viewportWidth = window.innerWidth;
 
     if (document.body.classList.contains('home') && viewportWidth > 1024 )  {
         // añadir clase colores en '.arriba' del destacado cuadrado imagen

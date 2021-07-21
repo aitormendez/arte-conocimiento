@@ -18,10 +18,8 @@ $(document).ready(() => {
   });
 
   if (viewportWidth <= 1024) {
-    console.log(menuItems);
     // acordeón móvil
     menuItems.click(function(){
-      console.log(menuItems.index(this));
       $(this).children('.my-child-menu').slideDown();
       $(this).siblings().children('.my-child-menu').slideUp();
     });
@@ -121,9 +119,7 @@ $(document).ready(() => {
       currY = w.scrollTop(),
       direction = (currY > lastY) ? 'down' : 'up';
       lastY = currY;
-      console.log(direction);
-      console.log(hambObj.estadoVertical);
-  
+        
       if (direction == 'down' && hambObj.estadoVertical == 'visible') {
         hambObj.ocultar();
       } else if (direction == 'up'  && hambObj.estadoVertical == 'oculto') {

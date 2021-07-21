@@ -3,7 +3,7 @@
 @section('content')
     @if ($destacados['has_posts'] == true)
 
-    <div id="button-group" class="hidden ml-3 md:block button-group filter-button-group">
+    <div id="button-group" class="hidden ml-3 lg:block button-group filter-button-group">
       <button class="px-3 py-2 m-1 text-xs tracking-wider uppercase border border-black hover:bg-white" data-filter="*">todos</button>
       @foreach ($destacados['filtros'] as $filtro)
         <button class="px-3 py-2 m-1 text-xs tracking-wider uppercase border border-black hover:bg-white" data-filter=".{{ $filtro }}">{{ $filtro }}</button>

@@ -24,4 +24,13 @@
       }
     }
   }
+
+  @media (min-width: 1024px) and (max-width: 1350px) {
+    .desktop {
+      .my-menu-item-desktop {
+        max-width: 13vw;
+        font-size: calc(0.5vw + 0.5rem);
+      }
+    }
+  }
 }
