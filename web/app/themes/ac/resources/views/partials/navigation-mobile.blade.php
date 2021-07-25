@@ -1,5 +1,5 @@
 @if ($mobile_navigation)
-  <ul class="mobile lg:hidden">
+  <ul class="leading-tight mobile lg:hidden">
     @foreach ($mobile_navigation as $item)
       @if ($item->children == false)
       <li class="my-menu-item {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }} font-bold" role="button">
@@ -18,7 +18,7 @@
         @if ($item->children)
           <ul class="h-0 overflow-hidden accordion-content">
             @foreach ($item->children as $child)
-              <li class="{{ $child->classes ?? '' }} {{ $child->active ? 'active' : '' }} font-normal">
+              <li class="my-3 {{ $child->classes ?? '' }} {{ $child->active ? 'active' : '' }} font-normal">
                 <a href="{{ $child->url }}" class="text-black">
                   {{ $child->label }}
                 </a>
