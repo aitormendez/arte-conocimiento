@@ -37,6 +37,8 @@ class Post extends Composer
                     'has_tipo_de_actividad' => false,
                 ];
 
+                $post_type = get_post_type($post_id);
+
                 $etiquetas = get_the_tags($post_id);
 
                 if ($etiquetas) {
@@ -80,7 +82,7 @@ class Post extends Composer
                 }
     
     
-                if (is_singular('proyecto')) {
+                if ($post_type == 'proyecto') {
                     $tipo_de_proyecto = get_the_terms($post_id, 'tipo_de_proyecto');
     
                     if ($tipo_de_proyecto) {
@@ -96,7 +98,7 @@ class Post extends Composer
                     }
                 }
     
-                if (is_singular('actividad')) {
+                if ($post_type == 'actividad') {
                     $tipo_de_actividad = get_the_terms($post_id, 'tipo_de_actividad');
     
                     if ($tipo_de_actividad) {
