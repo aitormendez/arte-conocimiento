@@ -30,6 +30,8 @@
 @endif
 
 @dump($taxonomias)
+@dump($taxonomias_front_page($destacado['ID']))
+
 
 
 
