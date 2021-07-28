@@ -162,7 +162,7 @@ return [
             ],
             'meta_box' => 'simple',
         ],
-        'lineas_investigacion' => [
+        'lineas_investigacion' => [ // ojo, está en plural. Cambiar antes de meter contenido real
             'links' => [
                 'proyecto',
                 'noticia',
@@ -173,6 +173,7 @@ return [
             ],
             'meta_box' => 'simple',
             'labels' => [
+                'slug' => 'linea-investigacion',
                 'singular' => 'Línea de investigación',
                 'plural' => 'Líneas de investigación',
             ],
@@ -183,6 +184,7 @@ return [
             ],
             'meta_box' => 'simple',
             'labels' => [
+                'slug' => 'tipo-de-proyecto',
                 'singular' => 'Tipo de proyecto',
                 'plural' => 'Tipos de proyecto',
             ],
@@ -193,6 +195,7 @@ return [
             ],
             'meta_box' => 'simple',
             'labels' => [
+                'slug' => 'tipo-de-actividad',
                 'singular' => 'Tipo de actividad',
                 'plural' => 'Tipos de actividad',
             ],
@@ -203,6 +206,7 @@ return [
             ],
             'meta_box' => 'simple',
             'labels' => [
+                'slug' => 'tipo-de-transferencia',
                 'singular' => 'Tipo de transferencia',
                 'plural' => 'Tipos de transferencia',
             ],

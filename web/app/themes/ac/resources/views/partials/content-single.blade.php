@@ -1,7 +1,5 @@
 <article @php post_class() @endphp >
 
-  @dump($personas)
-
   <header>
     <h1 class="entry-title">
       {!! $title !!}

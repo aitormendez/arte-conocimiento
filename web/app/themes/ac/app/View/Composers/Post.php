@@ -27,6 +27,7 @@ class Post extends Composer
         return [
             'title' => $this->title(),
             'personas' => $this->personas(),
+            'taxonomias' => $this->taxonomias(),
             'personas_front_page' => function($post_id) {
                 
                 // crear array de USUARIOS que están en el post
@@ -106,6 +107,12 @@ class Post extends Composer
         return get_the_title();
     }
 
+    /**
+     * Pasar usuarios y participantes de los post a las plantillas
+     *
+     * @return array
+     */
+
     public function personas()
     {
         global $post;
@@ -153,11 +160,107 @@ class Post extends Composer
         // ------------------------------------------------------------------
         
         // mirar en 'public function override()' en este mismo archivo.
-
-
-
-        
-
-        
     }
+
+    /**
+     * Pasar términos de taxonomías de los post a las plantillas
+     *
+     * @return array
+     */
+
+
+    public function taxonomias()
+    {
+        global $post;
+        $output = [
+            'has_tags' => false,
+            'has_lineas' => false,
+            'has_metaproyecto' => false,
+            'has_tipo_de_proyecto' => false,
+            'has_tipo_de_actividad' => false,
+        ];
+        if (is_single()) {
+            $etiquetas = get_the_tags($post->post_id);
+
+            if ($etiquetas) {
+                $out = array_map( function($term){
+                    return [
+                        'term' => $term,
+                        'link' => get_term_link($term),
+                    ];
+                }, $etiquetas);
+    
+                $output['has_tags'] = true;
+                $output['tags'] = $out;
+            }
+
+            $lineas_investigacion = get_the_terms($post->post_id, 'lineas_investigacion');
+
+            if ($lineas_investigacion) {
+                $out = array_map( function($term){
+                    return [
+                        'term' => $term,
+                        'link' => get_term_link($term),
+                    ];
+                }, $lineas_investigacion);
+    
+                $output['has_lineas'] = true;
+                $output['lineas'] = $out;
+            }
+
+            $metaproyecto = get_the_terms($post->post_id, 'metaproyecto');
+
+            if ($metaproyecto) {
+                $out = array_map( function($term){
+                    return [
+                        'term' => $term,
+                        'link' => get_term_link($term),
+                    ];
+                }, $metaproyecto);
+    
+                $output['has_metaproyecto'] = true;
+                $output['metaproyecto'] = $out;
+            }
+
+
+            if (is_singular('proyecto')) {
+                $tipo_de_proyecto = get_the_terms($post->post_id, 'tipo_de_proyecto');
+
+                if ($tipo_de_proyecto) {
+                    $out = array_map( function($term){
+                        return [
+                            'term' => $term,
+                            'link' => get_term_link($term),
+                        ];
+                    }, $tipo_de_proyecto);
+        
+                    $output['has_tipo_de_proyecto'] = true;
+                    $output['tipo_de_proyecto'] = $out;
+                }
+            }
+
+            if (is_singular('actividad')) {
+                $tipo_de_actividad = get_the_terms($post->post_id, 'tipo_de_actividad');
+
+                if ($tipo_de_actividad) {
+                    $out = array_map( function($term){
+                        return [
+                            'term' => $term,
+                            'link' => get_term_link($term),
+                        ];
+                    }, $tipo_de_actividad);
+        
+                    $output['has_tipo_de_actividad'] = true;
+                    $output['tipo_de_actividad'] = $out;
+                }
+            }
+        }
+        
+
+
+
+        return $output;
+
+    }
+
 }
