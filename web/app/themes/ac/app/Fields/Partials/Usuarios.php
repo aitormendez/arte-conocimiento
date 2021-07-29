@@ -23,7 +23,7 @@ class Usuarios extends Partial
         }
 
         // llenar dinámicamente las choices de roles participantes con un campo en options
-        $user_choices_out = [];
+        $participant_choices_out = [];
         $participant_choices = get_field('roles_participante', 'option', false);
         $participant_choices = explode("\n", $participant_choices);
         foreach ($participant_choices as $key => $value) {
@@ -47,7 +47,7 @@ class Usuarios extends Partial
                 'label' => 'Rol de usuario',
                 'required' => 1,
                 'choices' => $user_choices_out,
-                'default_value' => [],
+                'default_value' => ['Colaborador'],
                 'allow_null' => 0,
                 'multiple' => 0,
                 'ui' => 0,
@@ -70,7 +70,7 @@ class Usuarios extends Partial
                 'label' => 'Rol de participante',
                 'required' => 1,
                 'choices' => $participant_choices_out,
-                'default_value' => ['colaborador'],
+                'default_value' => ['Colaborador'],
                 'allow_null' => 0,
                 'multiple' => 0,
                 'ui' => 0,

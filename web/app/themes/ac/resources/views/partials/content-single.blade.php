@@ -5,6 +5,8 @@
       {!! $title !!}
     </h1>
 
+    
+
     @include('partials/entry-meta')
   </header>
 
