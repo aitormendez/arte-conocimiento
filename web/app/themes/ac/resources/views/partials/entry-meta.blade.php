@@ -81,3 +81,38 @@
 
   </div>
 @endif
+
+@if (is_single())
+@hasfields('documentos_asociados')
+<ul class="documentos-asociados">
+  @fields('documentos_asociados')
+  @php
+      $doc = get_sub_field('documento_asociado')
+  @endphp
+  @dump($doc))
+  <li>
+    @switch($doc['mime_type'])
+        @case('application/pdf')
+            <i class="fas fa-file-pdf"></i>
+            @break
+        @case('application/zip')
+            <i class="fas fa-file-alt"></i>
+            @break
+        @case('application/rtf')
+            <i class="fas fa-file-alt"></i>
+            @break
+        @case('application/pdf')
+            <i class="fas fa-file-archive"></i>
+            @break
+        @default
+        <i class="fas fa-file"></i>
+    @endswitch
+
+    <a href="{{ $doc['url'] }}" download>{{ $doc['title'] }}</a>
+  </li>
+@endfields
+</ul>
+
+@endhasfields
+    
+@endif

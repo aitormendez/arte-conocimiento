@@ -350,4 +350,19 @@ class Post extends Composer
 
     }
 
+    /**
+     * Documentos asociados en single post
+     *
+     * @return array
+     */
+
+     public function asociados()
+     {
+
+        if (is_single()) {
+            
+        }
+         
+     }
+
 }

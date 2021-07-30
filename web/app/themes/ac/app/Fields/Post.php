@@ -28,11 +28,30 @@ class Post extends Field
             ->or('post_type', '==', 'transferencia');
 
         $entrada
-        ->addTab('Equipo', ['placement' => 'left'])
-            ->addFields($this->get(Usuarios::class))
-        ->addTab('Destacar')
-            ->addFields($this->get(Destacados::class));
-
+            ->addTab('Equipo', ['placement' => 'left'])
+                ->addFields($this->get(Usuarios::class))
+            ->addTab('Destacar')
+                ->addFields($this->get(Destacados::class))
+            ->addTab('Documentos')
+            ->addRepeater('documentos_asociados', [
+                'label' => 'Documentos asociados',
+                'instructions' => 'Subir aquí los documentos asociados a esta entrada',
+                'min' => 1,
+                'max' => 7,
+                'button_label' => 'Añadir documento',
+                'layout' => 'block',
+            ])
+                    ->addFile('documento_asociado', [
+                        'label' => 'Documento asociado',
+                        'instructions' => '',
+                        'required' => 0,
+                        'return_format' => 'array',
+                        'library' => 'all',
+                        'min_size' => '',
+                        'max_size' => '',
+                        'mime_types' => '',
+                    ])
+                    ->endRepeater();
 
         return $entrada->build();
     }
