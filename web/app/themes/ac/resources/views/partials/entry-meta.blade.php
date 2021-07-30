@@ -89,26 +89,34 @@
   @php
       $doc = get_sub_field('documento_asociado')
   @endphp
-  @dump($doc))
+  @dump($doc)
   <li>
-    @switch($doc['mime_type'])
-        @case('application/pdf')
+    @switch(true)
+        @case(str_contains($doc['subtype'], 'pdf'))
             <i class="fas fa-file-pdf"></i>
             @break
-        @case('application/zip')
-            <i class="fas fa-file-alt"></i>
-            @break
-        @case('application/rtf')
-            <i class="fas fa-file-alt"></i>
-            @break
-        @case('application/pdf')
+        @case(str_contains($doc['subtype'], 'zip'))
             <i class="fas fa-file-archive"></i>
+            @break
+        @case(str_contains($doc['subtype'], 'rtf'))
+            <i class="fas fa-file-alt"></i>
+            @break
+        @case(preg_match('/(word)/', $doc['subtype']))
+            <i class="fas fa-file-word"></i>
+            @break
+        @case(preg_match('/(sheet)||(presentationml)/', $doc['subtype']))
+            <i class="fas fa-file-excel"></i>
+            @break
+        @case(preg_match('/(powerpoint)||(excel)/', $doc['subtype']))
+            <i class="fas fa-file-powerpoint"></i>
             @break
         @default
         <i class="fas fa-file"></i>
     @endswitch
 
     <a href="{{ $doc['url'] }}" download>{{ $doc['title'] }}</a>
+
+    <div class="caption">{{ $doc['caption'] }}</div>
   </li>
 @endfields
 </ul>

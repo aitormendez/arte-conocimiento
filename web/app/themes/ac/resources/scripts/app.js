@@ -12,9 +12,12 @@ import {
   faFile , 
   faFileAlt, 
   faFileArchive,
+  faFileWord,
+  faFileExcel,
+  faFilePowerpoint,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faFilePdf, faFile, faFileAlt, faFileArchive);
+library.add(faFilePdf, faFile, faFileAlt, faFileArchive, faFileWord, faFileExcel, faFilePowerpoint);
 dom.watch();
 
 
