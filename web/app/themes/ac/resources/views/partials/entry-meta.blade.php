@@ -40,7 +40,11 @@
           {!! count($taxonomias['metaproyecto']) > 1 ? '<h3 class="font-bold">Metaproyectos:</h3>' : '<h3 class="font-bold">Metaproyecto:</h3>'!!}
           <ul>
             @foreach ($taxonomias['metaproyecto'] as $metaproyecto)
-                <li>{{ $metaproyecto['term']->name }}</li>
+              @if (is_front_page())
+              <li>{{ $metaproyecto['term']->name }}</li>
+              @else
+                <li><a href="{{ $metaproyecto['link'] }}">{{ $metaproyecto['term']->name }}</a> </li>
+              @endif
             @endforeach
           </ul>
         </div>
@@ -51,7 +55,11 @@
           {!! count($taxonomias['tipo_de_proyecto']) > 1 ? '<h3 class="font-bold">Tipos de proyecto:</h3>' : '<h3 class="font-bold">Tipo de proyecto:</h3>'!!}
           <ul>
             @foreach ($taxonomias['tipo_de_proyecto'] as $tipo_de_proyecto)
-                <li>{{ $tipo_de_proyecto['term']->name }}</li>
+              @if (is_front_page())
+              <li>{{ $tipo_de_proyecto['term']->name }}</li>
+              @else
+                <li><a href="{{ $tipo_de_proyecto['link'] }}">{{ $tipo_de_proyecto['term']->name }}</a> </li>
+              @endif
             @endforeach
           </ul>
       </div>
@@ -61,8 +69,12 @@
       <div class="mb-3 bloque lineas-investigacion">
           {!! count($taxonomias['lineas']) > 1 ? '<h3 class="font-bold">Líneas de investigación:</h3>' : '<h3 class="font-bold">Línea de investigación:</h3>'!!}
           <ul>
-            @foreach ($taxonomias['lineas'] as $lineas)
-                <li>{{ $lineas['term']->name }}</li>
+            @foreach ($taxonomias['lineas'] as $linea)
+              @if (is_front_page())
+              <li>{{ $linea['term']->name }}</li>
+              @else
+                <li><a href="{{ $linea['link'] }}">{{ $linea['term']->name }}</a> </li>
+              @endif
             @endforeach
           </ul>
       </div>
