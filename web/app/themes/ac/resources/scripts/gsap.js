@@ -1,5 +1,5 @@
 import {
- gsap, Power3, random
+ gsap
 } from 'gsap/all';
 
 $(document).ready(() => {
@@ -85,53 +85,7 @@ $(document).ready(() => {
         });
     })
 
-    // menú desktop
 
-    if (viewportWidth > 1024 ) {
-
-        function menu () {
-            document.querySelectorAll('.my-menu-item-desktop').forEach((item, i) => {
-                item.id = 'menu-' + i;
-                let alto = document.getElementById('menu-' + i).offsetHeight;
-                let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-                let desplaza = -(alto - 3.1 * rem);
-                
-                if (item.classList.contains('doslineas')) {
-                    desplaza = -(alto - 4.2 * rem);
-                }
-    
-                gsap.set('#menu-' + i, {
-                    top: desplaza,
-                })
-    
-                if (! item.classList.contains('sin-child')) {
-                    item.addEventListener('mouseenter', event => {
-                        gsap.killTweensOf('#menu-' + i);
-                        gsap.to('#menu-' + i, {
-                            duration: '1',
-                            backgroundColor: '#ffffff',
-                            top: 0,
-                            ease: "bounce",
-                        });
-                    })
-                    item.addEventListener('mouseleave', event => {
-                        gsap.killTweensOf('#menu-' + i);
-                        gsap.to('#menu-' + i, {
-                            duration: '0.5',
-                            top: desplaza,
-                            backgroundColor: 'transparent',
-                        })
-                    })
-                }
-    
-              })
-
-              
-        }
-        
-        menu();
-        window.onresize = menu;
-    }
 
       
 });

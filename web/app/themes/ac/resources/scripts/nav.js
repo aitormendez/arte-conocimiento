@@ -178,6 +178,100 @@ $(document).ready(() => {
 
   }
 
+  /* 
+  * menú desktop
+  */
+
+  if (viewportWidth > 1024 ) {
+
+    function menu () {
+
+      // submenús
+
+      document.querySelectorAll('.my-menu-item-desktop').forEach((item, i) => {
+        item.id = 'menu-' + i;
+        let alto = document.getElementById('menu-' + i).offsetHeight;
+        let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        let desplaza = -(alto - 3.1 * rem);
+        
+        if (item.classList.contains('doslineas')) {
+          desplaza = -(alto - 4.2 * rem);
+        }
+
+        gsap.set('#menu-' + i, {
+          top: desplaza,
+        })
+
+          if (! item.classList.contains('sin-child')) {
+            item.addEventListener('mouseenter', event => {
+              gsap.killTweensOf('#menu-' + i);
+              gsap.to('#menu-' + i, {
+                duration: '1',
+                backgroundColor: '#ffffff',
+                top: 0,
+                ease: "bounce",
+              });
+            })
+            item.addEventListener('mouseleave', event => {
+              gsap.killTweensOf('#menu-' + i);
+              gsap.to('#menu-' + i, {
+                duration: '0.5',
+                top: desplaza,
+                backgroundColor: 'transparent',
+              })
+            })
+          }
+
+        })
+
+    }
+    
+    menu();
+    window.onresize = menu;
+
+    // esconder banner en scroll
+
+    let banner = $('.banner'),
+      bannerHeight = banner.height(),
+      bannerVisible = true;
+
+    banner.ocultar = () => {
+      gsap.to(banner, {
+        y: -bannerHeight,
+        duration: 0.5,
+      });
+    }
+
+    banner.mostrar = () => {
+      gsap.to(banner, {
+        y: 0,
+        duration: 1,
+        ease: "bounce",
+      });
+    }
+
+    w.scroll(function() {
+      currY = w.scrollTop(),
+      direction = (currY > lastY) ? 'down' : 'up';
+      lastY = currY;
+        
+      if (direction == 'down' && bannerVisible == true) {
+        bannerVisible = false;
+        console.log(bannerVisible);
+        banner.ocultar();
+        
+      } else if (direction == 'up'  && bannerVisible == false) {
+        bannerVisible = true;
+        console.log(bannerVisible);
+        banner.mostrar();
+      }
+
+      console.log(direction);
+
+      
+    });
+  }
+
 
 
 });

@@ -89,7 +89,6 @@
   @php
       $doc = get_sub_field('documento_asociado')
   @endphp
-  @dump($doc)
   <li>
     @switch(true)
         @case(str_contains($doc['subtype'], 'pdf'))

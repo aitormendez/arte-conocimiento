@@ -1,4 +1,4 @@
-<article @php post_class() @endphp >
+<article @php post_class('prose') @endphp >
 
   <header>
     <h1 class="entry-title">

@@ -13,12 +13,24 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#000',
+            a: {
+              color: 'azul',
+              textDecoration: 'none',
+              fontWeight: 'inherit',
+            },
+          },
+        },
+      },
       fontFamily: {
         'sans': ['rubik', 'sans-serif'],
         'serif': ['times-new-roman', 'serif'],
       },
       colors: {
-        blue: '#2c38d4',
+        blue: '#20479b',
         fondo: '#f0f0f0'
       },
       screens: {
