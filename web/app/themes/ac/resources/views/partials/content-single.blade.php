@@ -11,7 +11,7 @@
         info <span class="mx-3 fas fa-angle-right fa-2x"></span>
       </div>
       <div class="meta">
-        <div class="p-4 wrap">
+        <div class="p-4 wrap lg:flex lg:justify-start">
           @include('partials/entry-meta')
         </div>
       </div>

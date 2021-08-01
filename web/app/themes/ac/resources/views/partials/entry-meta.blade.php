@@ -1,39 +1,41 @@
-<time class="updated" datetime="{{ get_post_time('c', true) }}">
-  {{ get_the_date() }}
-</time>
-
-@if (is_front_page())
-  @php 
-    $personas = $personas_front_page($destacado['ID']);
-    $taxonomias = $taxonomias_front_page($destacado['ID']) 
-  @endphp
-@endif
-
-@if ($personas)
-  <div class="mb-3 personas">
-    @foreach ($personas as $persona)
-      @if ($persona['tipo'] === 'usuario')
-
-        <p class="my-0 byline author vcard">
-          @if (! is_home())
-            <a href="{{ $persona['permalink'] }}" class="normal" rel="author"><span class="fn">{{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span></a>
-          @else
-            {{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span>
-          @endif
-
-        </p>
-
-      @elseif ($persona['tipo'] === 'participante')
-
-      <p class="byline author vcard">
-        <span rel="author" class="fn">{{ $persona['nombre'] }}</span>@if ($persona['rol']['value'] != 'sin_rol'): <span class="role">{{ $persona['rol']['label'] }}</span>@endif      
-      @endif
-    @endforeach
-  </div>
-@endif
+<div class="lg:w-1/5 xl:w-1/3 bloque lg:mr-10 xl:flex" id="bloque-1">
+  <time class="block mb-3 updated xl:mr-10 xl:w-32" datetime="{{ get_post_time('c', true) }}">
+    {{ get_the_date() }}
+  </time>
+  
+  @if (is_front_page())
+    @php
+      $personas = $personas_front_page($destacado['ID']);
+      $taxonomias = $taxonomias_front_page($destacado['ID'])
+    @endphp
+  @endif
+  
+  @if ($personas)
+    <div class="mb-3 personas">
+      @foreach ($personas as $persona)
+        @if ($persona['tipo'] === 'usuario')
+  
+          <p class="my-0 byline author vcard">
+            @if (! is_home())
+              <a href="{{ $persona['permalink'] }}" class="" rel="author"><span class="fn">{{ $persona['nombre'] }}</span></a><span class="text-gray-400 role"> | {{ $persona['rol']['label'] }}</span>
+            @else
+              {{ $persona['nombre'] }}</span> | <span class="text-gray-400 role">{{ $persona['rol']['label'] }}</span>
+            @endif
+  
+          </p>
+  
+        @elseif ($persona['tipo'] === 'participante')
+  
+        <p class="byline author vcard">
+          <span rel="author" class="fn">{{ $persona['nombre'] }}</span>@if ($persona['rol']['value'] != 'sin_rol')<span class="text-gray-400 role"> | {{ $persona['rol']['label'] }}</span>@endif
+        @endif
+      @endforeach
+    </div>
+  @endif
+</div>
 
 @if ($taxonomias)
-  <div class="taxonomias">
+  <div class="lg:w-1/5 taxonomias bloque lg:mr-10 xl:w-1/3" id="bloque-2">
 
      @if ($taxonomias['has_metaproyecto'])
         <div class="mb-3 bloque metaproyectos">
@@ -43,7 +45,7 @@
               @if (is_front_page())
               <li>{{ $metaproyecto['term']->name }}</li>
               @else
-                <li><a href="{{ $metaproyecto['link'] }}" class="normal">{{ $metaproyecto['term']->name }}</a> </li>
+                <li><a href="{{ $metaproyecto['link'] }}" class="">{{ $metaproyecto['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>
@@ -51,14 +53,14 @@
      @endif
 
      @if ($taxonomias['has_tipo_de_proyecto'])
-      <div class="mb-3 bloque tipo-de-proyecto">
+      <div class="mb-3 tipo-de-proyecto">
           {!! count($taxonomias['tipo_de_proyecto']) > 1 ? '<h3 class="font-bold">Tipos de proyecto:</h3>' : '<h3 class="font-bold">Tipo de proyecto:</h3>'!!}
           <ul>
             @foreach ($taxonomias['tipo_de_proyecto'] as $tipo_de_proyecto)
               @if (is_front_page())
               <li>{{ $tipo_de_proyecto['term']->name }}</li>
               @else
-                <li><a href="{{ $tipo_de_proyecto['link'] }}" class="normal">{{ $tipo_de_proyecto['term']->name }}</a> </li>
+                <li><a href="{{ $tipo_de_proyecto['link'] }}" class="">{{ $tipo_de_proyecto['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>
@@ -73,7 +75,7 @@
               @if (is_front_page())
               <li>{{ $linea['term']->name }}</li>
               @else
-                <li><a href="{{ $linea['link'] }}" class="normal">{{ $linea['term']->name }}</a> </li>
+                <li><a href="{{ $linea['link'] }}" class="">{{ $linea['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>
@@ -96,7 +98,7 @@
 
 @if (is_single())
 @hasfields('documentos_asociados')
-<div class="documentos-asociados">
+<div class="documentos-asociados bloque lg:w-3/5" id="bloque-3">
   <h3 class="mb-3 font-bold">Documentos asociados</h3>
   <ul>
     @fields('documentos_asociados')
@@ -128,9 +130,9 @@
           <i class="fas fa-file"></i>
         @endswitch
       </div>
-      <div class="pt-3 wrap">
+      <div class="pt-2 wrap">
         <div class="enlace">
-          <a href="{{ $doc['url'] }}" class="normal" download>{{ $doc['title'] }}</a>
+          <a href="{{ $doc['url'] }}" class="" download>{{ $doc['title'] }}</a>
         </div>
         <div class="descripcion">
           {{ $doc['caption'] }}

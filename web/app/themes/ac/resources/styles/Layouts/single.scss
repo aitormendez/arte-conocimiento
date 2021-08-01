@@ -1,18 +1,23 @@
 .single {
-    .documentos-asociados {
-        ul {
-            li {
-                border-bottom: 1px solid black;
+    .meta {
+        font-size: 0.8rem;
 
-                .icono {
-                    width: 50px;
-                    font-size: 3rem;
+        .documentos-asociados {
+            ul {
+                li {
+                    border-bottom: 1px solid black;
+    
+                    .icono {
+                        width: 50px;
+                        font-size: 2.5rem;
+                    }
 
-                    svg {
-                        width: 100%;
+                    &:last-child {
+                        border-bottom: none;
                     }
                 }
             }
         }
     }
+
 }
