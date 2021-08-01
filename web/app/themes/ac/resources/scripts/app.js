@@ -5,7 +5,8 @@ import 'jquery';
 // import './three.js';
 import './nav.js';
 import './isotope.js';
-import './gsap.js';
+import './colores.js';
+import './post.js';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { 
   faFilePdf, 
@@ -15,9 +16,10 @@ import {
   faFileWord,
   faFileExcel,
   faFilePowerpoint,
+  faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faFilePdf, faFile, faFileAlt, faFileArchive, faFileWord, faFileExcel, faFilePowerpoint);
+library.add(faFilePdf, faFile, faFileAlt, faFileArchive, faFileWord, faFileExcel, faFilePowerpoint, faAngleRight);
 dom.watch();
 
 

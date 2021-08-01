@@ -17,6 +17,8 @@ module.exports = {
         DEFAULT: {
           css: {
             color: '#000',
+            lineHeight: '1.2',
+            maxWidth: 'inherit',
             a: {
               color: 'azul',
               textDecoration: 'none',

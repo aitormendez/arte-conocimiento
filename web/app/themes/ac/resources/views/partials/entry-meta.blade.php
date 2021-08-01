@@ -14,9 +14,9 @@
     @foreach ($personas as $persona)
       @if ($persona['tipo'] === 'usuario')
 
-        <p class="byline author vcard">
+        <p class="my-0 byline author vcard">
           @if (! is_home())
-            <a href="{{ $persona['permalink'] }}" rel="author"><span class="fn">{{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span></a>
+            <a href="{{ $persona['permalink'] }}" class="normal" rel="author"><span class="fn">{{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span></a>
           @else
             {{ $persona['nombre'] }}</span>: <span class="role">{{ $persona['rol']['label'] }}</span>
           @endif
@@ -43,7 +43,7 @@
               @if (is_front_page())
               <li>{{ $metaproyecto['term']->name }}</li>
               @else
-                <li><a href="{{ $metaproyecto['link'] }}">{{ $metaproyecto['term']->name }}</a> </li>
+                <li><a href="{{ $metaproyecto['link'] }}" class="normal">{{ $metaproyecto['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>
@@ -58,7 +58,7 @@
               @if (is_front_page())
               <li>{{ $tipo_de_proyecto['term']->name }}</li>
               @else
-                <li><a href="{{ $tipo_de_proyecto['link'] }}">{{ $tipo_de_proyecto['term']->name }}</a> </li>
+                <li><a href="{{ $tipo_de_proyecto['link'] }}" class="normal">{{ $tipo_de_proyecto['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>
@@ -73,7 +73,7 @@
               @if (is_front_page())
               <li>{{ $linea['term']->name }}</li>
               @else
-                <li><a href="{{ $linea['link'] }}">{{ $linea['term']->name }}</a> </li>
+                <li><a href="{{ $linea['link'] }}" class="normal">{{ $linea['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>
@@ -96,41 +96,50 @@
 
 @if (is_single())
 @hasfields('documentos_asociados')
-<ul class="documentos-asociados">
-  @fields('documentos_asociados')
-  @php
-      $doc = get_sub_field('documento_asociado')
-  @endphp
-  <li>
-    @switch(true)
-        @case(str_contains($doc['subtype'], 'pdf'))
+<div class="documentos-asociados">
+  <h3 class="mb-3 font-bold">Documentos asociados</h3>
+  <ul>
+    @fields('documentos_asociados')
+    @php
+        $doc = get_sub_field('documento_asociado')
+    @endphp
+    <li class="flex mb-3">
+      <div class="flex-grow-0 flex-shrink-0 mr-4 icono">
+        @switch(true)
+          @case(str_contains($doc['subtype'], 'pdf'))
             <i class="fas fa-file-pdf"></i>
             @break
-        @case(str_contains($doc['subtype'], 'zip'))
+          @case(str_contains($doc['subtype'], 'zip'))
             <i class="fas fa-file-archive"></i>
             @break
-        @case(str_contains($doc['subtype'], 'rtf'))
+          @case(str_contains($doc['subtype'], 'rtf'))
             <i class="fas fa-file-alt"></i>
             @break
-        @case(preg_match('/(word)/', $doc['subtype']))
+          @case(preg_match('/(word)/', $doc['subtype']))
             <i class="fas fa-file-word"></i>
             @break
-        @case(preg_match('/(sheet)||(presentationml)/', $doc['subtype']))
+          @case(preg_match('/(sheet)||(presentationml)/', $doc['subtype']))
             <i class="fas fa-file-excel"></i>
             @break
-        @case(preg_match('/(powerpoint)||(excel)/', $doc['subtype']))
+          @case(preg_match('/(powerpoint)||(excel)/', $doc['subtype']))
             <i class="fas fa-file-powerpoint"></i>
             @break
-        @default
-        <i class="fas fa-file"></i>
-    @endswitch
-
-    <a href="{{ $doc['url'] }}" download>{{ $doc['title'] }}</a>
-
-    <div class="caption">{{ $doc['caption'] }}</div>
-  </li>
-@endfields
-</ul>
+          @default
+          <i class="fas fa-file"></i>
+        @endswitch
+      </div>
+      <div class="pt-3 wrap">
+        <div class="enlace">
+          <a href="{{ $doc['url'] }}" class="normal" download>{{ $doc['title'] }}</a>
+        </div>
+        <div class="descripcion">
+          {{ $doc['caption'] }}
+        </div>
+      </div>
+    </li>
+  @endfields
+  </ul>
+</div>
 
 @endhasfields
     

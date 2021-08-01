@@ -1,0 +1,18 @@
+.single {
+    .documentos-asociados {
+        ul {
+            li {
+                border-bottom: 1px solid black;
+
+                .icono {
+                    width: 50px;
+                    font-size: 3rem;
+
+                    svg {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
