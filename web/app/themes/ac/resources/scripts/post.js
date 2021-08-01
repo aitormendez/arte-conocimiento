@@ -41,13 +41,14 @@ $(document).ready(() => {
                 height: 0,
                 duration: 1,
                 ease: "bounce",
+                overwrite: 'auto'
             });
 
             gsap.to(caret, {
                 duration: 1,
                 rotation: 0,
                 ease: "bounce",
-                overwrite: auto
+                overwrite: 'auto'
             });
         }
         console.log(infoAbierto);
