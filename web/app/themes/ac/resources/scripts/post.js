@@ -47,7 +47,7 @@ $(document).ready(() => {
                 duration: 1,
                 rotation: 0,
                 ease: "bounce",
-                overwrite: true
+                overwrite: auto
             });
         }
         console.log(infoAbierto);
