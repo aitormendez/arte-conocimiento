@@ -17,6 +17,12 @@ $(document).ready(() => {
     $(this).siblings().children('.my-child-menu').slideUp(0);
   });
 
+  w.scroll(function() {
+    currY = w.scrollTop(),
+    direction = (currY > lastY) ? 'down' : 'up';
+    lastY = currY;
+  });
+
   if (viewportWidth <= 1024) {
     /* 
     * Menú móvil acordeón
@@ -163,11 +169,7 @@ $(document).ready(() => {
       }
     })
 
-    w.scroll(function() {
-      currY = w.scrollTop(),
-      direction = (currY > lastY) ? 'down' : 'up';
-      lastY = currY;
-        
+    w.scroll(function() {        
       if (direction == 'down' && hambObj.estadoVertical == 'visible') {
         hambObj.ocultar();
       } else if (direction == 'up'  && hambObj.estadoVertical == 'oculto') {
@@ -263,9 +265,6 @@ $(document).ready(() => {
         bannerVisible = true;
         banner.mostrar();
       }
-
-      console.log(direction);
-
       
     });
     
