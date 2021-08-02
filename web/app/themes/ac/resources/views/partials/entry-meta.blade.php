@@ -1,6 +1,10 @@
-<div class="lg:w-1/5 xl:w-1/3 bloque lg:mr-10 xl:flex" id="bloque-1">
-  <time class="block mb-3 updated xl:mr-10 xl:w-32" datetime="{{ get_post_time('c', true) }}">
-    {{ get_the_date() }}
+<div class="bloque" id="bloque-1">
+  <time class="inline-block px-2 py-1 mb-3 text-xs border border-black updated" datetime="{{ get_post_time('c', true) }}">
+    @if (is_front_page())
+      {{ get_the_date('j/n/Y', $destacado['ID']) }}
+    @else
+      {{ get_the_date() }}
+    @endif
   </time>
   
   @if (is_front_page())
@@ -15,19 +19,19 @@
       @foreach ($personas as $persona)
         @if ($persona['tipo'] === 'usuario')
   
-          <p class="my-0 byline author vcard">
+          <p class="my-0 mb-2 byline author vcard">
             @if (! is_home())
-              <a href="{{ $persona['permalink'] }}" class="" rel="author"><span class="fn">{{ $persona['nombre'] }}</span></a><span class="text-gray-400 role"> | {{ $persona['rol']['label'] }}</span>
+              <a href="{{ $persona['permalink'] }}" class="" rel="author"><span class="fn">{{ $persona['nombre'] }}</span></a><i class="block rol">{{ $persona['rol']['label'] }}</i>
             @else
-              {{ $persona['nombre'] }}</span> | <span class="text-gray-400 role">{{ $persona['rol']['label'] }}</span>
+              {{ $persona['nombre'] }}</span><i class="block rol"">{{ $persona['rol']['label'] }}</i>
             @endif
   
           </p>
   
         @elseif ($persona['tipo'] === 'participante')
   
-        <p class="byline author vcard">
-          <span rel="author" class="fn">{{ $persona['nombre'] }}</span>@if ($persona['rol']['value'] != 'sin_rol')<span class="text-gray-400 role"> | {{ $persona['rol']['label'] }}</span>@endif
+        <p class="mb-2 byline author vcard">
+          <span rel="author" class="fn">{{ $persona['nombre'] }}</span>@if ($persona['rol']['value'] != 'sin_rol')<i class="block rol">{{ $persona['rol']['label'] }}</i>@endif
         @endif
       @endforeach
     </div>
@@ -35,7 +39,7 @@
 </div>
 
 @if ($taxonomias)
-  <div class="lg:w-1/5 taxonomias bloque lg:mr-10 xl:w-1/3" id="bloque-2">
+  <div class="taxonomias bloque" id="bloque-2">
 
      @if ($taxonomias['has_metaproyecto'])
         <div class="mb-3 bloque metaproyectos">
@@ -98,14 +102,14 @@
 
 @if (is_single())
 @hasfields('documentos_asociados')
-<div class="documentos-asociados bloque lg:w-3/5" id="bloque-3">
+<div class="documentos-asociados bloque" id="bloque-3">
   <h3 class="mb-3 font-bold">Documentos asociados</h3>
   <ul>
     @fields('documentos_asociados')
     @php
         $doc = get_sub_field('documento_asociado')
     @endphp
-    <li class="flex mb-3">
+    <li class="flex pb-3 mb-3">
       <div class="flex-grow-0 flex-shrink-0 mr-4 icono">
         @switch(true)
           @case(str_contains($doc['subtype'], 'pdf'))
@@ -130,7 +134,7 @@
           <i class="fas fa-file"></i>
         @endswitch
       </div>
-      <div class="pt-2 wrap">
+      <div class="pt-1 wrap">
         <div class="enlace">
           <a href="{{ $doc['url'] }}" class="" download>{{ $doc['title'] }}</a>
         </div>

@@ -2,6 +2,12 @@
     .meta {
         font-size: 0.8rem;
 
+        #bloque-1 {
+            .rol {
+                @apply text-gray-400;
+            }
+        }
+
         .documentos-asociados {
             ul {
                 li {
@@ -20,4 +26,40 @@
         }
     }
 
+    @media (min-width: 768px) {
+        .meta {
+            #bloque-1 {
+                width: 20%;
+                margin-right: 2.3rem;
+            }
+
+            #bloque-2 {
+                width: 20%;
+                margin-right: 2.3rem;
+            }
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .meta {
+            #bloque-1 {
+                width: 33.33333%;
+                display: flex;
+
+                time {
+                    margin-right: 2.5rem;
+                    width: 8rem;
+                }
+            }
+
+            #bloque-2 {
+                width: 33.33333%;
+                margin-right: 2,5rem;
+            }
+
+            #bloque-3 {
+                width: 60%;
+            }
+        }
+    }
 }

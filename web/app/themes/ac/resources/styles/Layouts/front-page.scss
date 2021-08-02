@@ -68,13 +68,20 @@
       }
 
       &.horizontal {
-        a {          
-          .arriba {
-            header {
+        a {
+          .meta {
+            display: flex;
+
+            #bloque-1 {
+              display: flex;
+              margin-right: 2rem;
+              align-items: flex-start;
+
+              time {
+                margin-right: 2rem;
+              }
             }
-          }
-          .abajo {
-          }
+          }         
         }
       }
 

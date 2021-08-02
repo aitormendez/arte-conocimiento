@@ -25,7 +25,6 @@ $(document).ready(() => {
     const menus = gsap.utils.toArray(".accordion-menu");
     let openMenu;
 
-    // console.log(menus);
 
     menus.forEach(menu => {  
       let box = menu.parentNode.querySelector(".accordion-content"),
@@ -228,16 +227,19 @@ $(document).ready(() => {
     
     menu();
     window.onresize = menu;
+  }
 
+  if (viewportWidth >= 768 ) {
+  
     // esconder banner en scroll
 
     let banner = $('.banner'),
-      bannerHeight = banner.height(),
-      bannerVisible = true;
+    bannerHeight = banner.height(),
+    bannerVisible = true;
 
     banner.ocultar = () => {
       gsap.to(banner, {
-        y: -bannerHeight,
+        y: -bannerHeight -20,
         duration: 0.5,
       });
     }
@@ -251,18 +253,14 @@ $(document).ready(() => {
     }
 
     w.scroll(function() {
-      currY = w.scrollTop(),
-      direction = (currY > lastY) ? 'down' : 'up';
-      lastY = currY;
+      console.log
         
       if (direction == 'down' && bannerVisible == true) {
         bannerVisible = false;
-        console.log(bannerVisible);
         banner.ocultar();
         
       } else if (direction == 'up'  && bannerVisible == false) {
         bannerVisible = true;
-        console.log(bannerVisible);
         banner.mostrar();
       }
 
@@ -270,6 +268,7 @@ $(document).ready(() => {
 
       
     });
+    
   }
 
 
