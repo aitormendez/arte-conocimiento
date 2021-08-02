@@ -55,7 +55,7 @@ $(document).ready(() => {
             console.log(infoAbierto);
         }
     
-        // gsap.set(meta, {height: 0});
+        gsap.set(meta, {height: 0});
     
         console.log(meta);
     
