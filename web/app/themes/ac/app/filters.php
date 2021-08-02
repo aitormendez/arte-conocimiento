@@ -145,10 +145,11 @@ $post_type = get_post_type($post_id);
 add_action('pre_get_posts', function ($query) {
     if ( is_author() && $query->is_main_query() ) {
         $query->set('post_type', [
-            'projecto', 
+            'proyecto', 
             'noticia', 
-            'referencia',
+            'publicacion',
             'actividad',
+            'transferencia',
         ]);
     }
     return $query;

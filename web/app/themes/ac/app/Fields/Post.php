@@ -32,6 +32,21 @@ class Post extends Field
                 ->addFields($this->get(Usuarios::class))
             ->addTab('Destacar')
                 ->addFields($this->get(Destacados::class))
+            ->addTab('Fechas')
+                ->addDatePicker('post_fecha_inicio', [
+                    'label' => 'Fecha de inicio',
+                    'instructions' => '',
+                    'display_format' => 'd/m/Y',
+                    'return_format' => 'd/m/Y',
+                    'first_day' => 1,
+                ]) 
+                ->addDatePicker('post_fecha_fin', [
+                    'label' => 'Fecha de finalización',
+                    'instructions' => '',
+                    'display_format' => 'd/m/Y',
+                    'return_format' => 'd/m/Y',
+                    'first_day' => 1,
+                ])
             ->addTab('Documentos')
             ->addRepeater('documentos_asociados', [
                 'label' => 'Documentos asociados',

@@ -16,15 +16,29 @@ class Metaproyecto extends Field
     public function fields()
     {
 
-        $equipo = new FieldsBuilder('grupo');
+        $metaproyecto = new FieldsBuilder('grupo');
 
-        $equipo
+        $metaproyecto
             ->setLocation('taxonomy', '==', 'metaproyecto');
 
-        $equipo
-            ->addFields($this->get(Usuarios::class));
+        $metaproyecto
+            ->addFields($this->get(Usuarios::class))
+            ->addDatePicker('metaproyecto_fecha_inicio', [
+                'label' => 'Fecha de inicio',
+                'instructions' => '',
+                'display_format' => 'd/m/Y',
+                'return_format' => 'd/m/Y',
+                'first_day' => 1,
+            ]) 
+            ->addDatePicker('metaproyecto_fecha_fin', [
+                'label' => 'Fecha de finalización',
+                'instructions' => '',
+                'display_format' => 'd/m/Y',
+                'return_format' => 'd/m/Y',
+                'first_day' => 1,
+            ]);
 
 
-        return $equipo->build();
+        return $metaproyecto->build();
     }
 }
