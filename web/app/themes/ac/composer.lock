@@ -1436,16 +1436,16 @@
         },
         {
             "name": "log1x/poet",
-            "version": "v2.0.0",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/poet.git",
-                "reference": "9b0c6173d14a8266e0214053fb91d8da1c52b560"
+                "reference": "2ec499557f36cefb27cac4b24231d25af0b505c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/poet/zipball/9b0c6173d14a8266e0214053fb91d8da1c52b560",
-                "reference": "9b0c6173d14a8266e0214053fb91d8da1c52b560",
+                "url": "https://api.github.com/repos/Log1x/poet/zipball/2ec499557f36cefb27cac4b24231d25af0b505c2",
+                "reference": "2ec499557f36cefb27cac4b24231d25af0b505c2",
                 "shasum": ""
             },
             "require": {
@@ -1486,7 +1486,7 @@
             ],
             "support": {
                 "issues": "https://github.com/log1x/poet/issues",
-                "source": "https://github.com/Log1x/poet/tree/v2.0.0"
+                "source": "https://github.com/Log1x/poet/tree/v2.0.4"
             },
             "funding": [
                 {
@@ -1494,7 +1494,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-11T05:23:18+00:00"
+            "time": "2021-08-04T06:17:37+00:00"
         },
         {
             "name": "log1x/sage-directives",
