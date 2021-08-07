@@ -24,7 +24,7 @@ $(document).ready(() => {
     if (viewportWidth > 1024 ) {
     // animación degradados enlaces que no son '.normal'
     
-        document.querySelectorAll('a:not(.normal)').forEach((item, i) => {
+        document.querySelectorAll('#app a:not(.normal)').forEach((item, i) => {
             item.addEventListener('mouseenter', event => {
                 item.id = 'color-enlace-' + i;
                 gsap.set('#color-enlace-' + i, {

@@ -1,5 +1,5 @@
 <div class="bloque" id="bloque-1">
-  <time class="inline-block px-2 py-1 mb-3 text-xs border border-black updated" datetime="{{ get_post_time('c', true) }}">
+  <time class="inline-block px-2 py-1 mb-3 border border-black updated" datetime="{{ get_post_time('c', true) }}">
     @if (is_front_page())
       {{ get_the_date('j/n/Y', $destacado['ID']) }}
     @else
