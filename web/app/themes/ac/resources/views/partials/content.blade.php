@@ -1,4 +1,4 @@
-<article @php(post_class('mb-4 p-4 bg-white'))>
+<article @php(post_class('mb-4 p-4 bg-white infinite-scroll-item'))>
   <div class="wrap lg:mx-auto lg:max-w-3xl">
     <header>
       <h2 class="mb-3 text-xl font-bold entry-title">

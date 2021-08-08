@@ -50,6 +50,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "gsap": "^3.7.0",
     "imagesloaded": "^4.1.4",
+    "infinite-scroll": "^4.0.1",
     "isotope-layout": "^3.0.6",
     "isotope-packery": "^2.0.1"
   }
