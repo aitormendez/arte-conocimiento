@@ -1,18 +1,35 @@
 <div class="bloque" id="bloque-1">
-  <time class="inline-block px-2 py-1 mb-3 border border-black updated" datetime="{{ get_post_time('c', true) }}">
     @if (is_front_page())
-      {{ get_the_date('j/n/Y', $destacado['ID']) }}
-    @else
-      {{ get_the_date() }}
-    @endif
-  </time>
-  
-  @if (is_front_page())
     @php
       $personas = $personas_front_page($destacado['ID']);
       $taxonomias = $taxonomias_front_page($destacado['ID'])
     @endphp
-  @endif
+
+      <div class="mb-3 fechas">
+        <time class="block" datetime="{{ get_post_time('c', true, $destacado['ID']) }}">
+          Publicado el {{ get_the_date('j/n/Y', $destacado['ID']) }}
+        </time>
+        @if (get_field('post_fecha_inicio', $destacado['ID']))
+            <div>Inicio {{ get_field('post_fecha_inicio', $destacado['ID']) }}</div>
+        @endif
+        @if (get_field('post_fecha_fin', $destacado['ID']))
+            <div>Fin {{ get_field('post_fecha_fin', $destacado['ID']) }}</div>
+        @endif
+      </div>
+    @else
+      <div class="mb-3 fechas">
+        <time class="inline-block updated" datetime="{{ get_post_time('c', true) }}">
+          Publicado el {{ get_the_date('j/n/Y') }}
+        </time>
+        @if (get_field('post_fecha_inicio'))
+            <div>Inicio {{ get_field('post_fecha_inicio') }}</div>
+        @endif
+        @if (get_field('post_fecha_fin'))
+            <div>Fin {{ get_field('post_fecha_fin') }}</div>
+        @endif
+      </div>
+    @endif
+
   
   @if ($personas)
     <div class="mb-3 personas">

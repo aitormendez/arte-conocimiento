@@ -36,15 +36,15 @@ class Post extends Field
                 ->addDatePicker('post_fecha_inicio', [
                     'label' => 'Fecha de inicio',
                     'instructions' => '',
-                    'display_format' => 'd/m/Y',
-                    'return_format' => 'd/m/Y',
+                    'display_format' => 'j/n/Y',
+                    'return_format' => 'j/n/Y',
                     'first_day' => 1,
                 ]) 
                 ->addDatePicker('post_fecha_fin', [
                     'label' => 'Fecha de finalización',
                     'instructions' => '',
-                    'display_format' => 'd/m/Y',
-                    'return_format' => 'd/m/Y',
+                    'display_format' => 'j/n/Y',
+                    'return_format' => 'j/n/Y',
                     'first_day' => 1,
                 ])
             ->addTab('Documentos')

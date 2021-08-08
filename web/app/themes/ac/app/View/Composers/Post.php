@@ -356,13 +356,13 @@ class Post extends Composer
      * @return array
      */
 
-     public function asociados()
-     {
+    //  public function asociados()
+    //  {
 
-        if (is_single()) {
+    //     if (is_single()) {
             
-        }
+    //     }
          
-     }
+    //  }
 
 }
