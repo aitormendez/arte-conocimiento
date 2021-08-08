@@ -143,9 +143,8 @@ $post_type = get_post_type($post_id);
  */
 
 add_action('pre_get_posts', function ($query) {
-    if ( is_author() && $query->is_main_query() ) {
+    if (! is_admin() && is_author() && $query->is_main_query() ) {
         $query->set('post_type', [
-            'proyecto', 
             'noticia', 
             'publicacion',
             'actividad',
@@ -154,3 +153,20 @@ add_action('pre_get_posts', function ($query) {
     }
     return $query;
 });
+
+/**
+ * Añadir CPT 'publicaciones' al archivo de CPT 'actividades'
+ */
+
+add_action('pre_get_posts', function ($query) {
+    if (! is_admin() && is_post_type_archive('actividad') && $query->is_main_query() ) {
+        $query->set('post_type', [
+            'publicacion',
+            'actividad',
+        ]);
+    }
+    return $query;
+});
+
+
+
