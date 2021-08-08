@@ -170,3 +170,20 @@ add_action('pre_get_posts', function ($query) {
 
 
 
+
+
+/*
+Cambiar títulos
+*/
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+    $q = get_queried_object();
+    if (is_post_type_archive('investigacion')) {
+        $title = 'Fomento de la investigación';
+    } elseif (is_tax()) {
+        $title = $q->name;
+    } else {
+        $title = $q->labels->name;
+    }
+    return $title;
+});
