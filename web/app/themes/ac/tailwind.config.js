@@ -1,4 +1,5 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   mode: 'jit',
@@ -49,5 +50,19 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('tailwindcss-debug-screens'),
+    plugin(function({ addComponents }) {
+      const botones = {
+        '.btn': {
+          border: '1px solid #000',
+          backgroundColor: '#fff',
+          textTransform: 'uppercase',
+          letterSpacing: '0.2em',
+          fontSize: '0.8rem',
+          color: '#000',
+          padding: '0.7em 1em 0.6em'
+        }
+      }
+      addComponents([botones])
+    })
   ],
 };

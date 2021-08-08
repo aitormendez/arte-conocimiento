@@ -8,6 +8,7 @@ import './isotope.js';
 import './colores.js';
 import './post.js';
 import './infscroll.js';
+import './archive.js';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { 
   faFilePdf, 

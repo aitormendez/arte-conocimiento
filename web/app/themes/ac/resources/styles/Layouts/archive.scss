@@ -1,0 +1,10 @@
+.archive {
+    @media (min-width: 1024px) {
+        article {
+            .thumb {
+                max-width: 10rem;
+            }
+        }
+    }
+    
+}
