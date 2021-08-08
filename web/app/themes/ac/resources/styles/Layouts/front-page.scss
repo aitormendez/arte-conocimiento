@@ -49,7 +49,7 @@
         .meta {
           opacity: 0;
           transition: opacity, 0.5s;
-          font-size: 0.8vw;
+          font-size: 1.1vw;
         }
 
         &:hover {
@@ -337,14 +337,39 @@
 
   @media (min-width: 1280px) {
     --bloque: calc((100vw - var(--scrollbar-width)) / 7);
+
+    article {
+      a {
+        .meta {
+          font-size: 1vw;
+        }
+      }
+    }
   }
 
   @media (min-width: 1536px) {
     --bloque: calc((100vw - var(--scrollbar-width)) / 8);
+
+
+    article {
+      a {
+        .meta {
+          font-size: 0.9vw;
+        }
+      }
+    }
   }
 
   @media (min-width: 1792px) {
     --bloque: calc((100vw - var(--scrollbar-width)) / 9);
+
+    article {
+      a {
+        .meta {
+          font-size: 0.8vw;
+        }
+      }
+    }
   }
 }
 

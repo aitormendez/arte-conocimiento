@@ -3,7 +3,7 @@
   <header>
     <div class="prose lg:mx-auto lg:max-w-3xl">    
       <h1 class="entry-title">{!! $title !!}</h1>
-  </div>
+    </div>
 
 
     <div class="my-8 overflow-hidden bg-white">

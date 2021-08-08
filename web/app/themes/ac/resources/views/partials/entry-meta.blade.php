@@ -1,9 +1,9 @@
 <div class="bloque" id="bloque-1">
     @if (is_front_page())
-    @php
-      $personas = $personas_front_page($destacado['ID']);
-      $taxonomias = $taxonomias_front_page($destacado['ID'])
-    @endphp
+      @php
+        $personas = $personas_front_page($destacado['ID']);
+        $taxonomias = $taxonomias_front_page($destacado['ID'])
+      @endphp
 
       <div class="mb-3 fechas">
         <time class="block" datetime="{{ get_post_time('c', true, $destacado['ID']) }}">
