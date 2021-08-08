@@ -22,6 +22,8 @@
 
 
   {!! get_the_posts_navigation() !!}
+
+  @include('partials.page-load-infscroll')
 @endsection
 
 @section('sidebar')
