@@ -17,7 +17,7 @@
         @endif
       </div>
     @else
-      <div class="mb-3 fechas">
+      <div class="fechas">
         <time class="inline-block updated" datetime="{{ get_post_time('c', true) }}">
           Publicado el {{ get_the_date('j/n/Y') }}
         </time>
@@ -79,7 +79,7 @@
           <ul>
             @foreach ($taxonomias['tipo_de_proyecto'] as $tipo_de_proyecto)
               @if (is_front_page())
-              <li>{{ $tipo_de_proyecto['term']->name }}</li>
+              <li class="mb-2">{{ $tipo_de_proyecto['term']->name }}</li>
               @else
                 <li><a href="{{ $tipo_de_proyecto['link'] }}" class="">{{ $tipo_de_proyecto['term']->name }}</a> </li>
               @endif
@@ -94,9 +94,9 @@
           <ul>
             @foreach ($taxonomias['lineas'] as $linea)
               @if (is_front_page())
-              <li>{{ $linea['term']->name }}</li>
+              <li class="mb-2">{{ $linea['term']->name }}</li>
               @else
-                <li><a href="{{ $linea['link'] }}" class="">{{ $linea['term']->name }}</a> </li>
+                <li class="mb-2"><a href="{{ $linea['link'] }}" class="">{{ $linea['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>

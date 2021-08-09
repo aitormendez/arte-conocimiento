@@ -1,65 +1,68 @@
 .single {
+  .meta {
+    font-size: 0.8rem;
+
+    >.wrap {
+      border-top: 1px solid black;
+      padding-top: 1rem;
+
+
+      #bloque-1 {
+        .rol {
+          @apply text-gray-400;
+        }
+      }
+
+      .documentos-asociados {
+        ul {
+          li {
+            border-bottom: 1px dotted black;
+
+            .icono {
+              width: 50px;
+              font-size: 2.5rem;
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
     .meta {
-        font-size: 0.8rem;
+
+      >.wrap {
+          padding: 0;
 
         #bloque-1 {
-            .rol {
-                @apply text-gray-400;
-            }
+          width: 22%;
+          padding: 0;
+          border-right: 1px solid black;
+
+          .fechas {
+              padding: 1rem;
+              border-bottom: 1px solid #000;
+          }
+
+          .personas {
+              padding: 1rem;
+          }
         }
 
-        .documentos-asociados {
-            ul {
-                li {
-                    border-bottom: 1px solid black;
-    
-                    .icono {
-                        width: 50px;
-                        font-size: 2.5rem;
-                    }
-
-                    &:last-child {
-                        border-bottom: none;
-                    }
-                }
-            }
+        #bloque-2 {
+          width: 20%;
+          padding: 1rem;
+          border-right: 1px solid #000;
         }
+
+        #bloque-3 {
+            padding: 1rem;
+        }
+      }
     }
-
-    @media (min-width: 768px) {
-        .meta {
-            #bloque-1 {
-                width: 22%;
-                margin-right: 2.3rem;
-            }
-
-            #bloque-2 {
-                width: 20%;
-                margin-right: 2.3rem;
-            }
-        }
-    }
-
-    @media (min-width: 1280px) {
-        .meta {
-            #bloque-1 {
-                width: 33.33333%;
-                display: flex;
-                align-items: flex-start;
-
-                time {
-                    margin-right: 2.5rem;
-                }
-            }
-
-            #bloque-2 {
-                width: 33.33333%;
-                margin-right: 2,5rem;
-            }
-
-            #bloque-3 {
-                width: 60%;
-            }
-        }
-    }
+  }
 }
