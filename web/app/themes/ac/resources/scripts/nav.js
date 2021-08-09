@@ -205,20 +205,22 @@ $(document).ready(() => {
 
           if (! item.classList.contains('sin-child')) {
             item.addEventListener('mouseenter', event => {
-              gsap.killTweensOf('#menu-' + i);
+              // gsap.killTweensOf('#menu-' + i);
               gsap.to('#menu-' + i, {
                 duration: '1',
                 backgroundColor: '#ffffff',
                 top: 0,
                 ease: "bounce",
+                overwrite: 'auto',
               });
             })
             item.addEventListener('mouseleave', event => {
-              gsap.killTweensOf('#menu-' + i);
+              // gsap.killTweensOf('#menu-' + i);
               gsap.to('#menu-' + i, {
                 duration: '0.5',
                 top: desplaza,
                 backgroundColor: 'transparent',
+                overwrite: 'auto',
               })
             })
           }
