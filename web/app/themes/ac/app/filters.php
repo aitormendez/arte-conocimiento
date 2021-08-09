@@ -170,6 +170,24 @@ add_action('pre_get_posts', function ($query) {
 
 
 
+/**
+ * Añadir CPTs a la página de autor
+ */
+
+add_action('pre_get_posts', function ($query) {
+    if (! is_admin() && is_author() && $query->is_main_query() ) {
+        $query->set('post_type', [
+            'publicacion',
+            'actividad',
+            'investigacion',
+            'transferencia',
+        ]);
+    }
+    return $query;
+});
+
+
+
 
 
 /*
@@ -181,6 +199,8 @@ add_filter( 'get_the_archive_title', function ( $title ) {
         $title = 'Fomento de la investigación';
     } elseif (is_tax()) {
         $title = $q->name;
+    } elseif (is_author()) {
+        $title = $q->data->display_name;
     } else {
         $title = $q->labels->name;
     }
