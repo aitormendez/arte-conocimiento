@@ -36,7 +36,7 @@ class Usuarios extends Partial
         $listItems
         ->addRepeater('usuarios', [
             'label' => 'Usuarios',
-            'instructions' => 'Añade aquí los participantes en el proyecto que SÍ tengan cuenta de usuario en este sitio web. Se añadirán automáticamente los que ya existan en los post asociados a este metaproyecto',
+            'instructions' => 'Añade aquí los participantes en el proyecto que SÍ tengan cuenta de usuario en este sitio web. Se añadirán automáticamente los que ya existan en los post asociados a este proyecto',
             'layout' => 'table',
             'button_label' => 'Añadir usuario',
         ])
@@ -59,7 +59,7 @@ class Usuarios extends Partial
 
         ->addRepeater('participantes', [
             'label' => 'Participantes',
-            'instructions' => 'Añade aquí los participantes en el proyecto que NO tengan cuenta de usuario en este sitio web. Se añadirán automáticamente los que ya existan en los post asociados a este metaproyecto',
+            'instructions' => 'Añade aquí los participantes en el proyecto que NO tengan cuenta de usuario en este sitio web. Se añadirán automáticamente los que ya existan en los post asociados a este proyecto',
             'layout' => 'table',
             'button_label' => 'Añadir participante',
         ])

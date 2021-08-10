@@ -20,8 +20,7 @@ class Post extends Field
         $entrada = new FieldsBuilder('entrada');
 
         $entrada
-            ->setLocation('post_type', '==', 'proyecto')
-            ->or('post_type', '==', 'noticia')
+            ->setLocation('post_type', '==', 'noticia')
             ->or('post_type', '==', 'publicacion')
             ->or('post_type', '==', 'actividad')
             ->or('post_type', '==', 'investigacion')

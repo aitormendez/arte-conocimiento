@@ -32,8 +32,8 @@ class Post extends Composer
                 $output = [
                     'has_tags' => false,
                     'has_lineas' => false,
-                    'has_metaproyecto' => false,
-                    'has_tipo_de_proyecto' => false,
+                    'has_proyecto' => false,
+                    'has_tipo_de_investigacion' => false,
                     'has_tipo_de_actividad' => false,
                 ];
 
@@ -67,18 +67,18 @@ class Post extends Composer
                     $output['lineas'] = $out;
                 }
     
-                $metaproyecto = get_the_terms($post_id, 'metaproyecto');
+                $proyecto = get_the_terms($post_id, 'proyecto');
     
-                if ($metaproyecto) {
+                if ($proyecto) {
                     $out = array_map( function($term){
                         return [
                             'term' => $term,
                             'link' => get_term_link($term),
                         ];
-                    }, $metaproyecto);
+                    }, $proyecto);
         
-                    $output['has_metaproyecto'] = true;
-                    $output['metaproyecto'] = $out;
+                    $output['has_proyecto'] = true;
+                    $output['proyecto'] = $out;
                 }
     
     
@@ -265,7 +265,7 @@ class Post extends Composer
             $output = [
                 'has_tags' => false,
                 'has_lineas' => false,
-                'has_metaproyecto' => false,
+                'has_proyecto' => false,
                 'has_tipo_de_proyecto' => false,
                 'has_tipo_de_actividad' => false,
             ];
@@ -298,18 +298,18 @@ class Post extends Composer
                 $output['lineas'] = $out;
             }
 
-            $metaproyecto = get_the_terms($post->post_id, 'metaproyecto');
+            $proyecto = get_the_terms($post->post_id, 'proyecto');
 
-            if ($metaproyecto) {
+            if ($proyecto) {
                 $out = array_map( function($term){
                     return [
                         'term' => $term,
                         'link' => get_term_link($term),
                     ];
-                }, $metaproyecto);
+                }, $proyecto);
     
-                $output['has_metaproyecto'] = true;
-                $output['metaproyecto'] = $out;
+                $output['has_proyecto'] = true;
+                $output['proyecto'] = $out;
             }
 
 

@@ -151,7 +151,7 @@ return [
     */
 
     'taxonomy' => [
-        'metaproyecto' => [
+        'proyecto' => [
             'links' => [
                 // 'proyecto',
                 'noticia',
@@ -178,15 +178,15 @@ return [
                 'plural' => 'Líneas de investigación',
             ],
         ],
-        'tipo_de_proyecto' => [
+        'tipo_de_investigacion' => [
             'links' => [
                 'investigacion',
             ],
             'meta_box' => 'simple',
             'labels' => [
-                'slug' => 'tipo-de-proyecto',
-                'singular' => 'Tipo de proyecto',
-                'plural' => 'Tipos de proyecto',
+                'slug' => 'tipo-de-investigacion',
+                'singular' => 'Tipo de investigación',
+                'plural' => 'Tipos de investigación',
             ],
         ],
         'tipo_de_actividad' => [

@@ -78,7 +78,7 @@ $post_type = get_post_type($post_id);
 
         // comprobar terms que están en este post
 
-        $terms = get_the_terms( $post_id, 'metaproyecto' );
+        $terms = get_the_terms( $post_id, 'proyecto' );
 
         
         

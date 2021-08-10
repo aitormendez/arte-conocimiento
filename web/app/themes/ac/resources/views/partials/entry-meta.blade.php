@@ -58,15 +58,15 @@
 @if ($taxonomias)
   <div class="taxonomias bloque" id="bloque-2">
 
-     @if ($taxonomias['has_metaproyecto'])
-        <div class="mb-3 bloque metaproyectos">
-          {!! count($taxonomias['metaproyecto']) > 1 ? '<h3 class="font-bold">Metaproyectos:</h3>' : '<h3 class="font-bold">Metaproyecto:</h3>'!!}
+     @if ($taxonomias['has_proyecto'])
+        <div class="mb-3 bloque proyectos">
+          {!! count($taxonomias['proyecto']) > 1 ? '<h3 class="font-bold">proyectos:</h3>' : '<h3 class="font-bold">proyecto:</h3>'!!}
           <ul>
-            @foreach ($taxonomias['metaproyecto'] as $metaproyecto)
+            @foreach ($taxonomias['proyecto'] as $proyecto)
               @if (is_front_page())
-              <li>{{ $metaproyecto['term']->name }}</li>
+              <li>{{ $proyecto['term']->name }}</li>
               @else
-                <li><a href="{{ $metaproyecto['link'] }}" class="">{{ $metaproyecto['term']->name }}</a> </li>
+                <li><a href="{{ $proyecto['link'] }}" class="">{{ $proyecto['term']->name }}</a> </li>
               @endif
             @endforeach
           </ul>
