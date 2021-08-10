@@ -13,29 +13,29 @@ return [
     */
 
     'post' => [
-        'proyecto' => [
-            'enter_title_here' => 'Título del proyecto',
-            // 'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
-            'show_in_rest' => true,
-            'has_archive' => true,
-            'taxonomies' => ['post_tag'],
-            'menu_position' => 2,
-            'admin_cols'   => [
-                'destacado' => [
-                    'title'    => 'Destacado',
-                    'meta_key' => 'destacar',
-                ],
-                'formato' =>[
-                    'title'    => 'Formato del destacado',
-                    'meta_key' => 'destacar_imagen_texto',
-                ],
-                'tipo' =>[
-                    'title'    => 'Tipo',
-                    'taxonomy' => 'tipo_de_proyecto',
-                ],
-            ],
-        ],
+        // 'proyecto' => [
+        //     'enter_title_here' => 'Título del proyecto',
+        //     // 'menu_icon' => 'dashicons-book-alt',
+        //     'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
+        //     'show_in_rest' => true,
+        //     'has_archive' => true,
+        //     'taxonomies' => ['post_tag'],
+        //     'menu_position' => 2,
+        //     'admin_cols'   => [
+        //         'destacado' => [
+        //             'title'    => 'Destacado',
+        //             'meta_key' => 'destacar',
+        //         ],
+        //         'formato' =>[
+        //             'title'    => 'Formato del destacado',
+        //             'meta_key' => 'destacar_imagen_texto',
+        //         ],
+        //         'tipo' =>[
+        //             'title'    => 'Tipo',
+        //             'taxonomy' => 'tipo_de_proyecto',
+        //         ],
+        //     ],
+        // ],
         'noticia' => [
             'enter_title_here' => 'Título de la noticia',
             // 'menu_icon' => 'dashicons-book-alt',
@@ -153,7 +153,7 @@ return [
     'taxonomy' => [
         'metaproyecto' => [
             'links' => [
-                'proyecto',
+                // 'proyecto',
                 'noticia',
                 'actividad',
                 'publicacion',
@@ -164,7 +164,7 @@ return [
         ],
         'lineas_investigacion' => [ // ojo, está en plural. Cambiar antes de meter contenido real
             'links' => [
-                'proyecto',
+                // 'proyecto',
                 'noticia',
                 'actividad',
                 'publicacion',
@@ -180,7 +180,7 @@ return [
         ],
         'tipo_de_proyecto' => [
             'links' => [
-                'proyecto',
+                'investigacion',
             ],
             'meta_box' => 'simple',
             'labels' => [

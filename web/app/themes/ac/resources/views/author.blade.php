@@ -12,8 +12,6 @@
     {!! get_search_form(false) !!}
   @endif
 
-  <h1>alksjdlaskjd</h1>
-
   @dump(get_queried_object())
 
   @if (have_posts())

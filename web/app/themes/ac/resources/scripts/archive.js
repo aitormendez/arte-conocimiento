@@ -59,7 +59,7 @@ $(document).ready(() => {
         function cerrarCrecer() {
             gsap.to('#giro-' + i, {
                 duration: '0.5',
-                maxWidth: '10vw',
+                maxWidth: '15vw',
                 ease: "power1.inOut",
                 onStart: () =>  start(),
                 onComplete: () =>  complete(),
