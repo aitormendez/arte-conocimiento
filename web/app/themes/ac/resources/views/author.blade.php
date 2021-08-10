@@ -6,11 +6,11 @@
 
 @section('content')
 
-@if ($foto['foto'])
-  <figure class="px-4 mb-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
-    <img src="{{ $foto['foto']['url'] }}" alt="{{ $foto['foto']['alt'] }}" srcset="{{ $foto['srcset'] }}" sizes="(max-width: 768px) 100vw, 30vw"/>
-  </figure>
-@endif
+  @if ($foto['foto'])
+    <figure class="px-4 mb-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
+      <img src="{{ $foto['foto']['url'] }}" alt="{{ $foto['foto']['alt'] }}" srcset="{{ $foto['srcset'] }}" sizes="(max-width: 768px) 100vw, 30vw"/>
+    </figure>
+  @endif
 
 
   
@@ -25,20 +25,28 @@
     {!! get_search_form(false) !!}
   @endif
 
-@if (get_field('pagina_de_usuario', 'user_' . $q->ID))
-  <div class="px-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
-    {!! get_field('pagina_de_usuario', 'user_' . $q->ID)->post_content !!}
-  </div>
-@endif
+  @if (get_field('pagina_de_usuario', 'user_' . $q->ID))
+    <div class="px-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
+      {!! get_field('pagina_de_usuario', 'user_' . $q->ID)->post_content !!}
+    </div>
+  @endif
 
+  @query([
+    'post_type' => [
+      'investigacion',
+      'publicacion',
+      'transferencia',
+      'actividad',
+    ]
+  ])
 
-  @if (have_posts())
+  @if ($query->have_posts())
   <section>
     <header class="px-4 mb-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
       <h2>Participa en:</h2>
     </header>
     <div class="infinite-scroll-container">
-      @while(have_posts()) @php(the_post())
+      @while($query->have_posts()) @php($query->the_post())
         @includeFirst(['partials.content-' . get_post_type(), 'partials.content']) 
       @endwhile
     </div>
