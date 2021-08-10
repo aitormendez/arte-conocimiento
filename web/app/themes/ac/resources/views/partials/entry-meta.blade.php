@@ -73,11 +73,11 @@
         </div>
      @endif
 
-     @if ($taxonomias['has_tipo_de_proyecto'])
-      <div class="mb-3 tipo-de-proyecto">
-          {!! count($taxonomias['tipo_de_proyecto']) > 1 ? '<h3 class="font-bold">Tipos de proyecto:</h3>' : '<h3 class="font-bold">Tipo de proyecto:</h3>'!!}
+     @if ($taxonomias['has_tipo_de_investigacion'])
+      <div class="mb-3 tipo-de-investigacion">
+          {!! count($taxonomias['tipo_de_investigacion']) > 1 ? '<h3 class="font-bold">Tipos de proyecto:</h3>' : '<h3 class="font-bold">Tipo de investigación:</h3>'!!}
           <ul>
-            @foreach ($taxonomias['tipo_de_proyecto'] as $tipo_de_proyecto)
+            @foreach ($taxonomias['tipo_de_investigacion'] as $tipo_de_proyecto)
               @if (is_front_page())
               <li class="mb-2">{{ $tipo_de_proyecto['term']->name }}</li>
               @else

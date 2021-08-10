@@ -82,8 +82,8 @@ class Post extends Composer
                 }
     
     
-                if ($post_type == 'proyecto') {
-                    $tipo_de_proyecto = get_the_terms($post_id, 'tipo_de_proyecto');
+                if ($post_type == 'investigacion') {
+                    $tipo_de_proyecto = get_the_terms($post_id, 'tipo_de_investigacion');
     
                     if ($tipo_de_proyecto) {
                         $out = array_map( function($term){
@@ -93,8 +93,8 @@ class Post extends Composer
                             ];
                         }, $tipo_de_proyecto);
             
-                        $output['has_tipo_de_proyecto'] = true;
-                        $output['tipo_de_proyecto'] = $out;
+                        $output['has_tipo_de_investigacion'] = true;
+                        $output['tipo_de_investigacion'] = $out;
                     }
                 }
     
