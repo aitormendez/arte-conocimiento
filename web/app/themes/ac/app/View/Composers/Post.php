@@ -266,7 +266,7 @@ class Post extends Composer
                 'has_tags' => false,
                 'has_lineas' => false,
                 'has_proyecto' => false,
-                'has_tipo_de_proyecto' => false,
+                'has_tipo_de_investigacion' => false,
                 'has_tipo_de_actividad' => false,
             ];
 
@@ -324,8 +324,8 @@ class Post extends Composer
                         ];
                     }, $tipo_de_proyecto);
         
-                    $output['has_tipo_de_proyecto'] = true;
-                    $output['tipo_de_proyecto'] = $out;
+                    $output['has_tipo_de_investigacion'] = true;
+                    $output['tipo_de_investigacion'] = $out;
                 }
             }
 

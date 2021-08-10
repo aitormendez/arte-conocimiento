@@ -60,7 +60,7 @@
 
      @if ($taxonomias['has_proyecto'])
         <div class="mb-3 bloque proyectos">
-          {!! count($taxonomias['proyecto']) > 1 ? '<h3 class="font-bold">proyectos:</h3>' : '<h3 class="font-bold">proyecto:</h3>'!!}
+          {!! count($taxonomias['proyecto']) > 1 ? '<h3 class="font-bold">Proyectos:</h3>' : '<h3 class="font-bold">Proyecto:</h3>'!!}
           <ul>
             @foreach ($taxonomias['proyecto'] as $proyecto)
               @if (is_front_page())
