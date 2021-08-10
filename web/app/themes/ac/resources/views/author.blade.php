@@ -12,7 +12,11 @@
     {!! get_search_form(false) !!}
   @endif
 
-  @dump(get_queried_object())
+
+  <div class="px-4 prose lg:px-0 entry-content lg:mx-auto lg:max-w-3xl">
+    {!! get_field('pagina_de_usuario', 'user_' . get_queried_object()->ID)->post_content !!}
+  </div>
+
 
   @if (have_posts())
     <div class="infinite-scroll-container">

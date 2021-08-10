@@ -187,12 +187,9 @@ add_action('pre_get_posts', function ($query) {
 });
 
 
-
-
-
 /*
-Cambiar títulos
-*/
+ * Cambiar títulos
+ */
 add_filter( 'get_the_archive_title', function ( $title ) {
     $q = get_queried_object();
     if (is_post_type_archive('investigacion')) {
@@ -206,3 +203,8 @@ add_filter( 'get_the_archive_title', function ( $title ) {
     }
     return $title;
 });
+
+/*
+ *  Ocultar menú ACF
+ */
+add_filter('acf/settings/show_admin', '__return_false');

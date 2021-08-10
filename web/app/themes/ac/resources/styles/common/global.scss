@@ -38,3 +38,20 @@ a {
     padding-top: 12rem;
   }
 }
+
+// override tailwind tipography (prose) en galerías
+
+.prose .wp-block-gallery { 
+  margin-top: 0;
+
+  li {
+    padding-left: 0;
+    font-size: inherit;
+    line-height: inherit;
+
+    &:before {
+      content: none;
+    }
+  }
+
+}
