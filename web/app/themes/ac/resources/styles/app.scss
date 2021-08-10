@@ -9,3 +9,8 @@
 
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+$lg-path-fonts: 'https://cdn.jsdelivr.net/npm/lightgallery@2.1.2/fonts';
+$lg-path-images: 'https://cdn.jsdelivr.net/npm/lightgallery@2.1.2/images';
+
+@import "~lightgallery/scss/lightgallery-bundle.scss";

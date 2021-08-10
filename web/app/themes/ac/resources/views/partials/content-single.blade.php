@@ -1,7 +1,7 @@
 <article @php post_class() @endphp >
 
   <header>
-    <div class="px-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">    
+    <div class="px-4 lg:px-0 lg:mx-auto lg:max-w-3xl">    
       <h1 class="entry-title">{!! $title !!}</h1>
     </div>
 

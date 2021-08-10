@@ -5247,6 +5247,11 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
+lightgallery@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.1.8.tgz#11fc2a84f8719ad86184ddab59f46222b93f533c"
+  integrity sha512-YyPVsnCDn6NHDemJ44NM0cgqROOpxvLlO09fQz+++mo9BVmhyRvn+jykZsZit53QiHQPlgLxLhMRa5cCF3htkg==
+
 lilconfig@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.3.tgz#68f3005e921dafbd2a2afb48379986aa6d2579fd"

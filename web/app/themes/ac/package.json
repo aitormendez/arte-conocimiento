@@ -52,6 +52,7 @@
     "imagesloaded": "^4.1.4",
     "infinite-scroll": "^4.0.1",
     "isotope-layout": "^3.0.6",
-    "isotope-packery": "^2.0.1"
+    "isotope-packery": "^2.0.1",
+    "lightgallery": "^2.1.8"
   }
 }

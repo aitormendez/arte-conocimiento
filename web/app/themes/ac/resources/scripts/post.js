@@ -1,9 +1,14 @@
-import {
- gsap
-} from 'gsap/all';
+import gsap from 'gsap/all';
+import lightGallery from 'lightgallery';
+import lgFullscreen from 'lightgallery/plugins/fullscreen';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 $(document).ready(() => {
     if (document.body.classList.contains('single')) {
+
+
+        // Cajón de metadatos
+        // ----------------------------------------------------
         
         let info = document.querySelector('.info'),
         caret = document.querySelector('.info svg'),
@@ -61,6 +66,20 @@ $(document).ready(() => {
     
         info.addEventListener("click", () => infoAbierto ? info.cerrar() : info.abrir());
     
+    }
+
+
+    // Galerías lightbox
+    // ----------------------------------------------------
+
+    let galerias = document.getElementsByClassName('lightbox');
+
+    for (let i = 0; i < galerias.length; i++) {
+      galerias[i].id = 'gal' + i;
+      lightGallery(document.getElementById('gal' + i), {
+        plugins: [lgFullscreen, lgZoom],
+        selector: 'a',
+      });
     }
 
  
