@@ -1,4 +1,21 @@
 .single {
+
+  .prose .wp-block-gallery { // override tailwind tipography (prose) en galerías
+    margin-top: 0;
+
+    li {
+      padding-left: 0;
+      font-size: inherit;
+      line-height: inherit;
+
+      &:before {
+        content: none;
+      }
+    }
+
+  }
+
+
   .meta {
     font-size: 0.8rem;
 
