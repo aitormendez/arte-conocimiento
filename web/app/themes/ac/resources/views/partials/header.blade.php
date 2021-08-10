@@ -1,4 +1,4 @@
-<header class="items-start w-full px-4 pb-4 banner md:flex md:fixed md:z-50 bg-fondo">
+<header class="items-start w-full px-4 pb-4 banner md:flex md:fixed md:z-50">
   <a class="inline-block mt-4 leading-tight text-black hover:text-blue brand md:mr-6" href="{{ home_url('/') }}">
     <span class="block">Prácticas Artísticas</span>
     <span class="block">y Formas de Conocimiento</span>

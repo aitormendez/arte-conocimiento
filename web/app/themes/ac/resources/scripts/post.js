@@ -34,7 +34,6 @@ $(document).ready(() => {
                     ease: "elastic",
                 });
             }
-            console.log(infoAbierto);
         }
     
         info.cerrar = () => {
@@ -57,12 +56,10 @@ $(document).ready(() => {
                     overwrite: 'auto'
                 });
             }
-            console.log(infoAbierto);
         }
     
         gsap.set(meta, {height: 0});
-    
-        console.log(meta);
+
     
         info.addEventListener("click", () => infoAbierto ? info.cerrar() : info.abrir());
     

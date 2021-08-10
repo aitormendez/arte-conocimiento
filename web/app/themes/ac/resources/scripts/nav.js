@@ -5,6 +5,7 @@ import {
 $(document).ready(() => {
   // Dirección scroll
   let
+    banner = $('.banner'),
     w = $(window),
     viewportWidth = w.width(),
     lastY = w.scrollTop(),
@@ -21,6 +22,12 @@ $(document).ready(() => {
     currY = w.scrollTop(),
     direction = (currY > lastY) ? 'down' : 'up';
     lastY = currY;
+
+    if (currY > 100) {
+      banner.addClass('bg-fondo');
+    } else {
+      banner.removeClass('bg-fondo');
+    }
   });
 
   if (viewportWidth <= 1024) {
@@ -237,7 +244,7 @@ $(document).ready(() => {
   
     // esconder banner en scroll
 
-    let banner = $('.banner'),
+    let 
     bannerHeight = banner.height(),
     bannerVisible = true;
 
@@ -257,7 +264,6 @@ $(document).ready(() => {
     }
 
     w.scroll(function() {
-      console.log
         
       if (direction == 'down' && bannerVisible == true) {
         bannerVisible = false;

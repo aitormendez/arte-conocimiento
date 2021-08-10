@@ -33,11 +33,15 @@ a {
   }
 }
 
+.banner {
+  transition: background-color 0.5s;
+}
+
 #main {
   @media (min-width: 1024px) {
     padding-top: 12rem;
 
-    body:not(author) & {
+    body.author & {
       padding-top: 0;
     }
   }

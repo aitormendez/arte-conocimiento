@@ -15,12 +15,10 @@ $(document).ready(() => {
 
         function start() {
             cambiando = true;
-            console.log(cambiando);
         }
 
         function complete() {
             cambiando = false;
-            console.log(cambiando);
         }
 
         gsap.set('#giro-' + i, {
