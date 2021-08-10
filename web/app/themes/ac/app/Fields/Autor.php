@@ -31,7 +31,23 @@ class Autor extends Field
                     'multiple' => 0,
                     'return_format' => 'object',
                     'ui' => 1,
+                ])
+            ->addTab('Foto')
+                ->addImage('autor_foto', [
+                    'label' => 'Foto del usuario',
+                    'instructions' => 'Debe tener 1024 px x 1024px',
+                    'return_format' => 'array',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+                    'min_width' => '1024',
+                    'min_height' => '1024',
+                    'min_size' => '',
+                    'max_width' => '1024',
+                    'max_height' => '1024',
+                    'max_size' => '',
+                    'mime_types' => '',
                 ]);
+
     
 
         return $autor->build();

@@ -36,6 +36,10 @@ a {
 #main {
   @media (min-width: 1024px) {
     padding-top: 12rem;
+
+    body:not(author) & {
+      padding-top: 0;
+    }
   }
 }
 

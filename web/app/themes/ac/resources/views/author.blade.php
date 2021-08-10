@@ -1,6 +1,19 @@
+@php
+  $q = get_queried_object();
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
+
+@if ($foto['foto'])
+  <figure class="px-4 mb-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
+    <img src="{{ $foto['foto']['url'] }}" alt="{{ $foto['foto']['alt'] }}" srcset="{{ $foto['srcset'] }}" sizes="(max-width: 768px) 100vw, 30vw"/>
+  </figure>
+@endif
+
+
+  
   @include('partials.page-header')
 
 
@@ -12,18 +25,24 @@
     {!! get_search_form(false) !!}
   @endif
 
-
-  <div class="px-4 prose lg:px-0 entry-content lg:mx-auto lg:max-w-3xl">
-    {!! get_field('pagina_de_usuario', 'user_' . get_queried_object()->ID)->post_content !!}
+@if (get_field('pagina_de_usuario', 'user_' . $q->ID))
+  <div class="px-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
+    {!! get_field('pagina_de_usuario', 'user_' . $q->ID)->post_content !!}
   </div>
+@endif
 
 
   @if (have_posts())
+  <section>
+    <header class="px-4 mb-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
+      <h2>Participa en:</h2>
+    </header>
     <div class="infinite-scroll-container">
       @while(have_posts()) @php(the_post())
         @includeFirst(['partials.content-' . get_post_type(), 'partials.content']) 
       @endwhile
     </div>
+  </section>
   @endif
 
 
