@@ -1,6 +1,6 @@
 .archive {
     @media (min-width: 500px) {
-        article {
+        a[role='article'] {
             .thumb {
                 max-width: 50vw;
             }
@@ -8,7 +8,7 @@
     }
 
     @media (min-width: 768px) {
-        article {
+        a[role='article']  {
             .thumb {
                 max-width: 30vw;
             }
@@ -16,7 +16,7 @@
     }
 
     @media (min-width: 1024px) {
-        article {
+        a[role='article']  {
             .thumb {
                 max-width: 15vw;
             }
