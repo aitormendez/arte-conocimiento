@@ -118,52 +118,53 @@
 @endif
 
 @if (is_single())
-@hasfields('documentos_asociados')
-<div class="documentos-asociados bloque" id="bloque-3">
-  <h3 class="mb-3 font-bold">Documentos asociados</h3>
-  <ul>
-    @fields('documentos_asociados')
-    @php
-        $doc = get_sub_field('documento_asociado')
-    @endphp
-    <li class="flex pb-3 mb-3">
-      <div class="flex-grow-0 flex-shrink-0 mr-4 icono">
-        @switch(true)
-          @case(str_contains($doc['subtype'], 'pdf'))
-            <i class="fas fa-file-pdf"></i>
-            @break
-          @case(str_contains($doc['subtype'], 'zip'))
-            <i class="fas fa-file-archive"></i>
-            @break
-          @case(str_contains($doc['subtype'], 'rtf'))
-            <i class="fas fa-file-alt"></i>
-            @break
-          @case(preg_match('/(word)/', $doc['subtype']))
-            <i class="fas fa-file-word"></i>
-            @break
-          @case(preg_match('/(sheet)||(presentationml)/', $doc['subtype']))
-            <i class="fas fa-file-excel"></i>
-            @break
-          @case(preg_match('/(powerpoint)||(excel)/', $doc['subtype']))
-            <i class="fas fa-file-powerpoint"></i>
-            @break
-          @default
-          <i class="fas fa-file"></i>
-        @endswitch
-      </div>
-      <div class="pt-1 wrap">
-        <div class="enlace">
-          <a href="{{ $doc['url'] }}" class="" download>{{ $doc['title'] }}</a>
-        </div>
-        <div class="descripcion">
-          {{ $doc['caption'] }}
-        </div>
-      </div>
-    </li>
-  @endfields
-  </ul>
-</div>
 
-@endhasfields
-    
+@if (have_rows('documentos_asociados'))
+
+  <div class="documentos-asociados bloque" id="bloque-3">
+    <h3 class="mb-3 font-bold">Documentos asociados</h3>
+    <ul>
+      @fields('documentos_asociados')
+      @php
+          $doc = get_sub_field('documento_asociado')
+      @endphp
+      <li class="flex pb-3 mb-3">
+        <div class="flex-grow-0 flex-shrink-0 mr-4 icono">
+          @switch(true)
+            @case(str_contains($doc['subtype'], 'pdf'))
+              <i class="fas fa-file-pdf"></i>
+              @break
+            @case(str_contains($doc['subtype'], 'zip'))
+              <i class="fas fa-file-archive"></i>
+              @break
+            @case(str_contains($doc['subtype'], 'rtf'))
+              <i class="fas fa-file-alt"></i>
+              @break
+            @case(preg_match('/(word)/', $doc['subtype']))
+              <i class="fas fa-file-word"></i>
+              @break
+            @case(preg_match('/(sheet)||(presentationml)/', $doc['subtype']))
+              <i class="fas fa-file-excel"></i>
+              @break
+            @case(preg_match('/(powerpoint)||(excel)/', $doc['subtype']))
+              <i class="fas fa-file-powerpoint"></i>
+              @break
+            @default
+            <i class="fas fa-file"></i>
+          @endswitch
+        </div>
+        <div class="pt-1 wrap">
+          <div class="enlace">
+            <a href="{{ $doc['url'] }}" class="" download>{{ $doc['title'] }}</a>
+          </div>
+          <div class="descripcion">
+            {{ $doc['caption'] }}
+          </div>
+        </div>
+      </li>
+    @endfields
+    </ul>
+  </div>
+  @endif
+      
 @endif

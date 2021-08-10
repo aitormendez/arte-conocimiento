@@ -208,3 +208,19 @@ add_filter( 'get_the_archive_title', function ( $title ) {
  *  Ocultar menú ACF
  */
 add_filter('acf/settings/show_admin', '__return_false');
+
+
+
+
+
+/*
+ *  para query en repeter field author template
+ */
+
+// add_filter('posts_where', function( $where ) {
+	
+// 	$where = str_replace("meta_key = 'usuarios_$", "meta_key LIKE 'usuarios_%", $where);
+
+// 	return $where;
+// }
+// );

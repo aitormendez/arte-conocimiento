@@ -31,14 +31,25 @@
     </div>
   @endif
 
+  @dump($q->data->user_nicename)
+
   @query([
     'post_type' => [
       'investigacion',
       'publicacion',
       'transferencia',
       'actividad',
-    ]
+    ],
+    // 'meta_query' => [
+    //   [
+    //     'key'		=> 'usuarios_$_nombre_usuario',
+    //     'compare'	=> '=',
+    //     'value'	=> $q->data->user_nicename,
+    //   ]
+    // ]
   ])
+
+
 
   @if ($query->have_posts())
   <section>

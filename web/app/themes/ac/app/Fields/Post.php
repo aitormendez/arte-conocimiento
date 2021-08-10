@@ -50,8 +50,8 @@ class Post extends Field
             ->addRepeater('documentos_asociados', [
                 'label' => 'Documentos asociados',
                 'instructions' => 'Subir aquí los documentos asociados a esta entrada',
-                'min' => 1,
-                'max' => 7,
+                'min' => 0,
+                'max' => 20,
                 'button_label' => 'Añadir documento',
                 'layout' => 'block',
             ])
