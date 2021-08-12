@@ -190,7 +190,7 @@ $(document).ready(() => {
   * menú desktop
   */
 
-  if (viewportWidth > 1024 ) {
+  if (viewportWidth >= 1024 ) {
 
     function menu () {
 

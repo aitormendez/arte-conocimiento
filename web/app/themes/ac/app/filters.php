@@ -161,8 +161,8 @@ add_action('pre_get_posts', function ($query) {
 add_action('pre_get_posts', function ($query) {
     if (! is_admin() && is_post_type_archive('actividad') && $query->is_main_query() ) {
         $query->set('post_type', [
-            'publicacion',
             'actividad',
+            'publicacion',
         ]);
     }
     return $query;
