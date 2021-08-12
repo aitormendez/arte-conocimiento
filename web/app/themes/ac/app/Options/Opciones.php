@@ -49,6 +49,43 @@ class Opciones extends Field
                 'maxlength' => '',
                 'rows' => '',
                 'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
+            ])
+        ->addTab('Descripciones de sección')
+            ->addTextarea('cpt_actividad_description', [
+                'label' => 'Descripción para "Actividades"',
+                'instructions' => 'Este texto aparecerá en el encabezado de "Actividades".',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
+            ])
+            ->addTextarea('cpt_publicacion_description', [
+                'label' => 'Descripción para "Publicaciones"',
+                'instructions' => 'Este texto aparecerá en el encabezado de "Publicaciones".',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
+            ])
+            ->addTextarea('cpt_investigacion_description', [
+                'label' => 'Descripción para "Fomento de la investigación"',
+                'instructions' => 'Este texto aparecerá en el encabezado de "Fomento de la investigación".',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
+            ])
+            ->addTextarea('cpt_transferencia_description', [
+                'label' => 'Descripción para "Transferencia"',
+                'instructions' => 'Este texto aparecerá en el encabezado del archivo de "Transferencia".',
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
             ]);
 
         return $options->build();

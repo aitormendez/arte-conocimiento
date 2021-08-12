@@ -1,5 +1,10 @@
 <?php
 
+$transferencia_desc = get_field('cpt_transferencia_description', 'option');
+$investigacion_desc = get_field('cpt_investigacion_description', 'option');
+$publicacion_desc = get_field('cpt_publicacion_description', 'option');
+$actividad_desc = get_field('cpt_actividad_description', 'option');
+
 return [
 
     /*
@@ -63,6 +68,7 @@ return [
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
             'menu_position' => 4,
+            'description' => $actividad_desc,
             'labels' => [
                 'singular' => 'Actividad',
                 'plural' => 'Actividades',
@@ -83,6 +89,7 @@ return [
             // 'menu_icon' => 'dashicons-book-alt',
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
+            'description' => $transferencia_desc,
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
             'menu_position' => 4,
@@ -109,6 +116,7 @@ return [
             'has_archive' => true,
             'taxonomies' => ['post_tag'],
             'menu_position' => 5,
+            'description' => $publicacion_desc,
             'labels' => [
                 'singular' => 'Publicación',
                 'plural' => 'Publicaciones',
@@ -130,6 +138,7 @@ return [
             'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'has_archive' => true,
+            'description' => $investigacion_desc,
             'taxonomies' => ['post_tag'],
             'menu_position' => 6,
             'labels' => [
