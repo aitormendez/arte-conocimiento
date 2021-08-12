@@ -1,4 +1,23 @@
 .archive {
+
+    .descripcion {
+        background-color: white;
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .caja {
+            border: 4px solid #000;
+            position: relative;
+            top: -8px;
+            left: -8px;
+        }
+    }
     @media (min-width: 500px) {
         a[role='article'] {
             .thumb {
