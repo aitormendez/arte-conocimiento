@@ -2,6 +2,7 @@ import gsap from 'gsap/all';
 import lightGallery from 'lightgallery';
 import lgFullscreen from 'lightgallery/plugins/fullscreen';
 import lgZoom from 'lightgallery/plugins/zoom';
+import L from 'leaflet';
 
 $(document).ready(() => {
     if (document.body.classList.contains('single')) {

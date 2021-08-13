@@ -211,6 +211,11 @@ add_filter('acf/settings/show_admin', '__return_false');
 
 
 
+add_filter('acf/fields/google_map/api', function( $api ){
+    $api['key'] = getenv('GOOGLE_MAPS_API');
+    return $api;
+});
+
 
 
 /*

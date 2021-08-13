@@ -88,61 +88,65 @@
 
   <div class="taxonomias bloque" id="bloque-2">
 
-     @if ($taxonomias['has_proyecto'])
-        <div class="mb-3 bloque proyectos">
-          {!! count($taxonomias['proyecto']) > 1 ? '<h3 class="font-bold">Proyectos:</h3>' : '<h3 class="font-bold">Proyecto:</h3>'!!}
-          <ul>
-            @foreach ($taxonomias['proyecto'] as $proyecto)
-              @if (is_front_page())
-              <li>{{ $proyecto['term']->name }}</li>
-              @else
-                <li><a href="{{ $proyecto['link'] }}" class="">{{ $proyecto['term']->name }}</a> </li>
-              @endif
-            @endforeach
-          </ul>
-        </div>
-     @endif
-
-     @if ($taxonomias['has_tipo_de_investigacion'])
-      <div class="mb-3 tipo-de-investigacion">
-          {!! count($taxonomias['tipo_de_investigacion']) > 1 ? '<h3 class="font-bold">Tipos de proyecto:</h3>' : '<h3 class="font-bold">Tipo de investigación:</h3>'!!}
-          <ul>
-            @foreach ($taxonomias['tipo_de_investigacion'] as $tipo_de_proyecto)
-              @if (is_front_page())
-              <li class="mb-2">{{ $tipo_de_proyecto['term']->name }}</li>
-              @else
-                <li><a href="{{ $tipo_de_proyecto['link'] }}" class="">{{ $tipo_de_proyecto['term']->name }}</a> </li>
-              @endif
-            @endforeach
-          </ul>
+    @if ($taxonomias['has_proyecto'])
+      <div class="mb-3 bloque proyectos">
+        {!! count($taxonomias['proyecto']) > 1 ? '<h3 class="font-bold">Proyectos:</h3>' : '<h3 class="font-bold">Proyecto:</h3>'!!}
+        <ul>
+          @foreach ($taxonomias['proyecto'] as $proyecto)
+            @if (is_front_page())
+            <li>{{ $proyecto['term']->name }}</li>
+            @else
+              <li><a href="{{ $proyecto['link'] }}" class="">{{ $proyecto['term']->name }}</a> </li>
+            @endif
+          @endforeach
+        </ul>
       </div>
-     @endif
+    @endif
 
-     @if ($taxonomias['has_lineas'])
-      <div class="mb-3 bloque lineas-investigacion">
-          {!! count($taxonomias['lineas']) > 1 ? '<h3 class="font-bold">Líneas de investigación:</h3>' : '<h3 class="font-bold">Línea de investigación:</h3>'!!}
-          <ul>
-            @foreach ($taxonomias['lineas'] as $linea)
+    @if ($taxonomias['has_tipo_de_investigacion'])
+    <div class="mb-3 tipo-de-investigacion">
+        {!! count($taxonomias['tipo_de_investigacion']) > 1 ? '<h3 class="font-bold">Tipos de proyecto:</h3>' : '<h3 class="font-bold">Tipo de investigación:</h3>'!!}
+        <ul>
+          @foreach ($taxonomias['tipo_de_investigacion'] as $tipo_de_proyecto)
+            @if (is_front_page())
+            <li class="mb-2">{{ $tipo_de_proyecto['term']->name }}</li>
+            @else
+              <li><a href="{{ $tipo_de_proyecto['link'] }}" class="">{{ $tipo_de_proyecto['term']->name }}</a> </li>
+            @endif
+          @endforeach
+        </ul>
+    </div>
+    @endif
+
+    @if ($taxonomias['has_lineas'])
+    <div class="mb-3 bloque lineas-investigacion">
+        {!! count($taxonomias['lineas']) > 1 ? '<h3 class="font-bold">Líneas de investigación:</h3>' : '<h3 class="font-bold">Línea de investigación:</h3>'!!}
+        <ul>
+          @foreach ($taxonomias['lineas'] as $linea)
+            @if (is_front_page())
+            <li class="mb-2">{{ $linea['term']->name }}</li>
+            @else
+              <li class="mb-2"><a href="{{ $linea['link'] }}" class="">{{ $linea['term']->name }}</a> </li>
+            @endif
+          @endforeach
+        </ul>
+    </div>
+    @endif
+
+    @if ($taxonomias['has_tipo_de_actividad'])
+    <div class="mb-3 bloque tipo-actividad">
+        {!! count($taxonomias['tipo_de_actividad']) > 1 ? '<h3 class="font-bold">Tipos de actividad:</h3>' : '<h3 class="font-bold">Tipo de actividad:</h3>'!!}
+        <ul>
+          @foreach ($taxonomias['tipo_de_actividad'] as $tipo)
               @if (is_front_page())
-              <li class="mb-2">{{ $linea['term']->name }}</li>
+              <li class="mb-2">{{ $tipo['term']->name }}</li>
               @else
-                <li class="mb-2"><a href="{{ $linea['link'] }}" class="">{{ $linea['term']->name }}</a> </li>
+                <li class="mb-2"><a href="{{ $tipo['link'] }}" class="">{{ $tipo['term']->name }}</a> </li>
               @endif
-            @endforeach
-          </ul>
-      </div>
-     @endif
-
-     @if ($taxonomias['has_tipo_de_actividad'])
-      <div class="mb-3 bloque tipo-actividad">
-          {!! count($taxonomias['tipo_de_actividad']) > 1 ? '<h3 class="font-bold">Tipos de actividad:</h3>' : '<h3 class="font-bold">Tipo de actividad:</h3>'!!}
-          <ul>
-            @foreach ($taxonomias['tipo_de_actividad'] as $tipo_de_actividad)
-                <li>{{ $tipo_de_actividad['term']->name }}</li>
-            @endforeach
-          </ul>
-      </div>
-     @endif
+          @endforeach
+        </ul>
+    </div>
+    @endif
 
   </div>
 @endif

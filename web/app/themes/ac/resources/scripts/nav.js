@@ -250,7 +250,7 @@ $(document).ready(() => {
 
     banner.ocultar = () => {
       gsap.to(banner, {
-        y: -bannerHeight -20,
+        y: -bannerHeight -30,
         duration: 0.5,
       });
     }
