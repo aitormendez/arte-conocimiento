@@ -40,7 +40,9 @@ a {
 #main {
   @media (min-width: 1024px) {
     body.author &,
-    body.archive & {
+    body.archive &,
+    body.page &,
+    body.home & {
       padding-top: 12rem;
     }
 
@@ -67,4 +69,9 @@ a {
     }
   }
 
+}
+
+.descripcion .caja {
+  columns: 200px 3;
+  column-gap: 1rem;
 }
