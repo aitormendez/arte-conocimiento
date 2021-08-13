@@ -56,6 +56,36 @@
 </div>
 
 @if ($taxonomias)
+
+  @if ($taxonomias['publicacion'] != null)
+      <div class="bloque" id="bloque-4">
+        <ul>
+          @if ($taxonomias['publicacion']['tipo'])
+            <li>
+              <span class="font-bold">Tipo: </span> {{ $taxonomias['publicacion']['tipo'] }}
+            </li>
+          @endif
+          @if ($taxonomias['publicacion']['tipo'] == 'Revista')
+            @if ($taxonomias['publicacion']['publicacion'])
+            <li>
+              <span class="font-bold">Publicacion: </span> {{ $taxonomias['publicacion']['publicacion'] }}
+            </li>
+            @endif
+          @endif
+          @if ($taxonomias['publicacion']['fecha_publi'])   
+            <li>
+              <span class="font-bold">Publicado el: </span> {{ $taxonomias['publicacion']['fecha_publi'] }}
+            </li>
+          @endif
+          @if ($taxonomias['publicacion']['isbn'])   
+            <li>
+              <span class="font-bold">ISBN/ISSN: </span> {{ $taxonomias['publicacion']['isbn'] }}
+            </li>
+          @endif
+        </ul>
+      </div>
+  @endif
+
   <div class="taxonomias bloque" id="bloque-2">
 
      @if ($taxonomias['has_proyecto'])
@@ -120,8 +150,7 @@
 @if (is_single())
 
 @if (have_rows('documentos_asociados'))
-
-  <div class="documentos-asociados bloque" id="bloque-3">
+<div class="documentos-asociados bloque" id="bloque-3">
     <h3 class="mb-3 font-bold">Documentos asociados</h3>
     <ul>
       @fields('documentos_asociados')

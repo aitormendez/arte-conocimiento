@@ -35,6 +35,7 @@ class Post extends Composer
                     'has_proyecto' => false,
                     'has_tipo_de_investigacion' => false,
                     'has_tipo_de_actividad' => false,
+                    'publicacion' => null,
                 ];
 
                 $post_type = get_post_type($post_id);
@@ -258,7 +259,7 @@ class Post extends Composer
      */
 
 
-    public function taxonomias()
+    public function taxonomias() // recopila también ACF en publicaciones
     {
         global $post;
         if (is_single()) {
@@ -268,6 +269,7 @@ class Post extends Composer
                 'has_proyecto' => false,
                 'has_tipo_de_investigacion' => false,
                 'has_tipo_de_actividad' => false,
+                'publicacion' => null,
             ];
 
             $etiquetas = get_the_tags($post->post_id);
@@ -345,24 +347,23 @@ class Post extends Composer
                 }
             }
 
+            if (is_singular('publicacion')) {
+                $tipo = get_field('publi_tipo');
+                $publicacion = $tipo == 'Revista' ? get_field('publi_revista') : null;
+                $isbn = get_field('publi_isbn');
+                $fecha_publi = get_field('publi_fecha_publi');
+
+                $output['publicacion'] = [
+                    'tipo' => $tipo,
+                    'publicacion' => $publicacion,
+                    'isbn' => $isbn,
+                    'fecha_publi' => $fecha_publi,
+                ];
+            }
+
             return $output;
         }
 
     }
-
-    /**
-     * Documentos asociados en single post
-     *
-     * @return array
-     */
-
-    //  public function asociados()
-    //  {
-
-    //     if (is_single()) {
-            
-    //     }
-         
-    //  }
 
 }

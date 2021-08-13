@@ -36,7 +36,7 @@ class Publicacion extends Field
                 'layout' => 'vertical',
                 'return_format' => 'label',
             ])
-            ->addText('publi_editorial', [
+            ->addText('publi_revista', [
                 'label' => 'Publicación',
                 'instructions' => 'Especificar a qué publicación pertenece el ejemplar de la revista',
             ])
@@ -52,7 +52,6 @@ class Publicacion extends Field
                 'return_format' => 'd/m/Y',
                 'first_day' => 1,
             ])
-
             ;
 
 
