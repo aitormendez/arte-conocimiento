@@ -1,8 +1,16 @@
 <article @php post_class() @endphp >
 
   <header>
-    <div class="px-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">    
-      <h1 class="entry-title">{!! $title !!}</h1>
+    
+    
+    <div class="px-4 lg:px-0 lg:mx-auto lg:max-w-3xl">
+
+      @if (has_post_thumbnail())
+        <div class="mb-6 thumb md:max-w-xs">@thumbnail('large')</div>
+      @endif
+
+      <h1 class="text-4xl font-extrabold entry-title">{!! $title !!}</h1>
+      
     </div>
 
 

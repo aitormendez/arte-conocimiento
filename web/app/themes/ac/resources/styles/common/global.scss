@@ -39,10 +39,15 @@ a {
 
 #main {
   @media (min-width: 1024px) {
-    padding-top: 12rem;
+    body.author &,
+    body.archive & {
+      padding-top: 12rem;
+    }
 
-    body.author & {
-      padding-top: 0;
+    .single & {
+      article:not(.has-post-thumbnail) {
+        margin-top: 12rem;
+      }
     }
   }
 }

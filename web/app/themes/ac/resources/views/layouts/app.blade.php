@@ -6,7 +6,7 @@
 
   @include('partials.header')
 
-    <main id="main" class="py-8 main">
+    <main id="main" class="top-0 main">
       @yield('content')
     </main>
 
