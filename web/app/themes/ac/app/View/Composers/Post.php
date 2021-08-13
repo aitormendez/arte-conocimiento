@@ -259,7 +259,7 @@ class Post extends Composer
      */
 
 
-    public function taxonomias() // recopila también ACF en publicaciones
+    public function taxonomias() // recopila también ACF en publicaciones y actividades
     {
         global $post;
         if (is_single()) {
@@ -270,6 +270,7 @@ class Post extends Composer
                 'has_tipo_de_investigacion' => false,
                 'has_tipo_de_actividad' => false,
                 'publicacion' => null,
+                'localizacion' => null,
             ];
 
             $etiquetas = get_the_tags($post->post_id);
@@ -344,6 +345,8 @@ class Post extends Composer
         
                     $output['has_tipo_de_actividad'] = true;
                     $output['tipo_de_actividad'] = $out;
+                    $output['localizacion'] = get_field('localizacion');
+
                 }
             }
 

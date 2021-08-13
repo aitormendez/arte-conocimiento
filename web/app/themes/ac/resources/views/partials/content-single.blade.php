@@ -26,6 +26,10 @@
 
   </header>
 
+  @if (is_singular('actividad') && $taxonomias['localizacion'])
+    <div id="map" class="w-full" lat="{{$taxonomias['localizacion']['lat']  }}" lng="{{$taxonomias['localizacion']['lng']  }}"></div>
+  @endif
+
   <div class="px-4 prose lg:px-0 entry-content lg:mx-auto lg:max-w-3xl">
     @php(the_content())
   </div>

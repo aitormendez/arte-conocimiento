@@ -24,6 +24,15 @@ add_action('wp_enqueue_scripts', function () {
     }
 
     wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), false, null);
+
+
+    $datos = [
+        'homeUrl' => get_bloginfo( 'url' ),
+    ];
+
+    wp_localize_script('sage/app.js', 'datos', $datos);
+
+
 }, 100);
 
 /**
