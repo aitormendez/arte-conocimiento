@@ -3,7 +3,12 @@
   #map {
     height: 200px;
   }
-
+ 
+  .extracto {
+    columns: 200px 3;
+    column-gap: 1rem;
+  }
+  
   .meta {
     font-size: 0.8rem;
 

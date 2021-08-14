@@ -260,7 +260,7 @@ class Post extends Composer
      */
 
 
-    public function taxonomias() // recopila también ACF en publicaciones y actividades
+    public function taxonomias() // recopila también ACF en publicaciones y actividades y si se mustra el extracto
     {
         global $post;
         if (is_single()) {
@@ -272,6 +272,7 @@ class Post extends Composer
                 'has_tipo_de_actividad' => false,
                 'publicacion' => null,
                 'localizacion' => null,
+                'extracto' => null,
             ];
 
             $etiquetas = get_the_tags($post->post_id);
@@ -314,6 +315,13 @@ class Post extends Composer
     
                 $output['has_proyecto'] = true;
                 $output['proyecto'] = $out;
+            }
+
+            $extracto = get_field('mostrar_extracto');
+
+            if ($extracto == true) {
+                
+                $output['extracto'] = wpautop($post->post_excerpt);
             }
 
 

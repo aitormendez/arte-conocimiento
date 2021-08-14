@@ -32,6 +32,22 @@
     <div id="map" class="w-full" zoom="{{$taxonomias['localizacion']['zoom']  }}" lat="{{$taxonomias['localizacion']['lat']  }}" lng="{{$taxonomias['localizacion']['lng']  }}"></div>
   @endif
 
+  @if ($taxonomias['extracto'])
+  <div class="mt-12 border-b border-black sinopsis">
+
+    <div class="border-b border-black">
+      <h3 class="px-4 pb-1 text-xs font-bold tracking-wider uppercase lg:px-0 lg:mx-auto lg:max-w-3xl">
+        Sinopsis
+      </h3>
+    </div>
+
+      <div class="p-4 text-sm prose text-gray-500 extracto lg:px-0 lg:mx-auto lg:max-w-3xl">
+        {!! $taxonomias['extracto'] !!}
+      </div>
+
+  </div>
+  @endif
+
   <div class="px-4 mt-12 prose lg:px-0 entry-content lg:mx-auto lg:max-w-3xl">
     @php(the_content())
   </div>

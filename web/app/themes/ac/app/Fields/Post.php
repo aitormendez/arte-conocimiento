@@ -27,6 +27,15 @@ class Post extends Field
             ->or('post_type', '==', 'transferencia');
 
         $entrada
+            ->addTrueFalse('mostrar_extracto', [
+                'label' => 'Mostrar extracto',
+                'instructions' => 'Si se activa, el extracto se mostrará en forma de sinopsis en la página del post',
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Sí',
+                'ui_off_text' => 'No',
+            ])
             ->addTab('Equipo', ['placement' => 'left'])
                 ->addFields($this->get(Usuarios::class))
             ->addTab('Destacar')
