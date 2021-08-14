@@ -2,13 +2,16 @@
   
   <h1>{!! $title !!}</h1>
 
+
   @if (is_archive())
-    @if ($descripcion)
-      <div class="descripcion color-ya">
-        <div class="relative p-4 text-sm caja">
-          {!! $descripcion !!}
+    @isset($descripcion)
+      @if ($descripcion)
+        <div class="descripcion color-ya">
+          <div class="relative p-4 text-sm caja">
+            {!! $descripcion !!}
+          </div>
         </div>
-      </div>
-    @endif
+      @endif
+    @endisset
   @endif
 </div>

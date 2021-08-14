@@ -96,7 +96,23 @@ class Opciones extends Field
                 'toolbar' => 'basic',
                 'media_upload' => 0,
                 'delay' => 1,
+            ])
+        ->addTab('Equipo')
+            ->addUser('equipo', [
+                'label' => 'Equipo',
+                'instructions' => 'Selecciona los usuarios que aparecerán en la página "Equipo"',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
+                'role' => '',
+                'allow_null' => 0,
+                'multiple' => 1,
             ]);
+    
 
         return $options->build();
     }

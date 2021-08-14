@@ -31,8 +31,6 @@
     </div>
   @endif
 
-  @dump($q->data->user_nicename)
-
   @query([
     'post_type' => [
       'investigacion',
