@@ -57,6 +57,34 @@
 
 @if ($taxonomias)
 
+  @if ($taxonomias['localizacion'] != null)
+      <div class="bloque" id="bloque-4">
+        <h3 class="font-bold">Lugar:</h3>
+        <ul>
+          @if ($taxonomias['localizacion']['street_name_short'])
+            <li>
+              {{ $taxonomias['localizacion']['street_name_short'] }}, {{ $taxonomias['localizacion']['street_number'] ?? '' }}
+            </li>
+          @endif
+          @if ($taxonomias['localizacion']['city'])
+            <li>
+              {{ $taxonomias['localizacion']['post_code'] ?? '' }} {{ $taxonomias['localizacion']['city'] }}
+            </li>
+          @endif
+          @if ($taxonomias['localizacion']['state'])
+            <li>
+              {{ $taxonomias['localizacion']['state'] }}
+            </li>
+          @endif
+          @if ($taxonomias['localizacion']['country'])
+            <li>
+              {{ $taxonomias['localizacion']['country'] }}
+            </li>
+          @endif
+        </ul>
+      </div>
+  @endif
+
   @if ($taxonomias['publicacion'] != null)
       <div class="bloque" id="bloque-4">
         <ul>

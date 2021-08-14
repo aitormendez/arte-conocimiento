@@ -36,6 +36,7 @@ class Post extends Composer
                     'has_tipo_de_investigacion' => false,
                     'has_tipo_de_actividad' => false,
                     'publicacion' => null,
+                    'localizacion' => null,
                 ];
 
                 $post_type = get_post_type($post_id);

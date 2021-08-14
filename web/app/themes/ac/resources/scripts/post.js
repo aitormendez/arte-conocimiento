@@ -3,13 +3,16 @@ import lightGallery from 'lightgallery';
 import lgFullscreen from 'lightgallery/plugins/fullscreen';
 import lgZoom from 'lightgallery/plugins/zoom';
 import L from 'leaflet';
+import 'leaflet-fullscreen/dist/Leaflet.fullscreen';
+
 
 $(document).ready(() => {
     if (document.body.classList.contains('single')) {
 
-        console.log(datos);
+        const el = document.querySelector('article');
+        console.log(el);
 
-        if (document.body.classList.contains('single-actividad')) {
+        if (el.classList.contains('mapa')) {
             // Leaflet mapa
             // https://github.com/btpschroeder/leaflet-webpack/blob/master/src/index.js
 
@@ -27,19 +30,23 @@ $(document).ready(() => {
             const 
                 mapa = document.getElementById('map'),
                 lat = mapa.getAttribute('lat'),
-                lng = mapa.getAttribute('lng');
+                lng = mapa.getAttribute('lng'),
+                zoom = mapa.getAttribute('zoom');
 
-            const map = L.map('map');
+            
             const basemap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
             // attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
             });
-            
-            const defaultCenter = [lat, lng];
-            const defaultZoom = 16;
-            map.setView(defaultCenter, defaultZoom);
+
+            const map = L.map('map', {
+                center: [lat, lng],
+                zoom: zoom,
+            });
+
+            map.addControl(new L.Control.Fullscreen());
 
             basemap.addTo(map);
-            L.marker(defaultCenter, {icon: myIcon}).addTo(map);
+            L.marker([lat, lng], {icon: myIcon}).addTo(map);
         }
       
 
@@ -51,7 +58,6 @@ $(document).ready(() => {
         caret = document.querySelector('.info svg'),
         meta = document.querySelector('.meta'),
         infoAbierto = false;
-        console.log(caret);
     
         info.abrir = () => {
             if (!infoAbierto) {

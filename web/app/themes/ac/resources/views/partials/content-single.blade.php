@@ -1,4 +1,7 @@
-<article @php post_class() @endphp >
+@php
+    $clase = $taxonomias['localizacion'] ? 'mapa' : '';
+@endphp
+<article @php post_class($clase) @endphp >
 
   <header>
     
@@ -11,9 +14,8 @@
       <h1 class="text-4xl font-extrabold entry-title">{!! $title !!}</h1>
       
     </div>
-    @dump($taxonomias)  
 
-    <div class="my-8 overflow-hidden bg-white">
+    <div class="mt-8 overflow-hidden bg-white">
       <div class="flex items-center pl-4 cursor-pointer lg:px-0 info lg:mx-auto lg:max-w-3xl">
         info <span class="mx-3 fas fa-angle-right fa-2x"></span>
       </div>
@@ -27,7 +29,7 @@
   </header>
 
   @if (is_singular('actividad') && $taxonomias['localizacion'])
-    <div id="map" class="w-full" lat="{{$taxonomias['localizacion']['lat']  }}" lng="{{$taxonomias['localizacion']['lng']  }}"></div>
+    <div id="map" class="w-full" zoom="{{$taxonomias['localizacion']['zoom']  }}" lat="{{$taxonomias['localizacion']['lat']  }}" lng="{{$taxonomias['localizacion']['lng']  }}"></div>
   @endif
 
   <div class="px-4 prose lg:px-0 entry-content lg:mx-auto lg:max-w-3xl">
