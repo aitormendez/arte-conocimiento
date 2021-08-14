@@ -86,6 +86,16 @@ class Opciones extends Field
                 'maxlength' => '',
                 'rows' => '',
                 'new_lines' => '', // Possible values are 'wpautop', 'br', or ''.
+            ])
+        ->addTab('Faldón')
+            ->addWysiwyg('footer', [
+                'label' => 'Faldón',
+                'instructions' => 'Información para el faldón (aparece en todas las páginas)',
+                'default_value' => '',
+                'tabs' => 'all',
+                'toolbar' => 'basic',
+                'media_upload' => 0,
+                'delay' => 1,
             ]);
 
         return $options->build();
