@@ -32,7 +32,7 @@
     <div id="map" class="w-full" zoom="{{$taxonomias['localizacion']['zoom']  }}" lat="{{$taxonomias['localizacion']['lat']  }}" lng="{{$taxonomias['localizacion']['lng']  }}"></div>
   @endif
 
-  <div class="px-4 prose lg:px-0 entry-content lg:mx-auto lg:max-w-3xl">
+  <div class="px-4 mt-12 prose lg:px-0 entry-content lg:mx-auto lg:max-w-3xl">
     @php(the_content())
   </div>
 
