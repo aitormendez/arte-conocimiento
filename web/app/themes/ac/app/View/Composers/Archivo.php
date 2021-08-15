@@ -83,7 +83,9 @@ class Archivo extends Composer
             $output = [
                 'usuarios' => $usuarios_proy,
                 'participantes' => $participantes_proy,
-                'web' => get_field('proyecto_web', 'term_' . $q->term_id)
+                'web' => get_field('proyecto_web', 'term_' . $q->term_id),
+                'fecha_inicio' => get_field('proyecto_fecha_inicio', 'term_' . $q->term_id),
+                'fecha_fin' => get_field('proyecto_fecha_fin', 'term_' . $q->term_id),
             ];
         }
 
