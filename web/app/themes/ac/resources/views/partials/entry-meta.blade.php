@@ -132,7 +132,7 @@
     @endif
 
     @if ($taxonomias['has_tipo_de_investigacion'])
-    <div class="mb-3 tipo-de-investigacion">
+      <div class="mb-3 tipo-de-investigacion">
         {!! count($taxonomias['tipo_de_investigacion']) > 1 ? '<h3 class="font-bold">Tipos de proyecto:</h3>' : '<h3 class="font-bold">Tipo de investigación:</h3>'!!}
         <ul>
           @foreach ($taxonomias['tipo_de_investigacion'] as $tipo_de_proyecto)
@@ -143,11 +143,11 @@
             @endif
           @endforeach
         </ul>
-    </div>
+      </div>
     @endif
 
     @if ($taxonomias['has_lineas'])
-    <div class="mb-3 bloque lineas-investigacion">
+      <div class="mb-3 bloque lineas-investigacion">
         {!! count($taxonomias['lineas']) > 1 ? '<h3 class="font-bold">Líneas de investigación:</h3>' : '<h3 class="font-bold">Línea de investigación:</h3>'!!}
         <ul>
           @foreach ($taxonomias['lineas'] as $linea)
@@ -158,7 +158,7 @@
             @endif
           @endforeach
         </ul>
-    </div>
+      </div>
     @endif
 
     @if ($taxonomias['has_tipo_de_actividad'])
@@ -174,6 +174,21 @@
           @endforeach
         </ul>
     </div>
+    @endif
+    
+    @if ($taxonomias['has_tags'])
+      <div class="mb-3 bloque tags">
+        {!! count($taxonomias['lineas']) > 1 ? '<h3 class="font-bold">Etiquetas:</h3>' : '<h3 class="font-bold">Etiqueta:</h3>'!!}
+        <ul>
+          @foreach ($taxonomias['tags'] as $tag)
+            @if (is_front_page())
+            <li class="mb-2">{{ $tag['term']->name }}</li>
+            @else
+              <li class=""><a href="{{ $tag['link'] }}" class="">{{ $tag['term']->name }}</a> </li>
+            @endif
+          @endforeach
+        </ul>
+      </div>
     @endif
 
   </div>

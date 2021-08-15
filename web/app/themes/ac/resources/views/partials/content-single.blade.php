@@ -2,7 +2,7 @@
     $clase = $taxonomias['localizacion'] ? 'mapa' : '';
 @endphp
 <article @php post_class($clase) @endphp >
-
+  @dump($taxonomias)
   <header>
     
     <div class="px-4 lg:px-0 lg:mx-auto lg:max-w-3xl">
