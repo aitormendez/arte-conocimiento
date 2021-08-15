@@ -6,7 +6,7 @@ use Log1x\AcfComposer\Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\Usuarios;
 
-class proyecto extends Field
+class Proyecto extends Field
 {
     /**
      * The field group.

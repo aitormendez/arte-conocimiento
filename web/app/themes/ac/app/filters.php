@@ -41,7 +41,6 @@ add_action(
 add_action( 'acf/save_post', function ($post_id) {
 $post_type = get_post_type($post_id);
 
-    if ($post_type == 'proyecto') {
 
         // PARTICIPANTES y USUARIOS
         // --------------------------------------------------------------------------
@@ -134,7 +133,6 @@ $post_type = get_post_type($post_id);
 
         }
 
-    }
 });
 
 
