@@ -79,17 +79,22 @@ class Archivo extends Composer
                         ]);
                 endwhile;
             endif;
+
+            $output = [
+                'usuarios' => $usuarios_proy,
+                'participantes' => $participantes_proy,
+                'web' => get_field('proyecto_web', 'term_' . $q->term_id)
+            ];
         }
 
-        $output = [
-            'usuarios' => $usuarios_proy,
-            'participantes' => $participantes_proy,
-            'web' => get_field('proyecto_web', 'term_' . $q->term_id)
-        ];
+
+ 
+
+
 
         
 
-        return  $output ? $output : false;
+        return  isset($output) ? $output : false;
     }
 
 
