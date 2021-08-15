@@ -25,6 +25,21 @@
     {!! get_search_form(false) !!}
   @endif
 
+  @if ($lineas_de_trabajo)
+    <div class="px-4 py-8 my-10 text-sm bg-white lineas-trabajo">
+      <div class="px-4 lg:px-0 lg:mx-auto lg:max-w-3xl">
+        <h2 class="font-bold">Líneas de trabajo</h2>
+        <ul>
+          @foreach ($lineas_de_trabajo as $linea)
+            <li>
+              <a href="{{ $linea['link'] }}">{{ $linea['name'] }}</a>
+            </li>
+          @endforeach
+        </ul>
+      </div>
+    </div>      
+  @endif
+
   @if (get_field('pagina_de_usuario', 'user_' . $q->ID))
     <div class="px-4 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
       {!! get_field('pagina_de_usuario', 'user_' . $q->ID)->post_content !!}

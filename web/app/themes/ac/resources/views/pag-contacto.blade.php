@@ -8,11 +8,20 @@
 
 @section('content')
 
+
   @while(have_posts()) @php(the_post())
     @include('partials.page-header')
     <div class="lg:mx-auto lg:max-w-3xl">
       @include('partials.content-page')
+
+
+
+
+
+      
     </div>
+
+ 
     
     <div class="py-4 bg-white border-t border-black dir">
       <div class="lg:mx-auto lg:max-w-3xl">
@@ -22,7 +31,6 @@
         <p class="m-0">{{ $loc['post_code'] }} {{ $loc['city'] }}</p>
         <p class="m-0">{{ $loc['state'] }}</p>
         <p class="m-0">{{ $loc['country'] }}</p>
-            
           </li>
         </ul>
       </div>

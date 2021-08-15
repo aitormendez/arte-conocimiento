@@ -15,6 +15,7 @@ class Autor extends Field
     public function fields()
     {
 
+        
         $autor = new FieldsBuilder('otros_datos');
 
         $autor
@@ -46,6 +47,18 @@ class Autor extends Field
                     'max_height' => '1024',
                     'max_size' => '',
                     'mime_types' => '',
+                ])
+            ->addTab('lineas_de_investigación')
+                ->addCheckbox('autor_lineas', [
+                    'label' => 'Líneas de investigación',
+                    'instructions' => 'Selecciona las líneas de investigación en las que trabaja este autor',
+                    // 'choices' => [],
+                    'allow_custom' => 0,
+                    'save_custom' => 0,
+                    'default_value' => [],
+                    'layout' => 'vertical',
+                    'toggle' => 0,
+                    'return_format' => 'value',
                 ]);
 
     
@@ -53,3 +66,6 @@ class Autor extends Field
         return $autor->build();
     }
 }
+
+
+

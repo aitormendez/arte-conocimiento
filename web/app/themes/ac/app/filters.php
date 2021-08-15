@@ -229,3 +229,39 @@ add_filter('acf/fields/google_map/api', function( $api ){
 // 	return $where;
 // }
 // );
+
+
+
+/*
+ *  Rellenar dinámicamente choices de ACF field
+ */
+
+
+
+
+
+add_filter('acf/load_field/name=autor_lineas', function( $field ) {
+
+
+
+    
+    // reset choices
+    $field['choices'] = array();
+    
+    
+    // get the textarea value from options page without any formatting
+    $lineas = get_terms('lineas_investigacion');
+
+    // loop through array and add to field 'choices'
+    if( is_array($lineas) ) {
+        
+        foreach( $lineas as $linea ) {
+            $field['choices'][ $linea->slug ] = $linea->name;
+        }  
+    }
+    
+
+    // return the field
+    return $field;
+    
+});

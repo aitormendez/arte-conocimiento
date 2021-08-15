@@ -24,11 +24,12 @@ class Author extends Composer
     {
         return [
             'foto' => $this->foto(),
+            'lineas_de_trabajo' => $this->lineas_de_trabajo(),
         ];
     }
 
     /**
-     * Returns the post title.
+     * Returns ACF foto_autor.
      *
      * @return string
      */
@@ -47,8 +48,30 @@ class Author extends Composer
                 $out['srcset'] = $srcset;
             }
         }
+        
+        return $out;
+    }
 
+    /**
+     * Returns líneas de trabajo.
+     *
+     * @return string
+     */
+    public function lineas_de_trabajo()
+    {
+        $q = get_queried_object();
+        $lineas = get_field('autor_lineas', 'user_' . $q->ID);
 
+        $out = array_map( function($linea) {
+            $term = get_term_by( 'slug', $linea, 'lineas_investigacion');
+            return [
+                'slug' => $linea,
+                'name' => $term->name,
+                'link' => get_term_link($term->term_id),
+            ];
+        }, $lineas);
+
+ 
         
         return $out;
     }
