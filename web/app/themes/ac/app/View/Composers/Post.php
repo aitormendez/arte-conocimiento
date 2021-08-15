@@ -274,7 +274,7 @@ class Post extends Composer
                 'localizacion' => null,
                 'extracto' => null,
                 'presupuesto' => null,
-                'institución' => null,
+                'institucion' => null,
             ];
 
             $etiquetas = get_the_tags($post->post_id);
