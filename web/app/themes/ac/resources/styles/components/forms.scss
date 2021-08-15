@@ -1,0 +1,14 @@
+.wpforms-container {
+  input:focus,
+  input:focus-visible,
+  input,
+  textarea {
+    @apply px-4 py-3;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  
+}
+
