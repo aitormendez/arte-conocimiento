@@ -36,7 +36,14 @@ class Proyecto extends Field
                 'display_format' => 'd/m/Y',
                 'return_format' => 'd/m/Y',
                 'first_day' => 1,
+            ])
+            ->addLink('proyecto_web', [
+                'label' => 'Web',
+                'instructions' => 'Página web del proyecto',
+                'return_format' => 'array',
             ]);
+
+
 
 
         return $proyecto->build();

@@ -48,9 +48,24 @@ $(document).ready(() => {
             basemap.addTo(map);
             L.marker([lat, lng], {icon: myIcon}).addTo(map);
         }
-      
+    
+    }
 
 
+    // Galerías lightbox
+    // ----------------------------------------------------
+
+    let galerias = document.getElementsByClassName('lightbox');
+
+    for (let i = 0; i < galerias.length; i++) {
+      galerias[i].id = 'gal' + i;
+      lightGallery(document.getElementById('gal' + i), {
+        plugins: [lgFullscreen, lgZoom],
+        selector: 'a',
+      });
+    }
+
+    if (document.body.classList.contains('single') || document.body.classList.contains('tax-proyecto') ) {
         // Cajón de metadatos
         // ----------------------------------------------------
         
@@ -105,24 +120,11 @@ $(document).ready(() => {
 
     
         info.addEventListener("click", () => infoAbierto ? info.cerrar() : info.abrir());
-    
-    }
-
-
-    // Galerías lightbox
-    // ----------------------------------------------------
-
-    let galerias = document.getElementsByClassName('lightbox');
-
-    for (let i = 0; i < galerias.length; i++) {
-      galerias[i].id = 'gal' + i;
-      lightGallery(document.getElementById('gal' + i), {
-        plugins: [lgFullscreen, lgZoom],
-        selector: 'a',
-      });
     }
 
  
       
 });
   
+
+

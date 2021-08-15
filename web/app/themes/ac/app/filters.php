@@ -39,61 +39,60 @@ add_action(
 
 
 add_action( 'acf/save_post', function ($post_id) {
-$post_type = get_post_type($post_id);
+    $post_type = get_post_type($post_id);
 
 
-        // PARTICIPANTES y USUARIOS
-        // --------------------------------------------------------------------------
+    // PARTICIPANTES y USUARIOS
+    // --------------------------------------------------------------------------
 
-        // crear array de PARTICIPANTES que están en el post
+    // crear array de PARTICIPANTES que están en el post
 
-        $participantes_post = [];
-        if( have_rows('participantes') ):
-            while( have_rows('participantes') ) : the_row();
-                $nombre_post = get_sub_field('nombre_participante');
-                $rol_post = get_sub_field('rol_participante');
-                array_push($participantes_post, [
-                    'nombre' => $nombre_post,
-                    'rol' => $rol_post,
-                ]);
-            endwhile;
-        endif;
+    $participantes_post = [];
+    if( have_rows('participantes') ):
+        while( have_rows('participantes') ) : the_row();
+            $nombre_post = get_sub_field('nombre_participante');
+            $rol_post = get_sub_field('rol_participante');
+            array_push($participantes_post, [
+                'nombre' => $nombre_post,
+                'rol' => $rol_post,
+            ]);
+        endwhile;
+    endif;
 
-        // crear array de USUARIOS que están en el post
+    // crear array de USUARIOS que están en el post
 
-        $usuarios_post = [];
-        if( have_rows('usuarios') ):
-            while( have_rows('usuarios') ) : the_row();
-                $usuario_post = get_sub_field('nombre_usuario');
-                $nombre_post = $usuario_post['display_name'];
-                $rol_post = get_sub_field('rol_usuario');
-                array_push($usuarios_post, [
-                    'user' => $usuario_post,
-                    'display_name' => $nombre_post,
-                    'rol' => $rol_post,
-                ]);
-            endwhile;
-        endif;
+    $usuarios_post = [];
+    if( have_rows('usuarios') ):
+        while( have_rows('usuarios') ) : the_row();
+            $usuario_post = get_sub_field('nombre_usuario');
+            $nombre_post = $usuario_post['display_name'];
+            $rol_post = get_sub_field('rol_usuario');
+            array_push($usuarios_post, [
+                'user' => $usuario_post,
+                'display_name' => $nombre_post,
+                'rol' => $rol_post,
+            ]);
+        endwhile;
+    endif;
 
-        // comprobar terms que están en este post
+    // comprobar terms que están en este post
 
-        $terms = get_the_terms( $post_id, 'proyecto' );
+    $terms = get_the_terms( $post_id, 'proyecto' );
 
-        
-        
+    if ($terms) {
         foreach ($terms as $term) {
 
             // crear array de PARTICIPANTES que están en cada term de este post
             $participantes_term = [];
-
+    
             while( have_rows('participantes', 'term_' . $term->term_id) ) : the_row();
                 $nombre_term = get_sub_field('nombre_participante', $term->term_id);
                 array_push($participantes_term, $nombre_term);
             endwhile;
-
+    
             // comprobar que cada participante del $participantes_post 
             // no está en $participantes_term y añadirlo
-
+    
             foreach ($participantes_post as $participante_post) {
                 if (! in_array($participante_post['nombre'], $participantes_term)) {
                     $row = array(
@@ -103,21 +102,21 @@ $post_type = get_post_type($post_id);
                     add_row('participantes', $row, 'term_' . $term->term_id);
                 }
             }
-
-
-
-
+    
+    
+    
+    
             // crear array de USUARIOS que están en cada term de este post
             $usuarios_term = [];
-
+    
             while( have_rows('usuarios', 'term_' . $term->term_id) ) : the_row();
                 $nombre_term = get_sub_field('nombre_usuario', $term->term_id);
                 array_push($usuarios_term, $nombre_term['display_name']);
             endwhile;
-
+    
             // comprobar que cada USUARIO del $usuarios_post 
             // no está en $usuarios_term y añadirlo
-
+    
             foreach ($usuarios_post as $usuario_post) {
                 if (! in_array($usuario_post['display_name'], $usuarios_term)) {
                     $row = array(
@@ -127,11 +126,11 @@ $post_type = get_post_type($post_id);
                     add_row('usuarios', $row, 'term_' . $term->term_id);
                 }
             }
-
-
-
-
+    
         }
+    }
+    
+    
 
 });
 
