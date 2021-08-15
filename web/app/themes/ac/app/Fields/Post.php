@@ -74,7 +74,9 @@ class Post extends Field
                         'max_size' => '',
                         'mime_types' => '',
                     ])
-                    ->endRepeater();           
+                    ->endRepeater()
+                ->addTab('otros_datos')
+                        ->addText('presupuesto');
 
         return $entrada->build();
     }

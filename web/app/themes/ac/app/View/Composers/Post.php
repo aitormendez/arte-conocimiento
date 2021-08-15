@@ -273,6 +273,7 @@ class Post extends Composer
                 'publicacion' => null,
                 'localizacion' => null,
                 'extracto' => null,
+                'presupuesto' => null,
             ];
 
             $etiquetas = get_the_tags($post->post_id);
@@ -322,6 +323,12 @@ class Post extends Composer
             if ($extracto == true) {
                 
                 $output['extracto'] = wpautop($post->post_excerpt);
+            }
+
+            $presupuesto = get_field('presupuesto');
+
+            if ($presupuesto) {
+                $output['presupuesto'] = $presupuesto;
             }
 
 
