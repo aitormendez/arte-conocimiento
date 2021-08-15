@@ -274,6 +274,7 @@ class Post extends Composer
                 'localizacion' => null,
                 'extracto' => null,
                 'presupuesto' => null,
+                'institución' => null,
             ];
 
             $etiquetas = get_the_tags($post->post_id);
@@ -329,6 +330,12 @@ class Post extends Composer
 
             if ($presupuesto) {
                 $output['presupuesto'] = $presupuesto;
+            }
+
+            $institucion = get_field('institucion');
+
+            if ($institucion) {
+                $output['institucion'] = $institucion;
             }
 
 

@@ -76,7 +76,10 @@ class Post extends Field
                     ])
                     ->endRepeater()
                 ->addTab('otros_datos')
-                        ->addText('presupuesto');
+                        ->addText('presupuesto')
+                        ->addText('institucion', [
+                            'label' => 'Institución'
+                        ]);
 
         return $entrada->build();
     }

@@ -131,10 +131,19 @@
       </div>
     @endif
 
-    @if ($taxonomias['presupuesto'])
+    @if (is_single())
+      @if ($taxonomias['presupuesto'])
         <h3 class="font-bold">Presupuesto:</h3>
         <p class="mb-3">{{ $taxonomias['presupuesto'] }} €</p>
+      @endif
+
+      @if ($taxonomias['institucion'])
+        <h3 class="font-bold">Institución:</h3>
+        <p class="mb-3">{{ $taxonomias['institucion'] }}</p>
+      @endif
     @endif
+
+   
 
     @if ($taxonomias['has_tipo_de_investigacion'])
       <div class="mb-3 tipo-de-investigacion">
