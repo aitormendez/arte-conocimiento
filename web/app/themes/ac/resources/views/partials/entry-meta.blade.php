@@ -178,11 +178,11 @@
     
     @if ($taxonomias['has_tags'])
       <div class="mb-3 bloque tags">
-        {!! count($taxonomias['lineas']) > 1 ? '<h3 class="font-bold">Etiquetas:</h3>' : '<h3 class="font-bold">Etiqueta:</h3>'!!}
+        {!! count($taxonomias['tags']) > 1 ? '<h3 class="font-bold">Etiquetas:</h3>' : '<h3 class="font-bold">Etiqueta:</h3>'!!}
         <ul>
           @foreach ($taxonomias['tags'] as $tag)
             @if (is_front_page())
-            <li class="mb-2">{{ $tag['term']->name }}</li>
+            <li class="">{{ $tag['term']->name }}</li>
             @else
               <li class=""><a href="{{ $tag['link'] }}" class="">{{ $tag['term']->name }}</a> </li>
             @endif
