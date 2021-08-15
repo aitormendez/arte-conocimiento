@@ -111,7 +111,18 @@ class Opciones extends Field
                 'role' => '',
                 'allow_null' => 0,
                 'multiple' => 1,
+            ])
+        ->addTab('Localización')
+            ->addGoogleMap('localizacion_ucm', [
+                'label' => 'Localización UCM',
+                'instructions' => '',
+                'required' => 0,
+                'center_lat' => '40.4399496',
+                'center_lng' => '-3.7360811',
+                'zoom' => '15',
+                'height' => '',
             ]);
+
     
 
         return $options->build();

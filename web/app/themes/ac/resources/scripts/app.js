@@ -9,6 +9,7 @@ import './colores.js';
 import './post.js';
 import './infscroll.js';
 import './archive.js';
+import './localizacion.js';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { 
   faFilePdf, 
