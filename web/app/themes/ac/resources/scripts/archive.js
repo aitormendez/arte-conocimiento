@@ -7,7 +7,7 @@ $(document).ready(() => {
     let viewportWidth = window.innerWidth;
 
 
-  if (document.body.classList.contains('archive') && viewportWidth > 1024) {
+  if (document.body.classList.contains('archive') || document.body.classList.contains('search') && viewportWidth > 1024) {
     
     document.querySelectorAll('.thumb').forEach((item, i) => {
         item.id = 'giro-' + i;

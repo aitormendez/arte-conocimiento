@@ -1,7 +1,7 @@
 const InfiniteScroll = require('infinite-scroll');
 
 $(document).ready(() => {
-  if (document.body.classList.contains('archive')) {
+  if (document.body.classList.contains('archive') || document.body.classList.contains('search')) {
 
     let viewMoreButton = document.querySelector('.view-more-button');
     let ulti = false;
