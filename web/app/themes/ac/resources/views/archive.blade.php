@@ -6,11 +6,12 @@
 
 
   @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, no results were found.', 'sage') !!}
-    </x-alert>
-
-    {!! get_search_form(false) !!}
+    <div class="px-4 mb-6 prose lg:px-0 lg:mx-auto lg:max-w-3xl">
+      <x-alert type="warning">
+        {!! __('Aquí no hay nada aún.', 'sage') !!}
+      </x-alert>
+      {!! get_search_form(false) !!}
+    </div>
   @endif
 
   @if (have_posts())
