@@ -2,6 +2,7 @@
   $q = get_queried_object();
 @endphp
 
+
 @extends('layouts.app')
 
 @section('content')
@@ -16,14 +17,6 @@
   
   @include('partials.page-header')
 
-
-  @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, no results were found.', 'sage') !!}
-    </x-alert>
-
-    {!! get_search_form(false) !!}
-  @endif
 
   @if ($lineas_de_trabajo)
     <div class="px-4 py-8 my-10 text-sm bg-white lineas-trabajo">
@@ -53,16 +46,15 @@
       'transferencia',
       'actividad',
     ],
-    // 'meta_query' => [
-    //   [
-    //     'key'		=> 'usuarios_$_nombre_usuario',
-    //     'compare'	=> '=',
-    //     'value'	=> $q->data->user_nicename,
-    //   ]
-    // ]
+    'suppress_filters' => false,
+    'meta_query' => [
+      [
+        'key' => 'usuarios_$_nombre_usuario',
+        'compare'	=> '=',
+        'value'	=> $q->ID,
+      ]
+    ]
   ])
-
-
 
   @if ($query->have_posts())
   <section>

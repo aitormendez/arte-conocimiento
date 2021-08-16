@@ -62,14 +62,19 @@ class Author extends Composer
         $q = get_queried_object();
         $lineas = get_field('autor_lineas', 'user_' . $q->ID);
 
-        $out = array_map( function($linea) {
-            $term = get_term_by( 'slug', $linea, 'lineas_investigacion');
-            return [
-                'slug' => $linea,
-                'name' => $term->name,
-                'link' => get_term_link($term->term_id),
-            ];
-        }, $lineas);
+        $out = [];
+
+        if ($lineas) {
+            $out = array_map( function($linea) {
+                $term = get_term_by( 'slug', $linea, 'lineas_investigacion');
+                return [
+                    'slug' => $linea,
+                    'name' => $term->name,
+                    'link' => get_term_link($term->term_id),
+                ];
+            }, $lineas);
+        }
+        
 
  
         

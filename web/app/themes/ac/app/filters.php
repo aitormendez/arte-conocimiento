@@ -219,13 +219,16 @@ add_filter('acf/fields/google_map/api', function( $api ){
  *  para query en repeter field author template
  */
 
-// add_filter('posts_where', function( $where ) {
-	
-// 	$where = str_replace("meta_key = 'usuarios_$", "meta_key LIKE 'usuarios_%", $where);
+add_filter('posts_where', function( $where ) {
+	global $wpdb;
+	$where = str_replace(
+        "meta_key = 'usuarios_$", 
+        "meta_key LIKE 'usuarios_%", 
+        $wpdb->remove_placeholder_escape($where));
 
-// 	return $where;
-// }
-// );
+	return $where;
+}
+);
 
 
 

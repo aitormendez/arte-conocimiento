@@ -39,6 +39,10 @@
     }
 
     @media (min-width: 1024px) {
+        .meta {
+            font-size: 0.8rem;
+        }
+
         a[role='article']  {
             .thumb {
                 max-width: 15vw;
