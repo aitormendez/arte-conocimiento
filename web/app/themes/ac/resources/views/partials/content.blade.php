@@ -7,14 +7,15 @@
     @endif
 
     <header>
+      <p class="inline-block px-2 py-1 mb-2 btn">{{ get_post_type() }}</p>
       <h2 class="mb-3 text-xl font-bold entry-title">
         {!! $title !!}
       </h2>
-      <div class="text-xs text-gray-400 meta">
+      <div class="mb-3 text-xs text-gray-500 meta">
         @include('partials/entry-meta')
       </div>
     </header>
-    <div class="text-black entry-summary">
+    <div class="prose text-black entry-summary">
       @php(the_excerpt())
     </div>
   </div>
