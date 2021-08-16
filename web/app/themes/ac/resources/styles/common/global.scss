@@ -47,6 +47,10 @@ a {
       padding-top: 12rem;
     }
 
+    body.archive.author &{
+      padding-top: 0;
+    }
+
     .single & {
       article:not(.has-post-thumbnail) {
         margin-top: 12rem;
